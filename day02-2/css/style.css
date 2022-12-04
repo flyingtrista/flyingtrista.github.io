@@ -1,0 +1,196 @@
+/* reset css */
+* {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.flex-nav {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+}
+
+.nav-area {
+    width: 90%;
+    margin: auto;
+}
+
+.flex-nav-logo {
+    width: 150px;
+
+}
+
+.menu {
+    display: flex;
+    width: 960px;
+    margin-left: 60px;
+
+    font-size: larger;
+    font-weight: 800;
+    
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+}
+
+
+/* 導覽列 */
+nav a {
+    color: inherit;
+    /* 移除超連結顏色 */
+    text-decoration: none;
+    /* 移除超連結底線 */
+    display: inline-block;
+
+
+}
+
+/* 導覽列: 移除清單預設的項目樣式： */
+nav ul {
+    list-style: none;
+    /* 移除項目符號 */
+    
+
+}
+
+/* 導覽列加入 :hover 效果： */
+li a:hover {
+    /* background-color: rgb(89, 243, 23); */
+    color: rgb(83, 204, 31);
+}
+
+.free-dwn {
+
+    display: flex;
+
+    align-items: center;
+
+    font-size: larger;
+    font-weight: 800;
+
+    background-color: rgb(25, 142, 57);
+    border-radius: 50px;
+    width: 150px;
+    text-align: center;
+    color: white;
+
+}
+
+.free-dwn a:hover {
+
+    background-color: rgb(46, 214, 91);
+    border-radius: 50px;
+}
+
+/* ---------------------------------------------------- */
+/* Banner區 */
+
+
+.banner-apply{
+    position: absolute;
+    color: rgb(46, 214, 91);
+    top: 500px;
+    left :300px;
+    font-size: 20px;
+    font-weight:900;
+
+    
+}
+
+
+.free-apply {
+
+    color: inherit;
+    /* 移除超連結顏色 */
+    text-decoration: none;
+    /* 移除超連結底線 */
+    display: inline-block;
+
+    font-size: 30px;
+    font-weight: 800;
+
+    background-color: rgb(25, 142, 57);
+    border-radius: 50px;
+    width: 150px;
+    text-align: center;
+    color: white;
+
+}
+.banner-apply a:hover {
+
+    background-color: rgb(46, 214, 91);
+    border-radius: 50px;
+}
+
+.banner-text {
+
+    position: absolute;
+    color: 000000;
+    top: 400px;
+    left :300px;
+    font-size: 30px;
+    
+    font-weight:900;
+
+
+
+}
+
+
+.container {
+
+    margin: auto;
+   
+    position: relative;
+}
+
+.text {
+    position: absolute;
+    color: rgb(25, 142, 57);
+    top: 300px;
+    left :300px;
+    font-size: 50px;
+    
+    font-weight:900;
+
+}
+
+/* ---------------------------------------------------- */
+.text-alarm{
+    text-align: center;
+}
+.green-color{
+    color:  rgb(46, 214, 91);
+}
+.gray-color{
+    color:gray;
+
+}
+
+/* ---------------------------------------------------- */
+.asset-img{
+    width: 50%;
+   
+}
+
+.flex-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.flex-section:nth-child(odd){
+    flex-direction: row-reverse;
+
+}
+
+
+.graybgcolor{
+    background-color: gray;
+}
+
