@@ -163,7 +163,7 @@ li a:hover {
     
 }
 .trust-color{
-    background-color: rgb(206, 236, 236);
+    background-color: rgba(228, 232, 234, 0.587);
 }
 
 .text-alarm-content{
@@ -296,4 +296,81 @@ li a:hover {
       /* 移除超連結底線 */
       display: inline-block;
       color: white;
+}
+
+
+.footer-bg{
+   
+    background-color: #2c323f;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+}
+
+.footer-a{
+    color: white;
+    font-weight: bold;
+}
+.footer-a > p> a{
+    /* 移除超連結顏色 */
+    text-decoration: none;
+    /* 移除超連結底線 */
+    display: inline-block;
+    color: gray;
+    font-weight:normal
+}
+
+.footer-a > p> a:hover{
+     /* 移除超連結顏色 */
+     text-decoration: none;
+     /* 移除超連結底線 */
+     display: inline-block;
+     color: white;
+     font-weight:normal
+}
+
+.footer-flex{
+    display: flex;
+    width: 150%;
+}
+
+.footer-content{
+    width: 80%;
+    display: flex;
+    justify-content: right;
+    margin: auto;
+}
+
+.footer-border{
+    
+    color: white;
+    
+   
+}
+
+
+.footer-border-a > p> a{
+    /* 移除超連結顏色 */
+    text-decoration: none;
+    /* 移除超連結底線 */
+   
+    color: gray;
+    font-weight:normal
+}
+
+.footer-border-a > p> a:hover{
+     /* 移除超連結顏色 */
+     text-decoration: none;
+     /* 移除超連結底線 */
+    
+     color: white;
+     font-weight:normal
+}
+
+.footer-line{
+    width:100%;
+    border: 10px white ;
+    text-decoration:underline  white;
 }
