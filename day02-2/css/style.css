@@ -65,12 +65,9 @@ li a:hover {
 
 .free-dwn {
 
-    display: flex;
-
-    align-items: center;
 
     font-size: larger;
-    font-weight: 800;
+    font-weight: bold;
 
     background-color: rgb(25, 142, 57);
     border-radius: 50px;
@@ -175,6 +172,7 @@ li a:hover {
 }
 .green-color{
     color:  rgb(46, 214, 91);
+    font-weight: bold;
 }
 .gray-color{
     color:gray;
@@ -244,4 +242,58 @@ li a:hover {
    
     
 
+}
+
+
+.trust-area{
+    text-align: center;
+    margin: auto;
+}
+
+
+
+
+.input-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+.input-section-div{
+    margin-right: 50px;
+    
+}
+
+.input-save {
+
+    margin: auto;
+    font-size: larger;
+    font-weight: bold;
+
+    background-color: rgb(25, 142, 57);
+    border-radius: 50px;
+    width: 150px;
+    text-align: center;
+  
+    
+   
+  
+
+
+}
+
+.input-save a:hover {
+
+    background-color: rgb(46, 214, 91);
+    border-radius: 50px;
+}
+
+.input-save >a {
+      /* 移除超連結顏色 */
+      text-decoration: none;
+      /* 移除超連結底線 */
+      display: inline-block;
+      color: white;
 }
