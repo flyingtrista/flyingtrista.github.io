@@ -162,6 +162,16 @@ li a:hover {
 /* ---------------------------------------------------- */
 .text-alarm{
     text-align: center;
+    font-weight: bold;
+    
+}
+.trust-color{
+    background-color: rgb(206, 236, 236);
+}
+
+.text-alarm-content{
+    font-size: 40px;
+    
 }
 .green-color{
     color:  rgb(46, 214, 91);
@@ -172,29 +182,66 @@ li a:hover {
 }
 
 /* ---------------------------------------------------- */
-.asset-img{
-    width: 50%;
-   
+
+.title-trust{
+    font-size: 30px;
+    font-weight: bold;
+}
+.article-area{
+    width: 60%;
+    margin: auto;
+}
+
+.article-area-img{
+    width: 100px;
+    width: 100px;
+    margin: auto;
+}
+.trust-content{
+    width: 200px;
+    height: 200px;
+    margin: auto;
 }
 
 .flex-section {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
+    font-size: 20px;
 
 
 }
-.flex-section:nth-child(odd){
+.flex-section:nth-child(even){
     flex-direction: row-reverse;
 
 }
 
+.asset-img{
+    width: 100%;
+   
+}
+
+.green-color-title{
+    font-weight: bold;
+    font-size: 40px;
+    color:  rgb(49, 188, 86);
+}
 
 .graybgcolor{
     background-color: gray;
 }
 
 
-.article-area{
-    width: 80%;
+
+.trust-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+   
+    
+
 }
