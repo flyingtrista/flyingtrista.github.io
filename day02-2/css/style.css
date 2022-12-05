@@ -5,6 +5,8 @@
     width: 100%;
 }
 
+
+
 .flex-nav {
     display: flex;
     justify-content: left;
@@ -29,7 +31,9 @@
 
     font-size: larger;
     font-weight: 800;
+
     
+
 }
 
 .logo {
@@ -53,7 +57,7 @@ nav a {
 nav ul {
     list-style: none;
     /* 移除項目符號 */
-    
+
 
 }
 
@@ -87,15 +91,15 @@ li a:hover {
 /* Banner區 */
 
 
-.banner-apply{
+.banner-apply {
     position: absolute;
     color: rgb(46, 214, 91);
     top: 500px;
-    left :300px;
+    left: 300px;
     font-size: 20px;
-    font-weight:900;
+    font-weight: 900;
 
-    
+
 }
 
 
@@ -117,6 +121,7 @@ li a:hover {
     color: white;
 
 }
+
 .banner-apply a:hover {
 
     background-color: rgb(46, 214, 91);
@@ -128,10 +133,10 @@ li a:hover {
     position: absolute;
     color: 000000;
     top: 400px;
-    left :300px;
+    left: 300px;
     font-size: 30px;
-    
-    font-weight:900;
+
+    font-weight: 900;
 
 
 
@@ -141,7 +146,7 @@ li a:hover {
 .container {
 
     margin: auto;
-   
+
     position: relative;
 }
 
@@ -149,53 +154,58 @@ li a:hover {
     position: absolute;
     color: rgb(25, 142, 57);
     top: 300px;
-    left :300px;
+    left: 300px;
     font-size: 50px;
-    
-    font-weight:900;
+
+    font-weight: 900;
 
 }
 
 /* ---------------------------------------------------- */
-.text-alarm{
+.text-alarm {
     text-align: center;
     font-weight: bold;
-    
+
 }
-.trust-color{
+
+.trust-color {
     background-color: rgba(228, 232, 234, 0.587);
 }
 
-.text-alarm-content{
+.text-alarm-content {
     font-size: 40px;
-    
+
 }
-.green-color{
-    color:  rgb(46, 214, 91);
+
+.green-color {
+    color: rgb(46, 214, 91);
     font-weight: bold;
 }
-.gray-color{
-    color:gray;
+
+.gray-color {
+    color: gray;
 
 }
 
 /* ---------------------------------------------------- */
 
-.title-trust{
+.title-trust {
     font-size: 30px;
     font-weight: bold;
 }
-.article-area{
+
+.article-area {
     width: 60%;
     margin: auto;
 }
 
-.article-area-img{
+.article-area-img {
     width: 100px;
     width: 100px;
     margin: auto;
 }
-.trust-content{
+
+.trust-content {
     width: 200px;
     height: 200px;
     margin: auto;
@@ -210,23 +220,24 @@ li a:hover {
 
 
 }
-.flex-section:nth-child(even){
+
+.flex-section:nth-child(even) {
     flex-direction: row-reverse;
 
 }
 
-.asset-img{
+.asset-img {
     width: 100%;
-   
+
 }
 
-.green-color-title{
+.green-color-title {
     font-weight: bold;
     font-size: 40px;
-    color:  rgb(49, 188, 86);
+    color: rgb(49, 188, 86);
 }
 
-.graybgcolor{
+.graybgcolor {
     background-color: gray;
 }
 
@@ -239,13 +250,13 @@ li a:hover {
     font-weight: bold;
     font-size: 20px;
     text-align: center;
-   
-    
+
+
 
 }
 
 
-.trust-area{
+.trust-area {
     text-align: center;
     margin: auto;
 }
@@ -261,9 +272,10 @@ li a:hover {
     font-size: 20px;
 
 }
-.input-section-div{
+
+.input-section-div {
     margin-right: 50px;
-    
+
 }
 
 .input-save {
@@ -276,10 +288,10 @@ li a:hover {
     border-radius: 50px;
     width: 150px;
     text-align: center;
-  
-    
-   
-  
+
+
+
+
 
 
 }
@@ -290,17 +302,17 @@ li a:hover {
     border-radius: 50px;
 }
 
-.input-save >a {
-      /* 移除超連結顏色 */
-      text-decoration: none;
-      /* 移除超連結底線 */
-      display: inline-block;
-      color: white;
+.input-save>a {
+    /* 移除超連結顏色 */
+    text-decoration: none;
+    /* 移除超連結底線 */
+    display: inline-block;
+    color: white;
 }
 
 
-.footer-bg{
-   
+.footer-bg {
+
     background-color: #2c323f;
 }
 
@@ -309,68 +321,69 @@ li a:hover {
     height: 50px;
 }
 
-.footer-a{
+.footer-a {
     color: white;
     font-weight: bold;
 }
-.footer-a > p> a{
+
+.footer-a>p>a {
     /* 移除超連結顏色 */
     text-decoration: none;
     /* 移除超連結底線 */
     display: inline-block;
     color: gray;
-    font-weight:normal
+    font-weight: normal
 }
 
-.footer-a > p> a:hover{
-     /* 移除超連結顏色 */
-     text-decoration: none;
-     /* 移除超連結底線 */
-     display: inline-block;
-     color: white;
-     font-weight:normal
+.footer-a>p>a:hover {
+    /* 移除超連結顏色 */
+    text-decoration: none;
+    /* 移除超連結底線 */
+    display: inline-block;
+    color: white;
+    font-weight: normal
 }
 
-.footer-flex{
+.footer-flex {
     display: flex;
     width: 150%;
 }
 
-.footer-content{
+.footer-content {
     width: 80%;
     display: flex;
     justify-content: right;
     margin: auto;
 }
 
-.footer-border{
-    
+.footer-border {
+
     color: white;
-    
-   
+
+
 }
 
 
-.footer-border-a > p> a{
+.footer-border-a>p>a {
     /* 移除超連結顏色 */
     text-decoration: none;
     /* 移除超連結底線 */
-   
+
     color: gray;
-    font-weight:normal
+    font-weight: normal
 }
 
-.footer-border-a > p> a:hover{
-     /* 移除超連結顏色 */
-     text-decoration: none;
-     /* 移除超連結底線 */
-    
-     color: white;
-     font-weight:normal
+.footer-border-a>p>a:hover {
+    /* 移除超連結顏色 */
+    text-decoration: none;
+    /* 移除超連結底線 */
+
+    color: white;
+    font-weight: normal
 }
 
-.footer-line{
-    width:100%;
-    border: 10px white ;
-    text-decoration:underline  white;
+.footer-line {
+    width: 100%;
+    border: 10px white;
+    text-decoration: underline white;
 }
