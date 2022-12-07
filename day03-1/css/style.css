@@ -1,0 +1,538 @@
+img { 
+    display: block;
+}
+
+.main-header {
+    width: 100%;
+    height: 80px;
+    margin: auto;
+    position: fixed;
+
+    background: #f2f6f5e1;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+.main-logo {
+    width: 100px;
+    margin: 0 10px;
+
+    /* 隱藏文字 */
+    font-size: 0;
+    overflow: hidden;
+
+}
+
+.main-nav {
+
+    width: 700px;
+    margin: 0 10px;
+    display: flex;
+}
+
+
+.main-nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.main-nav a:hover {
+    margin: 0 10px;
+    text-decoration: none;
+    color: rgb(85, 240, 33);
+    font-weight: bold;
+}
+
+/* ----------------------------- */
+
+main {
+    padding-top: 80px;
+}
+
+/* ----------------------------- */
+
+.download {
+    background-color: #0a0;
+    color: #fff;
+    border-radius: 100px;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+
+
+
+.download:hover {
+    background-color: rgb(85, 240, 33);
+}
+
+/* ----------免費下載------------------ */
+
+.full {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #2a2a2a50;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.qr-code {
+    width: 300px;
+    height: 300px;
+    background-color: #fff;
+    padding: 30px;
+    position: relative;
+}
+
+.qr-code img {
+    width: 100%;
+}
+
+#light-box {
+    display: none;
+}
+
+#light-box:checked~.full {
+    display: flex;
+}
+
+.close {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: -20px;
+    top: -20px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #fff;
+    text-align: center;
+    line-height: 50px;
+}
+
+/* -------------KV---------------- */
+.section-kv {
+    background-image: url('/day03-1/img/bg-img.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+
+
+/* kv banner螢光筆 */
+.mark-pen {
+    background-image: linear-gradient(transparent 50%, rgba(190, 231, 231, 0.5) 50%);
+}
+
+
+
+.kv-content {
+    width: 960px;
+    margin: auto;
+    padding: 100px 0;
+}
+
+.kv-content .main-title {
+    font-size: 42px;
+    color: #0a0;
+    font-weight: bold;
+}
+
+.kv-content .main-desc {
+    padding: 30px 0;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+
+
+/* 立即申請  會連到下方的申請表格*/
+.kv-content a {
+
+    display: block;
+    width: 200px;
+    padding: 10px 20px;
+    font-size: 22px;
+    background-color: #0a0;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 100px;
+    text-align: center;
+}
+
+.kv-content a:hover {
+    display: block;
+    width: 200px;
+    padding: 10px 20px;
+    font-size: 22px;
+    background-color: rgb(85, 240, 33);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 100px;
+}
+
+.kv-text {
+    padding: 10px 0;
+    color: #0a0;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+
+}
+
+.kv-radius:last-child {
+    text-align: right;
+}
+
+/* -----------Call I ------------------ */
+
+.section-call {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.call-list-txt{
+    width: 320px;
+}
+
+/* 文字上標 */
+.font-super {
+    vertical-align: super;
+}
+
+.call-light {
+    color: #0a0;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.call-content {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.call-desc {
+    font-size: 36px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.all-source {
+    font-size: 14px;
+    color: gray;
+    font-weight: bold;
+}
+
+.call-title p {
+    padding: 10px 0;
+    ;
+}
+
+/* -----------Call II ------------------ */
+
+.call-list {
+    padding-top: 50px;
+    
+    width: 960px;
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: auto;
+}
+
+.call-list-group {
+    
+    align-items: center;
+    display: flex;
+}
+
+.call-list-group:nth-child(2) {
+    flex-direction: row-reverse;
+
+}
+
+/* call-list螢光筆 */
+.call-list-mark-pen {
+    background-image: linear-gradient(transparent 50%, rgba(76, 216, 25, 0.952) 50%);
+}
+
+/* ---------拓展業務的最佳夥伴！-------------------- */
+
+.section-partner {
+
+    background-color: #f5f6f9;
+
+}
+
+
+
+.section-partner .main-title{
+    font-size: 36px;
+    font-weight: bold;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.section-partner .partner-main {
+    width: 960px;
+    display: flex;
+    text-align: center;
+    margin: auto;
+    padding-bottom: 30px;
+
+}
+.section-partner .partner-main .partner-content{
+    padding: 30px 0;
+    width: 320px;
+    
+}
+
+.partner-main .partner-content .title {
+    font-size: 21px;
+    font-weight: bold;
+    padding: 10px 10px;
+}
+
+.partner-main .partner-content  .content {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 10px;
+}
+
+
+
+.partner-content div img{
+    width: 100px;
+    height: 100px;
+    margin: auto;
+
+}
+
+/* ----------用戶經驗分享------------------- */
+
+.section-share{
+    padding: 50px 0;
+}
+.share-title{
+    font-size: 36px;
+    font-weight: bold;
+    padding: 50px 0;
+    text-align: center;
+}
+.share-content{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.share-content-item{
+    width: 320px;
+    border:#000 1px groove;
+    margin: 0 10px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.share-content-item .title {
+    font-size: 21px;
+    font-weight: bold;
+    padding: 10px 10px;
+}
+
+.share-content-item .content {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 10px;
+}
+
+
+.hare-content-mark-pen {
+    background-image: linear-gradient(transparent 50%, rgba(76, 216, 25, 0.952) 50%);
+}
+
+
+.share-content-item img:first-child{
+    margin-right: auto;
+   
+}
+
+.share-content-item img:last-child{
+    margin-left: auto;
+    margin-top: auto;
+}
+
+/* ----------馬上申請企業專屬認證號碼！------------------- */
+
+.section-apply{
+    
+    padding: 50px 0;
+    background-color: #f5f6f9;
+    
+}
+
+
+
+
+.section-apply .main-title h2{
+    font-size: 36px;
+    font-weight: bold;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.section-apply .main-title p{
+    font-size: 18px;
+    color: #00c300;
+    font-weight: bold;
+    text-align: center;
+}
+
+.section-apply .apply-content {
+    width: 960px;
+   
+    
+    
+    margin: auto;
+    padding-bottom: 30px;
+
+}
+
+.section-apply-content {
+    width: 960px;
+    font-size: 21px;
+    font-weight: bold;
+    padding: 10px 10px;
+    margin: auto;
+    
+}
+
+
+.apply-content-btn {
+
+    display: block;
+    width: 200px;
+    padding: 10px 20px;
+    font-size: 22px;
+    background-color: #0a0;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 100px;
+    text-align: center;
+    border:none;
+    margin: auto;
+    
+}
+
+.apply-content-btn:hover {
+    display: block;
+    width: 200px;
+    padding: 10px 20px;
+    font-size: 22px;
+    background-color: rgb(85, 240, 33);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 100px;
+    border:none;
+    margin: auto;
+    
+    
+}
+.input{
+    
+    display: flex;
+    
+}
+.input-content{
+    margin-right: 50px;
+    margin-top: 10px;
+}
+
+
+
+/* ================== */
+.main-footer{
+    padding: 40px 0;
+    background-color: #2c323f;
+}
+.main-footer .footer-content{
+    color: #fff;
+    width: 960px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.main-footer .footer-content .footer-link{
+    display: flex;
+}
+.main-footer .footer-content .footer-link .col{
+    margin-right: 20px;
+}
+.main-footer .footer-content .footer-link h3{
+    color: #fff;
+    font-size: 18px;
+}
+.main-footer .footer-content .footer-link .link-list{
+    padding-right: 10px;
+    padding-top: 10px;
+    
+}
+.main-footer .footer-content .footer-link .link-list li{
+
+}
+.main-footer .footer-content .footer-link .link-list a{
+    color: #ccc;
+    text-decoration: none;
+    
+}
+
+.main-footer .footer-content .footer-social{
+    width: 200px;
+}
+
+.main-footer .footer-content .follow ul{
+    display: flex;
+}
+
+
+.main-footer .footer-copyright{
+    width: 960px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.main-footer .footer-copyright .txt{
+    color: #fff;
+    display: flex;
+}
+.main-footer .footer-copyright .txt a{
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+}
+
+.powerBy a{
+    color: #fff;
+    text-decoration: none;
+   
+    
+}
+.powerBy span{
+    font-size: 28px;
+    
+}
+.submit{
+    margin: 20px 0;
+}
