@@ -185,9 +185,10 @@ main{
 }
 .stat-img{
     width: 600px;
-    height: 600px;
+    height: 500px;
     display: flex;
-    align-items: center;
+   
+    align-items: flex-end;
 }
 
 .stat-img img{
@@ -196,31 +197,36 @@ main{
 
 }
 
-.startPlay p{
+.playurl{
     border-radius: 20px;
     width: 150px;
     height: 50px;
-    position: fixed;
-    top: 750px;
+   
     color: antiquewhite;
     background-color: rgb(72, 20, 83);
-    font-size: 26px;
+    font-size: 36px;
     line-height: 40px;
+    text-decoration: none;
+    font-weight: bold;
+   
+
+   
     
 
 }
 
-.startPlay p:hover{
+.playurl:hover{
     border-radius: 20px;
     width: 150px;
     height: 50px;
-    position: fixed;
-    top: 750px;
+   
     background-color: rgb(113, 59, 123);
     color: antiquewhite;
+    font-size: 36px;
+    line-height: 40px;
+    text-decoration: none;
+    font-weight: bold;
+   
 }
 
-.playurl{
-    text-decoration: none;
-    color: white;
-}
+
