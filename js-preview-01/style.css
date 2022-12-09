@@ -1,0 +1,181 @@
+
+article{
+    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    background-color: rgb(246, 246, 246);
+}
+.logo{
+    width: 500px;
+   
+   
+}
+
+/* 螢光筆 */
+.mark-pen {
+    background-image: linear-gradient(transparent 50%, rgba(30, 105, 156, 0.249) 70%);
+}
+
+
+
+article{
+    text-align: center;
+    margin: auto;
+}
+header p{
+    color: black;
+   
+    
+}
+header h1{
+    display: inline;
+}
+
+
+
+header{
+    width: 500px;
+    font-size: 42px;
+    color: #0a0;
+    font-weight: bold;
+    margin: auto;
+
+}
+main{
+    
+    width: 600px;
+    height: 600px;
+    background-color: rgb(83, 150, 150,50%);
+    border-radius: 100%;
+    
+    text-align: center;
+    margin: auto;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+
+    
+}
+.area-showMsg{
+    width: 300px;
+    margin: auto;
+}
+
+.over{
+    
+    font-size: 22px;
+    color: rgb(3, 38, 3);
+    font-weight: bold;
+    margin-top: 10px;
+    
+}
+.icon img{
+    width: 100px;
+    height: 100px;
+    font-weight: bold;
+}
+
+.show-range{
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(6, 46, 6);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+.win{
+    font-size: 22px;
+    font-weight: bold;
+    background-color: pink;
+    border-radius: 10px;
+
+}
+
+
+.area-input{
+    width: 300px;
+    margin: auto;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#password{
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    font-size: 36px;
+  
+   
+}
+
+.area-btn{
+    width: 300px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+.main-content{
+    width: 200px;
+}
+
+.btn{
+    width: 40px;
+    height: 40px;
+    background-color: pink;
+    border-radius: 100%;
+    margin: 5px;
+}
+
+.btn:hover {
+    width: 40px;
+    height: 40px;
+    color: antiquewhite;
+    background-color: rgb(72, 20, 83);
+    border-radius: 100%;
+    margin: 5px;
+}
+/* .submit{
+    width: 100px;
+    height: 50px;
+    background-color: rgb(72, 64, 148);
+    color: antiquewhite;
+    font-weight: bold;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.submit:hover{
+    width: 100px;
+    height: 50px;
+    background-color: rgb(113, 59, 123);
+    color: antiquewhite;
+    font-weight: bold;
+    border-radius: 20px;
+    margin: 10px;
+} */
+.reset,.again,.submit{
+    width: 100px;
+    height: 50px;
+    background-color: rgb(72, 64, 148);
+    color: antiquewhite;
+    font-weight: bold;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.reset:hover,.again:hover,.submit:hover{
+    width: 100px;
+    height: 50px;
+    background-color: rgb(113, 59, 123);
+    color: antiquewhite;
+    font-weight: bold;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+
+
+
