@@ -220,7 +220,7 @@ main{
     color: antiquewhite;
 }
 
-.startPlay p a{
+.playurl{
     text-decoration: none;
     color: white;
 }
