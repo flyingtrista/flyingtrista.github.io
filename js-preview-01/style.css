@@ -14,7 +14,9 @@ article{
     background-image: linear-gradient(transparent 50%, rgba(30, 105, 156, 0.249) 70%);
 }
 
-
+.red{
+    color: rgb(160, 62, 131);
+}
 
 article{
     text-align: center;
@@ -68,6 +70,12 @@ main{
     font-weight: bold;
     margin-top: 10px;
     
+}
+.count{
+    font-size: 22px;
+    color: rgb(3, 38, 3);
+    font-weight: bold;
+    margin-top: 10px;
 }
 .icon img{
     width: 100px;
@@ -175,7 +183,44 @@ main{
     border-radius: 20px;
     margin: 10px;
 }
+.stat-img{
+    width: 600px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+}
 
+.stat-img img{
+    
+    border-radius: 20px;
 
+}
 
+.startPlay p{
+    border-radius: 20px;
+    width: 150px;
+    height: 50px;
+    position: fixed;
+    top: 750px;
+    color: antiquewhite;
+    background-color: rgb(72, 20, 83);
+    font-size: 26px;
+    line-height: 40px;
+    
 
+}
+
+.startPlay p:hover{
+    border-radius: 20px;
+    width: 150px;
+    height: 50px;
+    position: fixed;
+    top: 750px;
+    background-color: rgb(113, 59, 123);
+    color: antiquewhite;
+}
+
+.startPlay p a{
+    text-decoration: none;
+    color: white;
+}
