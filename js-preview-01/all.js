@@ -17,6 +17,8 @@ const count = document.querySelector(".count");
 
 
 const mainbtn = document.querySelector(".main-btn");
+const maincontent = document.querySelector(".main-content");
+
 
 let inputStr = "";
 let num = "";
@@ -193,8 +195,8 @@ function checkInputData(inputStr) {
         str_count = `你總共猜了${errorCount}次`;
         str_over = `恭喜你總算猜對了QQ`;
 
-        str_mainbtn = `<button class="again">again</button> or <br>來聽一首 <a class="music" href="https://www.youtube.com/watch?v=Tkp7gEC1E_0"> music 安妮雅之歌8 music</a>`
-
+        str_mainbtn = `<button class="again">again</button> or </a> 來聽一首 <br><a class="music" href="https://www.youtube.com/watch?v=Tkp7gEC1E_0"> music 安妮雅之歌 music`
+        maincontent.innerHTML = `<img class="winwin" src="https://cdn.bella.tw/index_image/QCkWEallEQ33VEr0ToMSGmG65rMnaHj54JXpV9fN.jpeg">`;
         render_showrange();
         render_icon();
         render_count();
