@@ -230,3 +230,12 @@ main{
 }
 
 
+.music{
+    
+    text-decoration: none;
+    color: rgb(237, 232, 232);
+    border-radius: 50px;
+    background-color: rgb(8, 2, 18);
+    font-weight: bold;
+}
+

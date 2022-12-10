@@ -191,9 +191,9 @@ function checkInputData(inputStr) {
         str_icon = `<img class="icon" src="https://spy-family.net/assets/img/special/anya/20.png" alt="">`;
 
         str_count = `你總共猜了${errorCount}次`;
-        str_over = `總算猜對了`;
+        str_over = `恭喜你總算猜對了QQ`;
 
-        str_mainbtn = `<button class="again">again</button>`
+        str_mainbtn = `<button class="again">again</button> or <br>來聽一首 <a class="music" href="https://www.youtube.com/watch?v=Tkp7gEC1E_0"> music 安妮雅之歌8 music</a>`
 
         render_showrange();
         render_icon();
@@ -211,7 +211,7 @@ function checkInputData(inputStr) {
 
 
 
-        if (errorCount > 5) {
+        if (errorCount > 6) {
             str_count = `你猜第${errorCount}次了~`;
             str_over = `還是會輸入超出區間~我要把你送去其他地方!!`;
 
@@ -243,7 +243,7 @@ function checkInputData(inputStr) {
 
 
 
-            if (errorCount > 5) {
+            if (errorCount > 6) {
                 str_count = `你猜第${errorCount}次了~還是沒猜對~`;
 
                 str_over = `我要把你送去其他地方!!`;
@@ -273,7 +273,7 @@ function checkInputData(inputStr) {
 
 
 
-            if (errorCount > 5) {
+            if (errorCount > 6) {
                 str_count = `你猜第${errorCount}次了~還是沒猜對~`;
                 str_over = `我要把你送去其他地方!!`;
                 setTimeout("location.href='https://karta060925.github.io/ultimatePassword/index.html'", 2000);
@@ -291,7 +291,7 @@ function checkInputData(inputStr) {
             resetInput();
         } else {
             str_icon = `<img class="icon" src="https://spy-family.net/assets/img/special/anya/04.png" alt="">`;
-            if (errorCount > 5) {
+            if (errorCount > 6) {
                 str_count = `你猜第${errorCount}次了~還是沒猜對~`;
                 str_over = `我要把你送去其他地方!!`;
                 setTimeout("location.href='https://karta060925.github.io/ultimatePassword/index.html'", 2000);
