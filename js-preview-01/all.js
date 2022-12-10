@@ -126,13 +126,23 @@ function checkInputData(inputStr) {
         errorCount--;
         blankCount++;
         console.log(blankCount);
-        if (errorCount === 0 ) {
+        if (errorCount === 0) {
+            if(blankCount>3){
+               
+                str_icon = `<img class="icon" src="https://spy-family.net/assets/img/special/anya/17.png" alt="">`;
+                str_count = `你空白太多次了~`;
+                str_over = `...我要送你去別的地方~(掰)`;
 
-            str_icon = `<img class="icon" src="https://spy-family.net/assets/img/special/anya/02.png" alt="">`;
+                setTimeout("location.href='https://karta060925.github.io/ultimatePassword/index.html'", 2000);
 
-            str_count = `這次不算,好像怪怪的~?`;
-            str_over = `送出前要輸入數字呀...==V==`;
-            blankCount--;
+            }else{
+                str_icon = `<img class="icon" src="https://spy-family.net/assets/img/special/anya/02.png" alt="">`;
+
+                str_count = `這次不算,好像怪怪的~?`;
+                str_over = `送出前要輸入數字呀...==V==`;
+                
+            }
+          
 
         } else {
             switch (blankCount) {
@@ -153,14 +163,14 @@ function checkInputData(inputStr) {
                     str_over = `一直送我空白~`;
                     break;
 
-   
+
                 default:
                     str_icon = `<img class="icon" src="https://spy-family.net/assets/img/special/anya/17.png" alt="">`;
                     str_count = `你空白太多次了~`;
                     str_over = `...我要送你去別的地方~(掰)`;
 
-                    setTimeout("location.href='https://karta060925.github.io/ultimatePassword/index.html'",2000);
-                   
+                    setTimeout("location.href='https://karta060925.github.io/ultimatePassword/index.html'", 2000);
+
                     break;
 
             }
@@ -181,7 +191,7 @@ function checkInputData(inputStr) {
         str_icon = `<img class="icon" src="https://spy-family.net/assets/img/special/anya/20.png" alt="">`;
 
         str_count = `你總共猜了${errorCount}次`;
-        str_over = `總算猜對了^^`;
+        str_over = `總算猜對了`;
 
         str_mainbtn = `<button class="again">again</button>`
 
@@ -199,11 +209,13 @@ function checkInputData(inputStr) {
 
         str_icon = `<img class="icon" src="https://spy-family.net/assets/img/special/anya/07.png" alt="">`;
 
-       
+
 
         if (errorCount > 3) {
-            str_count = `你還是沒猜對~猜第${errorCount}次了~`;
-            str_over = `超出區間範圍的數字啦(火爆)!!`;
+            str_count = `你猜第${errorCount}次了~`;
+            str_over = `還是會輸入超出區間~我要把你送去其他地方!!`;
+
+            setTimeout("location.href='https://karta060925.github.io/ultimatePassword/index.html'", 2000);
         } else {
             str_count = `你沒猜對~猜第${errorCount}次了~`;
             str_over = `超出區間範圍的數字了唷~`;
@@ -229,14 +241,17 @@ function checkInputData(inputStr) {
             init_max = inputValue;
             nowRange(init_min, init_max);
 
-           
+
 
             if (errorCount > 3) {
-                str_count = `你還是沒猜對~你猜第${errorCount}次了`;
-                str_over = `認真點好嗎~?`;
+                str_count = `你猜第${errorCount}次了~還是沒猜對~`;
+
+                str_over = `我要把你送去其他地方!!`;
+
+                setTimeout("location.href='https://karta060925.github.io/ultimatePassword/index.html'", 2000);
             } else {
                 str_count = `你沒猜對~你猜第${errorCount}次了`;
-                str_over = `親愛的加油~!!`;
+                str_over = `安尼亞幫你加油打氣呀~!!`;
             }
 
 
@@ -256,11 +271,13 @@ function checkInputData(inputStr) {
             init_min = inputValue;
             nowRange(init_min, init_max);
 
-            
+
 
             if (errorCount > 3) {
-                str_count = `你還是沒猜對~你猜第${errorCount}次了`;
-                str_over = `真的要認真~?`;
+                str_count = `你猜第${errorCount}次了~還是沒猜對~`;
+                str_over = `我要把你送去其他地方!!`;
+                setTimeout("location.href='https://karta060925.github.io/ultimatePassword/index.html'", 2000);
+
             } else {
                 str_count = `你沒猜對~你猜第${errorCount}次了`;
                 str_over = `給你打打氣~!!`;
@@ -275,13 +292,15 @@ function checkInputData(inputStr) {
         } else {
             str_icon = `<img class="icon" src="https://spy-family.net/assets/img/special/anya/04.png" alt="">`;
             if (errorCount > 3) {
-                str_count = `你還是沒猜對~你猜第${errorCount}次了`;
-            str_over = `確認一下輸入區間可以嗎?`;
+                str_count = `你猜第${errorCount}次了~還是沒猜對~`;
+                str_over = `我要把你送去其他地方!!`;
+                setTimeout("location.href='https://karta060925.github.io/ultimatePassword/index.html'", 2000);
+
             } else {
                 str_count = `你沒猜對~你猜第${errorCount}次了`;
-            str_over = `確認一下輸入區間呀...`;
+                str_over = `可以確認一下輸入區間嗎...`;
             }
-            
+
 
             render_icon();
             render_count();
