@@ -523,6 +523,8 @@ z-index層級 :
 
     font-weight: 500;
     padding: 3px 3px;
+
+    border-radius: 3px;
 }
 
 .important-content p:last-child::before {
