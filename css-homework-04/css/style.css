@@ -1,10 +1,11 @@
 /* --------------------------- */
-/*  初始化      ------ start --------  */
+/*  初始化 ------ start --------  */
 
 
 * {
     /* 文字字型設定 微軟正黑體 */
     font-family: Microsoft JhengHei;
+
 }
 
 /* a 連結統一初始化 */
@@ -14,8 +15,16 @@ a {
 }
 
 
+img {
+    display: block;
+
+    /* 設定之後要注意圖片會跟著父層寬高 */
+    width: 100%;
+
+}
+
 /* --------------------------- */
-/* 頂端固定區   ------ start --------  */
+/* 頂端固定區 ------ start --------  */
 
 
 /* 畫面上方固定區 */
@@ -59,8 +68,6 @@ img {
 }
 
 
-
-
 /* 導覽列 下方 Border */
 .header-border {
     height: 7px;
@@ -74,11 +81,14 @@ img {
     position: fixed;
     width: 100%;
 
+    /* Z軸 */
+    z-index: 100;
+
 }
 
 
 /* --------------------------- */
-/*  main        ------ start --------  */
+/*  main ------ start --------  */
 
 
 /* 導覽列 下方 main區 */
@@ -100,7 +110,7 @@ img {
 
 
 /* --------------------------- */
-/*  五大優勢        ------ start --------  */
+/*  五大優勢  ------ start --------  */
 
 
 .session-main {
@@ -110,17 +120,21 @@ img {
 
     text-align: center;
 
-    /* 五大優勢上方卡 50px高度 */
-    padding-top: 50px;
+    /* 五大優勢上方卡 70px高度 */
+    padding-top: 70px;
 
 }
 
 .title {
     font-size: 40px;
-    line-height: 40px;
+
     font-weight: bold;
     text-align: center;
+
 }
+
+
+
 
 /* 五大優勢下方的 Border */
 .title-line {
@@ -129,6 +143,10 @@ img {
     border-bottom: #000 3px solid;
 
     margin: 18px auto 0;
+
+    margin-bottom: 52px;
+
+
 }
 
 
@@ -141,8 +159,9 @@ img {
 
 }
 
-.session-main .nav-list ul li {
+.lidiv {
 
+    font-size: 18px;
     margin: 5px 5px;
 
     width: 184px;
@@ -155,55 +174,372 @@ img {
 
     border: #333 1px dotted;
     border-bottom: #ae0014 2px solid;
+}
+
+
+
+
+
+
+
+/* --------------------------- */
+/*  圖文交錯區  ------ start --------  */
+
+
+/* 
+絕對定位 absolute : 
+    1. 紅色區塊
+    2. 灰色區塊
+    3. 撥放按鈕
+
+固定定位　fixed :
+    上方導覽列
+
+z-index層級 : 
+    灰色區塊 < 大圖 < 紅色區塊 & 革新區塊 <　上方導覽列
+
+*/
+
+
+
+.session-area {
+    width: 960px;
 
 
 }
 
 
 
-/* --------------------------- */
-/*  圖文交錯區        ------ start --------  */
+.content-area {
+
+    /* 父層設定 relative */
+    position: relative;
 
 
-
-
-
+}
 
 
 
 /* 紅色區塊 */
 
+.area-title {
+    width: 355px;
+    height: 388px;
 
 
-/* 革新區塊 */
-.area-important{
-    width: 682px;
-    height: 275px;
-    background-color: #ddd;
+    /* 定位 */
+    position: absolute;
+
+    /* 不知道為什麼拆開來設定 就不會蓋到 五大優勢的選單 */
+    top: 90px;
+
+    /* 為了 錨點設定的 */
+    padding-top: 90px;
+    margin-top: -90px;
+
+    /* Z軸 */
+    z-index: 3;
+
 }
-.area-important ul {
-    list-style: none;
+
+.area-title-num {
+    background-color: #ae0014;
+    color: #ddd;
+
+    text-align: center;
+
+    display: flex;
+
 }
 
-.area-important ul li::before {
-    content: "\2022";
-    color: red;
-    display: inline-block;
-    width: 1em;
-    margin-left: 1em;
-    text-indent: -1em;
-    
+
+
+.titleNum {
+    width: 120px;
+
+    /* 操控樂趣 高度 */
+    height: 120px;
+
+    /* 文字轉90度 */
+    transform: rotate(90deg);
+
+    font-size: 100px;
+    /* 設定細文字 */
+    font-weight: 100;
+
+}
+
+.titleDesc {
+
+    width: 235px;
+    height: 120px;
+
+    font-size: 50px;
+
+    margin-top: auto;
+
+
+}
+
+/* 紅色區塊 II */
+
+.area-title-reverse {
+    width: 355px;
+    height: 388px;
+
+
+    /* 定位 */
+    position: absolute;
+
+    /* 不知道為什麼拆開來設定 就不會蓋到 五大優勢的選單 */
+    top: 90px;
+    left: 550px;
+
+    /* 為了 錨點設定的 */
+    padding-top: 90px;
+    margin-top: -90px;
+
+    /* Z軸 */
+    z-index: 3;
+
+}
+
+
+
+
+
+
+/* 黑色區塊 */
+.area-title-content {
+    background-color: #000;
+
+}
+
+.area-title-content {
+
+    color: #ddd;
+    font-size: 20px;
+    padding: 10px;
+
+}
+
+.contenttitle {
+    color: #ddd;
+    font-size: 28px;
+    font-weight: bold;
+
+    padding-top: 30px;
+
+}
+
+.contentDesc {
+    line-height: 36px;
+    padding: 30px 0;
+
+}
+
+
+
+
+/* 大圖片區塊 */
+
+.area-content {
+
+    width: 680px;
+
+    /* 父層要設定relative */
+    position: relative;
+
+    padding-left: 200px;
+
+    /* padding-top: 180px; */
+    padding-top: 210px;
+
+    /* Z軸 */
+    z-index: 2;
+
+}
+
+
+
+/* 大圖片區塊 */
+
+.area-content-reverse {
+
+    width: 680px;
+
+    /* 父層要設定relative */
+    position: relative;
+
+    padding-left: 50px;
+
+    /* padding-top: 180px; */
+    padding-top: 210px;
+
+    /* Z軸 */
+    z-index: 2;
+
+}
+
+/* 圖片大小不一致 要設定同父層寬度  */
+.area-content a img {
+    vertical-align: middle;
+}
+
+
+
+/* 播放 icon */
+.video-icon {
+    width: 57px;
+    height: 36px;
+    /* Play 絕對定位 */
+    position: absolute;
+    top: 410px;
+    left: 860px;
+}
+
+
+/* 播放 icon */
+.video-icon-reverse {
+    width: 57px;
+    height: 36px;
+    /* Play 絕對定位 */
+    position: absolute;
+    top: 410px;
+    left: 30px;
+}
+
+
+
+/* 灰色區塊 */
+.area-square {
+
+    width: 439px;
+    height: 290px;
+    background-color: #eeeeee;
+
+    position: absolute;
+
+
+    top: 120px;
+    right: 0px;
+
+    /* Z 軸 */
+    z-index: 1;
 }
 
 
 
 
 /* 灰色區塊 */
-.area-square {
+.area-square-reverse {
+
     width: 439px;
     height: 290px;
     background-color: #eeeeee;
 
+    position: absolute;
+
+
+    top: 120px;
+    left: 300px;
+
+    /* Z 軸 */
+    z-index: 1;
+}
+
+
+
+
+
+
+/* 革新 區塊 */
+
+.area-important {
+    width: 682px;
+
+    background-color: #eeeeee;
+
+    padding: 20px;
+
+    position: relative;
+
+    top: -50px;
+    z-index: 3;
+}
+
+
+/* 革新 區塊 */
+
+.area-important-reverse {
+    width: 682px;
+
+    background-color: #eeeeee;
+
+    padding: 20px;
+
+    position: relative;
+
+    top: -50px;
+    left: 200px;
+    z-index: 3;
+}
+
+.important-title p {
+    color: #ae0014;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+
+
+}
+
+.ooxx {
+    display: inline-block;
+    width: 400px;
+    height: 1.5px;
+    background-color: #ae0014;
+    margin: 10px;
+    /* background-image: linear-gradient(to right, #ae0014 10%, rgb(243, 10, 10) 10%); */
+}
+
+
+
+
+
+
+
+/* 革新 標題  */
+.important-content p:first-child {
+    font-size: 16px;
+
+    margin: 3px 0;
+    color: #fff;
+    background-color: #000;
+
+    /* 文字內容寬度 */
+    width: fit-content;
+
+    font-weight: 500;
+    padding: 3px 3px;
+}
+
+.important-content p:last-child::before {
+    content: "\2022";
+    color: red;
+    display: inline-block;
+    width: 1em;
+    /* margin-left: 1em;
+    text-indent: -1em; */
+    text-align: center;
+}
+
+.important-content p:last-child {
+
+    /* amos教學 https://ithelp.ithome.com.tw/articles/10243388 */
+    text-indent: -1em;
+    padding: 0em 1em 1em 2em;
 }
 
 
@@ -212,8 +548,43 @@ img {
 
 /* --------------------------- */
 /* footer 區  ------ start --------  */
+.main-footer {
+    width: 100%;
+    background-color: #333333;
+}
 
+.footer-content img {
+    width: 110px;
+    height: 20px;
+}
 
-footer {
-    height: 1000px;
+.footer-content {
+    width: 960px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.footer-content p {
+    color: #fff;
+}
+
+.footer-content a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer-sug {
+    text-align: center;
+    font-size: 10px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+}
+
+.footer-sug p {
+    color: #727779;
 }
