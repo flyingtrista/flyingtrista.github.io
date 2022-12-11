@@ -90,7 +90,7 @@ function render_showrange() {
     showrange.innerHTML = str_showrange;
 }
 function render_count() {
-    count.innerText = str_count;
+    count.innerHTML = str_count;
 }
 function render_over() {
     over.innerText = str_over;
@@ -188,14 +188,14 @@ function checkInputData(inputStr) {
 
         console.log("你答對了");
 
-        str_showrange = `<p class="win">恭喜恭喜恭喜恭喜<p>`;
+        str_showrange = `<p class="win">恭喜你猜對了<p> `;
 
         str_icon = `<img class="icon" src="https://spy-family.net/assets/img/special/anya/20.png" alt="">`;
 
-        str_count = `你總共猜了${errorCount}次`;
-        str_over = `恭喜你總算猜對了QQ`;
+        str_count = `<span class="over"><br>安妮雅送你一首 <span><a class="music" href="https://www.youtube.com/watch?v=Tkp7gEC1E_0">安妮雅之歌`;
+        str_over = `當作小禮物^^ `;
 
-        str_mainbtn = `<button class="again">again</button> or </a> 來聽一首 <br><a class="music" href="https://www.youtube.com/watch?v=Tkp7gEC1E_0"> music 安妮雅之歌 music`
+        str_mainbtn = `<button class="again">again</button> `
         maincontent.innerHTML = `<img class="winwin" src="https://cdn.bella.tw/index_image/QCkWEallEQ33VEr0ToMSGmG65rMnaHj54JXpV9fN.jpeg">`;
         render_showrange();
         render_icon();
