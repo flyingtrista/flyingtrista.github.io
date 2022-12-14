@@ -1,0 +1,123 @@
+:root{
+    --col-count: 3;
+}
+
+.card {
+
+    /* 卡片間物件推擠的距離 */
+    background-color: #fa0;
+    margin: 15px;
+    padding: 5px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.img img {
+    display: block;
+    width: 100%;
+    
+   
+}
+
+.content {
+    width: 50%;
+    text-align: center;
+
+    /* 子層文字置中 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border-radius: 50px;
+
+}
+
+.content h2 {
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 46px;
+    padding: 5px;
+}
+
+.content p {
+    font-size: 20px;
+    
+    padding: 5px;
+}
+
+/* 由小到大排 */
+@media screen and (min-width:768px) {
+    .wrap {
+        max-width: 1200px;
+        margin: auto;
+
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .card {
+
+
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: calc(100% / var(--col-count) - 30px);
+    }
+
+    .img {
+        width: 80%;
+
+    }
+
+    .content {
+        background-color: rgb(209, 236, 165);
+        width: 100%;
+        
+    }
+}
+
+
+@media screen and (min-width:1200px) {
+    .card:nth-child(-n+2){
+        flex-direction: row;
+        --col-count: 2;
+    }
+    .card:nth-child(-n+2) .img ,.content{
+        width: 50%;
+    }
+    .card:nth-child(n+3){
+        --col-count: 4;
+        flex-direction: column;
+        position: relative;
+    }
+
+    /* 第四個子物件 的文字內容*/
+    .card:nth-child(n+3) .content{
+
+        /* 絕對 位置*/
+        position: absolute;
+        
+        text-align: center;
+        /* pacity 属性指定了一个元素的不透明度。 */
+        /* 使用 opacity 属性，当属性值不为 1 时，会把元素放置在一个新的层叠上下文中。 */
+        opacity: 0;
+    }
+    .card:nth-child(n+3):hover .content{
+        /* pacity 属性指定了一个元素的不透明度。 */
+        opacity: 1;
+        color: #fff;
+        background-color: #c0bda650;
+        width: 100%;
+        height: 100%;
+     
+    }
+}
