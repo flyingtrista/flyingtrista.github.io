@@ -11,20 +11,21 @@ let btnLeft = document.querySelector('.btn-left');
 let btnRight = document.querySelector('.btn-right');
 
 window.onload = function () {
-
-    imgURL = `/utility-img/ALTIS/360EXT_1_18_${index}.png`;
-
-    // 建立一個img的DOM
     img = document.createElement("img");
+    for(let i=max;i>=min;i--){
 
-    // 將新增的DOM加入屬性
-    img.setAttribute("src", imgURL);
+        imgURL = `/utility-img/ALTIS/360EXT_1_18_${i}.png`;
 
-    // 將新增的DOM append至 container標籤內
-    container.append(img);
+        // 建立一個img的DOM
+        
+    
+        // 將新增的DOM加入屬性
+        img.setAttribute("src", imgURL);
+    
+        // 將新增的DOM append至 container標籤內
+        container.append(img);
 
-    let flag = false;
-    let stop;
+    }
 
     btnLeft.addEventListener("click", function (item) {
         console.log(item.target);

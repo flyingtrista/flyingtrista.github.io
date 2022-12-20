@@ -2192,6 +2192,7 @@
                 let card = container.querySelectorAll(".card");
                 // let headshot = container.querySelectorAll(".headshot");
 
+                console.log("=================");
                 console.log(card);
 
                 console.log("=================");
@@ -2202,12 +2203,25 @@
                 card.forEach((card_data, index) => {
                     headshot = card_data.querySelector(".card-img-top");
                     card_text = card_data.querySelector(".card-text");
+
+                    
                     console.log(headshot.currentSrc);
                     console.log(card_text.innerText);
 
-                    heroArray.push({
-                        index: index, id: card_data.id, text: card_text.innerText, url: headshot.currentSrc
-                    });
+
+
+                    // heroArray.push({
+                    //     index: index, id: card_data.id, text: card_text.innerText, url: headshot.currentSrc
+                    // });
+
+                    heroArray.push(
+                        {
+                            index: index, 
+                            id: "", 
+                            text: "", 
+                            url: ""
+                        }
+                    );
 
                 })
 
@@ -2319,9 +2333,9 @@
                 heroAry.forEach(data => {
                     let tr = document.createElement("tr");
                     //(2)建立td,設定資料,td加入tr
-                   
+
                     //  index: index, id: card_data.id, text: card_text.innerText, url: headshot.currentSrc
-                    console.log("data.index:" + data.index); 
+                    console.log("data.index:" + data.index);
 
                     let td1 = document.createElement("td");
                     td1.innerText = data.index;
@@ -2338,8 +2352,8 @@
                     let heroUrl = document.createElement("a");
                     heroImg.setAttribute("src", data.url);
                     heroImg.setAttribute("style", "width:100px");
-                    heroUrl.setAttribute("href",data.url);
-                    heroUrl.setAttribute("target","_blank");
+                    heroUrl.setAttribute("href", data.url);
+                    heroUrl.setAttribute("target", "_blank");
                     // td4.innerText = data.url;
                     heroUrl.append(heroImg);
                     console.log(heroUrl);
@@ -2353,7 +2367,7 @@
                     tbody.append(tr);
                 });
 
-                
+
                 table.append(tbody);
                 // 不動CSS用權重1000分去蓋...
                 container.setAttribute("style", "margin:10px");
