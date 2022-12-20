@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #xxx {
+            display: none;
+        }
+
+        p:first-of-type {
+            display: none;
+        }
+
+        #XXX:checked+p {
+            display: block;
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- input放這裡可以控制的範圍最多 -->
+    <input type="checkbox" id="XXX">
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis dicta temporibus expedita ducimus nobis
+        esse dolore excepturi a vel, ea deserunt distinctio voluptates placeat magnam quos modi in itaque ratione.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic quo recusandae aperiam suscipit adipisci, veritatis
+        distinctio, in iste a expedita iusto neque impedit excepturi assumenda tempore delectus voluptatum sapiente
+        laboriosam!</p>
+    <label for="XXX">我要控制資料顯示或隱藏</label>
+</body>
+
+</html>

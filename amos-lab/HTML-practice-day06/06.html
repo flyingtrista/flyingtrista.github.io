@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .container{
+            perspective: 500px;
+            display: flex;
+            justify-content: center;
+        }
+        .card {
+            width: 250px;
+            padding: 10px;
+            border: 1px solid #f00;
+            transform: rotateY(45deg);
+
+        }
+
+        .card img {
+            width: 100%;
+            vertical-align: top;
+            transform: 6s linear;
+        }
+        .card .pic{
+            overflow: hidden;
+        }
+        .card:hover img{
+            width: 250px;
+            padding: 10px;
+            border: 1px solid #f00;
+            transform: rotateX(15deg);
+        }
+
+        .card{
+            width: 200px;
+            height: 200px;
+            background-color: #aaa;
+            position: absolute;
+        }
+        .flip{
+            width: 40;
+            height: 100%;
+
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="pic">
+                <img src="https://picsum.photos/id/1025/600/400" alt="">
+            </div>
+        </div>
+        <div class="txt">
+            <h3></h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci, dolore? Corporis debitis quidem
+                officiis
+                dolor quod earum! Tempora, aut. Temporibus velit modi illo, hic eos consequatur? Ipsum atque porro quos!
+            </p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="flip">
+            <span>
+                <span>
+                    <span>
+                        <span>
+
+                        </span>
+                    </span>
+                </span>
+            </span>
+        </div>
+    </div>
+
+</body>
+
+</html>
