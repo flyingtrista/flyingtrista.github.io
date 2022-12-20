@@ -1,0 +1,37 @@
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 ;
+    background-color: aqua;
+  }
+  
+  .btn {
+    border-radius: 50px;
+    width: 100%;
+    
+  }
+
+.btn-left .btn {
+    transform: rotate(-180deg);
+  }
+.btn-right .btn {
+    transform: rotate(180deg);
+  }
+  
+  .container img {
+    width: 100%;
+    
+  }
+  
+  .btn-area {
+    width: 100px;
+  }
+  
+  .btn-area a {
+    font-size: 0;
+  }
+  
+  .container {
+    width: 300px;
+  }
