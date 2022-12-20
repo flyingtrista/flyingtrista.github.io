@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        input{
+            display: none;
+        }
+        .slider{
+            width: 300px;
+            height: 500px;
+            border: 1px solid red;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            position: relative;
+        }
+        .cover{
+            display: none;
+        }
+        .cover img{
+            width: 100%;
+        }
+        .slider-dot{
+            width: 50px;
+            overflow: hidden;
+            display: inline-block;
+            margin: 10px;
+
+        }
+        .slider-dot img{
+            width: 100%;
+        }
+        .slider-item:has(:checked) .cover{
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <ul class="slider">
+        <!-- 第一張 -->
+        <li class="slider-item">
+            <label class="slider-dot">
+                <input type="radio" name="slider" checked>
+                <img src="https://picsum.photos/300/200?random=22">
+            </label>
+            <div class="cover">
+                <img src="https://picsum.photos/300/200?random=22">
+            </div>
+        </li>
+        <!-- 第二張 -->
+        <li class="slider-item">
+            <label class="slider-dot">
+                <input type="radio" name="slider">
+                <img src="https://picsum.photos/300/200?random=23">
+            </label>
+            <div class="cover">
+                <img src="https://picsum.photos/300/200?random=23">
+            </div>
+        </li>
+        <!-- 第三張 -->
+        <li class="slider-item">
+            <label class="slider-dot">
+                <input type="radio" name="slider">
+                <img src="https://picsum.photos/300/200?random=24">
+            </label>
+            <div class="cover">
+                <img src="https://picsum.photos/300/200?random=24">
+            </div>
+        </li>
+    </ul>
+
+
+
+</body>
+</html>
