@@ -1,0 +1,267 @@
+a {
+    text-decoration: none;
+}
+
+.main-nav {
+    background-color: #fa0;
+
+
+}
+
+.main-nav a {
+    color: #fff;
+    display: block;
+    padding: 10px 20px;
+}
+
+/* 選單 */
+.main-nav>ul {
+    display: flex;
+
+    /* 第一層居中 */
+    justify-content: center;
+}
+
+
+
+
+/*  */
+.menu-item {}
+
+/* 選單子層要設隱藏 */
+.sub-menu {
+    display: none;
+
+    /* 絕對定位 */
+    position: absolute;
+    background-color: rgb(39, 30, 21);
+    /* display: flex; */
+}
+
+/* menu item被摸到 顯示子選單 */
+.menu-item:hover .sub-menu {
+    display: flex;
+}
+
+
+.sub-menu-item {}
+
+
+
+#menu-control {
+    display: none;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: #28353B;
+}
+
+.main-logo {
+    width: 100px;
+    height: 75px;
+}
+
+.main-logo img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.main-nav .nav-list {
+    display: flex;
+}
+
+.main-nav .nav-list a {
+    text-decoration: none;
+    color: #ccc;
+    padding: 28px 24.5px;
+    font-size: 20px;
+    display: block;
+}
+
+.menu-list li:hover>a {
+    background-color: #a8aeb170;
+}
+
+
+.menu-list .menu-list li a {
+    font-size: 17px;
+}
+
+.menu-list .menu-item {
+    position: relative;
+}
+
+.menu-list .menu-item~li {
+    border-top: 1px solid #ccc;
+}
+
+.menu-list .menu-item li+li {
+    border-top: 1px solid #ccc;
+}
+
+.menu-list>li {
+    border-top: 1px solid #ccc;
+}
+
+.sub-menu-list {
+    background-color: rgb(59, 109, 138);
+}
+
+.sub-menu-item .sub-menu-list li a {
+    font-size: 15px;
+    padding-top: 29px;
+    padding-bottom: 29px;
+}
+
+
+
+
+/*  手機版本*/
+
+@media screen and (width < 768px) {
+    .wrap {
+        background-color: #28353B;
+        height: 100vh;
+    }
+
+    .main-header {
+        border-bottom: 2px solid #ccc;
+    }
+
+    .HB {
+        width: 40px;
+        height: 40px;
+        background-color: #28353B;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-right: 10px;
+    }
+
+    .HB span {
+        width: 80%;
+        height: 2px;
+        background-color: #fff;
+    }
+
+    .main-nav {
+        position: absolute;
+        background-color: #28353B;
+        width: 100%;
+        top: 100%;
+        left: -100%;
+        opacity: 0;
+        transition: 1s;
+    }
+
+    #menu-control:checked~.wrap .main-header .main-nav {
+        left: 0;
+        opacity: 1;
+    }
+
+    #menu-control:checked~.wrap .main-header .HB span:first-child {
+        display: none;
+    }
+
+    #menu-control:checked~.wrap .main-header .HB span:nth-child(2) {
+        transform: rotate(45deg) translate(30%);
+        transition: .5s ease-out;
+    }
+
+    #menu-control:checked~.wrap .main-header .HB span:nth-child(3) {
+        transform: rotate(-45deg) translate(30%);
+        transition: .5s ease-out;
+    }
+
+    .main-nav a {
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .menu-list {
+        flex-direction: column;
+    }
+
+    .menu-list li {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-list li:hover .sub-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .sub-menu {
+        position: relative;
+        display: none;
+    }
+
+    .sub-menu-list {
+        display: none;
+    }
+
+    .sub-menu-list {
+        position: relative;
+    }
+
+    .menu-list .menu-item:hover .sub-menu-list {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+}
+
+
+@media screen and (width >=768px) {
+    .wrap {
+        height: 100vh;
+        background-color: rgb(211, 235, 154);
+    }
+
+    .HB {
+        display: none;
+    }
+
+    .menu-list li:hover .sub-menu {
+        display: block;
+    }
+
+    .menu-list li {
+        position: relative;
+    }
+
+    .sub-menu {
+        position: absolute;
+        display: none;
+        background-color: #83cef1;
+        top: 100%;
+        width: 100%;
+        text-align: center;
+    }
+
+    .sub-menu .sub-menu-item:hover .sub-menu-listt {
+        display: block;
+    }
+
+    .sub-menu-list {
+        position: absolute;
+        display: none;
+        left: 100%;
+        top: 0;
+        width: 250px;
+        text-align: center;
+    }
+}
