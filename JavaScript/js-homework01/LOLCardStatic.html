@@ -2192,34 +2192,40 @@
                 let card = container.querySelectorAll(".card");
                 // let headshot = container.querySelectorAll(".headshot");
 
-                console.log("=================");
-                console.log(card);
 
-                console.log("=================");
 
 
                 let headshot;
                 let card_text;
+
+
+
                 card.forEach((card_data, index) => {
                     headshot = card_data.querySelector(".card-img-top");
                     card_text = card_data.querySelector(".card-text");
-                    console.log(headshot.currentSrc);
-                    console.log(card_text.innerText);
 
-                    
+                    console.log("=================");
+                    console.log(headshot);
+                    console.log(card_text);
+
+                    console.log("=================");
+                    // console.log(headshot.currentSrc);
+                    // console.log(card_text.innerText);
+
+
 
                     // heroArray.push({
                     //     index: index, id: card_data.id, text: card_text.innerText, url: headshot.currentSrc
                     // });
 
-                      heroArray.push({
-                        index: index, id: card_data.id, text: card_text.innerText, url: headshot.currentSrc
+                    heroArray.push({
+                        index: index+1, id: card_data.id, text: card_text.innerText, url: headshot.src
                     });
 
                 })
-                
 
-                heroJSON = JSON.stringify(productArray);
+
+                // heroJSON = JSON.stringify(productArray);
 
                 console.log(heroArray);
 
