@@ -172,6 +172,8 @@
         // 偷看答案
         function openEyes() {
             alert(aryPwd.join(''));
+
+
         }
 
         // ======================================================================
@@ -243,7 +245,8 @@
 
                     countAB: `${countA}A${countB}B`,
 
-                    inputNum: inputNum
+                    // 避免 0 開頭 被自動移除0
+                    inputNum: inputResult
 
                 }
                 gameLog.push(obj);
