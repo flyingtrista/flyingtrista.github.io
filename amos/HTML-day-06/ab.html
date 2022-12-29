@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/utility-css/reset.css">
+    <style>
+        main {
+            width: 300px;
+            padding: 20px;
+            background-color: rgb(219, 171, 219);
+            border-radius: 10px;
+
+        }
+
+        .container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            margin: auto;
+
+        }
+
+        h1 {
+            font-size: 26px;
+        }
+
+        p {
+            margin: 10px 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <main>
+
+        <div class="container">
+            <section>
+                <h1>猜數字遊戲</h1>
+                <p>先求有...再求好^_^</p>
+                <p>遊戲說明：請輸入不重複的四位數整數...</p>
+            </section>
+            <section class="main-content">
+                <input type="text" maxlength="4" value="">
+                <p class="msg"></p>
+            </section>
+
+            <section class="main-btn">
+                <div>
+                    <button class="play">開始遊戲</button>
+                    <button class="see" onclick="openEyes()" disabled>看答案</button>
+                    <button class="guss" disabled>猜</button>
+                </div>
+            </section>
+            <section class="log">
+
+            </section>
+        </div>
+
+    </main>
+    <script>
+
+        // 宣告一個 不重複數字的陣列
+        let aryPwd = [];
+
+        // 宣告 猜密碼歷程
+        let gameLog = [];
+
+        // 宣告 錯誤訊息變數
+        let msg = "";
+
+        // DOM
+        const input = document.querySelector('input');
+        const showmsg = document.querySelector(".msg");
+        const gussbtn = document.querySelector('.guss');
+        const seebtn = document.querySelector('.see');
+        const showlog = document.querySelector('.log');
+        const playGame = document.querySelector('.play');
+
+
+        window.onload = function () {
+
+
+            playGame.addEventListener('click', () => {
+
+                play();
+
+            });
+
+
+        }
+
+
+
+        function play() {
+
+            input.value = "";
+            // step1. 初始狀態開始
+            seebtn.disabled = false;
+            gussbtn.disabled = false;
+            aryPwd = [];
+            gameLog = [];
+            msg = "";
+
+            playGame.innerText = "重新開始";
+
+            showmsg.innerText = msg;
+
+            while (showlog.firstChild) {
+                showlog.removeChild(showlog.firstChild);
+
+
+            }
+
+
+            console.log("遊戲開始");
+
+            // step2. 取不重複數字
+            // 取不重複數字版本之 - 用 1 個數字解決版
+            getRandom(0, 9);
+
+
+            // step3. 
+            // 按下 "猜" 
+            // 因為有重新遊戲關係,要移除監聽再重新加入
+            gussbtn.removeEventListener("click", guss);
+            gussbtn.addEventListener("click", guss);
+
+
+
+
+
+        }
+
+        // 取得畫面輸入值
+        function guss() {
+
+
+            // 取得 畫面 輸入的數字 
+            // 並 驗證 XAXB
+            getInputValue();
+
+            // 顯示log
+            console.log("進入outputlog");
+
+            // 先清除
+            while (showlog.firstChild) {
+                showlog.removeChild(showlog.firstChild);
+
+
+            }
+
+            // 再加上
+            gameLog.forEach(x => {
+                let output = document.createElement('p');
+                output.innerText = x.countAB + " , " + x.inputNum;
+                showlog.appendChild(output);
+
+            });
+
+
+
+        }
+
+        // 偷看答案
+        function openEyes() {
+            alert(aryPwd.join(''));
+        }
+
+        // ======================================================================
+        // # regin step3
+        // 取得 畫面 輸入的數字
+        function getInputValue() {
+            msg = "";
+            let countA = 0;
+            let countB = 0;
+
+            // DOM 取得猜的值
+
+            let inputResult = input.value;
+            console.log(inputResult);
+
+            // 用 ToNumber 將字串轉為數字
+            // 如果用 parseInt 當數字+非數字會發生靈異事件
+            // 例如: 輸入 123A => parseInt 之後會變成 123            
+            let inputNum = Number(inputResult);
+
+
+            console.log(inputNum);
+
+            // 若 有以下錯誤則提示錯誤訊息
+            // (1) 轉 數字 失敗(空值或非數字)
+            // (2) 輸入長度不足4位
+
+            let isSame = false;
+            let aryInput = [...inputResult];
+
+            aryInput.map((num, numindex) => {
+
+                console.log("num:" + num, "numindex:" + numindex, "ary.indexOf(num):" + aryInput.indexOf(num))
+
+                // 判斷重複輸入
+
+                // 第一個找到的跟 實際找到的索引值不同 表示 是重複
+                if (aryInput.indexOf(num) != numindex) {
+                    isSame = true;
+                }
+
+            });
+
+            console.log("isSame:" + isSame);
+
+
+            if (isNaN(inputNum) || inputResult.length < 4 || isSame) {
+                console.log("請輸入4位不重複數字");
+                msg = "請輸入4位不重複數字";
+            } else {
+                // aryPwd
+
+                // 檢查 密碼是否 有猜對
+                aryPwd.forEach((num, aryPwdindex) => {
+                    console.log(num, aryPwdindex, inputResult.indexOf(num));
+                    if (inputResult.indexOf(num) != -1) {
+                        if (aryPwdindex == inputResult.indexOf(num)) {
+                            countA++;
+                        } else {
+                            countB++;
+                        }
+                    }
+                });
+
+                console.log("countA:" + countA);
+                console.log("countB:" + countB);
+
+                let obj = {
+
+                    countAB: `${countA}A${countB}B`,
+
+                    inputNum: inputNum
+
+                }
+                gameLog.push(obj);
+
+                console.log(obj);
+
+
+
+                input.value = "";
+            }
+
+
+            if (countA == 4) {
+                console.log("win");
+                msg = "win";
+
+                playGame.innerText = "再玩一次";
+                seebtn.disabled = true;
+                gussbtn.disabled = true;
+            }
+
+
+            console.log(msg);
+            showmsg.innerText = msg;
+
+
+
+
+
+        }
+
+        // # end step3
+
+
+
+
+        // ======================================================================
+
+        // # regin step2 
+        // 取不重複數字版本之 - 用 1 個數字解決版
+
+        function getRandom(min, max) {
+            // 數字區間
+            const rangeMin = min;
+            const rangeMax = max;
+
+
+            // 沒成功取得 4 位 數字前不能結束迴圈
+            while (true) {
+                // 每次重新 取得 0 ~ 9 之間的 1 個數字
+                let pwdNumber = getRandomInt(min, max);
+
+
+                // 呼叫函式  checkPush
+                // 確認 pwdNumber 是否不重複
+                checkPush(pwdNumber);
+
+
+                // 呼叫函式  checkRandom ()
+                // 確認 是否還需要繼續取數字??
+                if (checkRandom()) {
+                    // 若回傳 true 則 break  while迴圈
+                    // 繼續到 step3
+                    break;
+                }
+            }
+
+
+        }
+
+        // 確認數字是否不重複
+        function checkPush(n) {
+            console.log(n);
+
+            // 用 indexOf 搜尋是否有相同值?
+            console.log(aryPwd.indexOf(n));
+
+            // 若沒有相同值會回傳 -1
+            if (aryPwd.indexOf(n) == -1) {
+
+                // 將 數字 push 塞到 最開始宣告的密碼陣列
+                aryPwd.push(n);
+            }
+            console.log(aryPwd);
+        }
+
+        // 是否還需要取數字
+        function checkRandom() {
+
+            // 如果 密碼陣列 內容物 長度為 4 就表示取完了
+
+            if (aryPwd.length == 4) {
+                return true;
+
+            } else {
+                // 否則 要再繼續取 1 位 數字
+                return false;
+            }
+
+        }
+
+        // 取亂數
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min; //不含最大值，含最小值
+        }
+
+
+        // # end 取不重複數字版本之 - 用 1 個數字解決版
+
+        // ======================================================================
+
+
+    </script>
+</body>
+
+</html>
