@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GuessNumber</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container" style="margin:5% 0 0 35%;">
+        <div class="row">
+            <div class="col-2 ">
+                <button type="button" class="btn btn-outline-primary" style="width:100px" id="start">開始</button>
+            </div>
+            <div class="col-2">
+                <button type="button" class="btn btn-outline-secondary" id="see" style="width:100px">看答案</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mt-3">
+                <span>次數:
+                    <span id="times">0</span>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 mt-3">
+                <h3>遊戲歷程</h3>
+                <ul class="list-group my-3" id="select">
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="input-group mb-1 mt-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" style="width:120px;">輸入四位數字</span>
+                    </div>
+                    <input type="text" id="input" class="form-control" disabled="true">
+                </div>
+                <br />
+                <button type="button" class="btn btn-outline-primary mt-3" id="check" disabled="true">檢查答案</button>
+                <button type="button" class="btn btn-outline-secondary mt-3" id="clean">放棄重來</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        /*TODO:
+1.開始按鈕
+2.產生四個不重複的數字
+3.檢查數字
+4.清除功能
+*/
+
+        // 抓取所需要的DOM
+        let answer = "";
+        let start = document.getElementById("start");
+        let see = document.getElementById("see");
+        let check = document.getElementById("check");
+        let input = document.getElementById("input");
+        let clean = document.getElementById("clean");
+        let times = document.getElementById("times");
+        // let span = document.createElement("span");
+        // let option = document.createElement("li");
+        // let select = document.getElementById("select");
+        // 產生答案
+        function Answer() {
+            while (answer.length < 4) {
+                let r = Math.floor(Math.random() * 10);
+                if (!answer.includes(r)) {
+                    answer += r;
+                }
+            }
+        }
+
+        // 開始遊戲
+        start.onclick = function () {
+            Answer();
+            input.disabled = false;
+            check.disabled = false;
+        }
+        // 看答案
+        see.onclick = function () {
+            if (check.disabled == true) {
+                alert("請先點選開始按鈕");
+            }
+            else {
+                alert(answer);
+            }
+
+        }
+        times = 0;
+        check.onclick = function () {
+            let regex = /^(?!\d*?(\d)\d*?\1)\d{4}$/;
+
+            
+            if (input.value.length == 4 && regex.test(input.value)) {
+                let a = 0;
+                let b = 0;
+                times += 1;
+                document.getElementById("times").innerText = times;
+                let inputArray = Array.from(input.value);
+                console.log(inputArray);
+                let answerArray = Array.from(answer);
+                console.log(answerArray);
+                for (let i = 0; i < 4; i++) {
+                    if (answerArray.includes(inputArray[i])) {
+                        if (answerArray[i] == inputArray[i]) {
+                            a++;
+                        } else {
+                            b++;
+                        }
+                    }
+                }
+                let span = document.createElement("span");
+                let option = document.createElement("li");
+                let select = document.getElementById("select");
+                span.className = "badge bg-danger";
+                option.className = "list-group-item";
+                if (answer === input.value) {
+                    span.className = "badge bg-success";
+                    alert("猜對了");
+                }
+                else {
+                    span.innerText = a + "A" + b + "B";
+                }
+                option.innerText = input.value;
+
+                console.log(span);
+                option.appendChild(span);
+                select.appendChild(option);
+            }
+            else if (!regex.test(input.value)) {
+                alert("請輸入不重複的四位數字");
+            }
+            else {
+                alert("長度太長或太短");
+            }
+            input.value = "";
+        }
+
+        clean.onclick = function () {
+            window.location.reload();
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
