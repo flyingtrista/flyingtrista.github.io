@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="/utility-css/reset.css">
+    <!-- <link rel="stylesheet" href="/JavaScript/js-homework03/style.css"> -->
+    <style>
+        td {
+            width: 20px;
+            height: 20px;
+            padding: 20px;
+        }
+
+        .wrap{
+            max-width: 420px; ;
+            margin: auto;
+            text-align: center;
+        }
+        .container{
+            margin: auto;
+            text-align: center;
+        }
+        table{
+            background-color: #faa25555;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <div class="wrap">
+            <div>
+                <button onclick="prevMonth()">Previous Month</button>
+                <button onclick="resetMonth()">Now Month</button>
+                <button onclick="nextMonth()">Next Month</button>
+            </div>
+            <div class="div">
+                <h2 class="title"></h2>
+            </div>
+
+
+            <div class="container">
+
+            </div>
+        </div>
+
+    </main>
+
+
+    <script>
+
+        let currentMonth;
+        let currentYear;
+        let daysInMonth;
+        let starDay;
+
+        let goMonth;
+        let goYear;
+        let goDayInMonth;
+
+        // DOM
+
+        let container;
+        let calendarTitle;
+
+        let countMonth = 0;
+        let countYear = 0;
+
+
+
+
+        window.onload = function () {
+            container = document.querySelector(".container");
+            calendarTitle = document.querySelector(".title")
+
+            console.log(container);
+
+
+
+            // 取得系統當前年月等資訊
+            currentMonth = new Date().getMonth();
+            currentYear = new Date().getFullYear();
+
+            createCalendar();
+            dateInfo();
+        }
+
+        function createCalendar() {
+
+
+            // 定義變數
+            daysInMonth = getDaysInMonth(currentMonth, currentYear);
+            starDay = getStartDay(currentMonth, currentYear);
+
+
+            console.log(daysInMonth);
+            console.log(starDay);
+
+
+            calendarTitle.innerHTML = `${currentYear}年${currentMonth + 1}月`;
+
+            // 建立日曆表格
+            calendarTable();
+
+        }
+
+        // 取得當月的天數
+        function getDaysInMonth(month, year) {
+            return new Date(year, month + 1, 0).getDate();
+        }
+
+        // 取得當月的第一天是星期幾
+        function getStartDay(month, year) {
+            return new Date(year, month, 1).getDay();
+        }
+
+        // 建立日曆表格
+        function calendarTable() {
+
+            let myCalendarTable = document.createElement("table");
+
+            for (let i = 0; i < 5; i++) {
+                let row = document.createElement("tr");
+                for (let j = 0; j < 7; j++) {
+                    let cell = document.createElement("td");
+                    let cellText = document.createTextNode("");
+                    cell.appendChild(cellText);
+                    row.appendChild(cell);
+
+                }
+                myCalendarTable.appendChild(row);
+                console.log("i=" + i);
+            }
+
+            // 將日期文字填入單元格中
+            let day = 1;
+            let pDay = starDay;
+            let nDay = 1;
+            for (let i = 0; i < 5; i++) {
+                let row = myCalendarTable.rows[i];
+                for (let j = 0; j < 7; j++) {
+
+                    // 每個月的第1天是星期幾
+                    if (i === 0 && j < starDay) {
+                        // row.cells[j].innerHTML = "";
+                        row.cells[j].innerHTML = backDayInMonth - pDay;
+                        pDay--;
+                        //如果天數大於當月份的天數 
+                    } else if (day > daysInMonth) {
+                        // row.cells[j].innerHTML = "";
+                        row.cells[j].innerHTML = nDay;
+                        nDay++;
+
+
+                    } else {
+                        row.cells[j].innerHTML = day;
+                        day++;
+                    }
+                }
+            }
+            // 將表格添加到頁面中
+            console.log(myCalendarTable);
+            container.appendChild(myCalendarTable);
+
+        }
+
+
+        // 儲存行事曆資訊
+        function saveCalendar() {
+            localStorage.setItem("calendar", JSON.stringify(calendarTable));
+        }
+
+        // 讀取行事曆資訊
+        function loadCalendar() {
+            var calendar = localStorage.getItem("calendar");
+            if (calendar) {
+                calendarTable = JSON.parse(calendar);
+            } else {
+                createCalendar();
+            }
+        }
+
+        // 修改行事曆中的日期：
+        /*
+        可以使用 calendarTable.rows[i].cells[j].innerHTML 來修改行事曆中單元格中的日期。
+        例如，要將行事曆中第二行第三個單元格的日期修改為 5，
+        你可以使用 calendarTable.rows[1].cells[2].innerHTML = 5。
+        */
+
+
+        // 切換至上一個月
+        function prevMonth() {
+
+            removeRander(container);
+            currentMonth--;
+            if (currentMonth < 1) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            createCalendar();
+            dateInfo();
+        }
+
+
+        // 切換至下一個月
+        function nextMonth() {
+            removeRander(container);
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+
+            createCalendar();
+            dateInfo();
+        }
+
+        // 切換至當月
+        function resetMonth() {
+            removeRander(container);
+            currentMonth = new Date().getMonth();
+            currentYear = new Date().getFullYear();
+
+            createCalendar();
+            dateInfo();
+        }
+
+
+
+        // 移除新增的節點內容
+        function removeRander(node) {
+
+            while (node.firstChild) {
+                console.log(node.firstChild);
+                node.removeChild(node.firstChild);
+            }
+
+        }
+
+        function dateInfo() {
+
+            // 上個月有幾天
+            backMonth = currentMonth - 1;
+            backYear = currentYear;
+
+
+            if (backMonth < 1) {
+                backMonth = 11;
+                backYear--;
+            }
+
+            backDayInMonth = getDaysInMonth(backMonth, backYear);
+
+
+        }
+
+    </script>
+</body>
+
+</html>
