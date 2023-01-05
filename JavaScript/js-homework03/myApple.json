@@ -53,25 +53,25 @@
                         {
                             "colordesc": "太空黑色",
                             "colorCSS": "#363636",
-                            "img": "url"
+                            "img": "iphone-14-pro-spaceblack.jpg"
                            
                         },
                         {
                             "colordesc": "銀色",
                             "colorCSS": "#CFCFCF",
-                            "img": "url"
+                            "img": "iphone-14-pro-silver.jpg"
                           
                         },
                         {
                             "colordesc": "金色",
                             "colorCSS": "#CCCC00",
-                            "img": "url"
+                            "img": "iphone-14-pro-gold.jpg"
                           
                         },
                         {
                             "colordesc": "深紫色",
                             "colorCSS": "#4A0080",
-                            "img": "url"
+                            "img": "iphone-14-pro-purple.jpg"
                           
                         }
                     ]
@@ -119,25 +119,25 @@
                         {
                             "colordesc": "太空黑色",
                             "colorCSS": "#363636",
-                            "img": "url"
+                            "img": "iphone-14-pro-spaceblack.jpg"
                           
                         },
                         {
                             "colordesc": "銀色",
                             "colorCSS": "#CFCFCF",
-                            "img": "url"
+                            "img": "iphone-14-pro-silver.jpg"
                            
                         },
                         {
                             "colordesc": "金色",
                             "colorCSS": "#CCCC00",
-                            "img": "url"
+                            "img": "iphone-14-pro-gold.jpg"
                            
                         },
                         {
                             "colordesc": "深紫色",
                             "colorCSS": "#4A0080",
-                            "img": "url"
+                            "img": "iphone-14-pro-purple.jpg"
                           
                         }
                     ]
@@ -193,31 +193,31 @@
                         {
                             "colordesc": "午夜色",
                             "colorCSS": "#404040",
-                            "img": "url"
-                           
+                            "img": "iphone-14-dark.jpg"
+                            
                         },
                         {
                             "colordesc": "紫色",
                             "colorCSS": "#8400E6",
-                            "img": "url"
-                           
+                            "img": "iphone-14-purple.jpg"
+                            
                         },
                         {
                             "colordesc": "星光色",
                             "colorCSS": "#C9C9C9",
-                            "img": "url"
+                            "img": "iphone-14-silver.jpg"
                            
                         },
                         {
                             "colordesc": "紅色",
                             "colorCSS": "#FF3030",
-                            "img": "url"
+                            "img": "iphone-14-red.jpg"
                            
                         },
                         {
                             "colordesc": "藍色",
                             "colorCSS": "#2626FF",
-                            "img": "url"
+                            "img": "iphone-14-blue.jpg"
                            
                         }
                     ]
@@ -261,31 +261,31 @@
                         {
                             "colordesc": "午夜色",
                             "colorCSS": "#404040",
-                            "img": "url"
+                            "img": "iphone-14-dark.jpg"
                             
                         },
                         {
                             "colordesc": "紫色",
                             "colorCSS": "#8400E6",
-                            "img": "url"
+                            "img": "iphone-14-purple.jpg"
                             
                         },
                         {
                             "colordesc": "星光色",
                             "colorCSS": "#C9C9C9",
-                            "img": "url"
+                            "img": "iphone-14-silver.jpg"
                            
                         },
                         {
                             "colordesc": "紅色",
                             "colorCSS": "#FF3030",
-                            "img": "url"
+                            "img": "iphone-14-red.jpg"
                            
                         },
                         {
                             "colordesc": "藍色",
                             "colorCSS": "#2626FF",
-                            "img": "url"
+                            "img": "iphone-14-blue.jpg"
                            
                         }
                     ]
