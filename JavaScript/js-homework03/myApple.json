@@ -1,0 +1,298 @@
+{
+    "iPhone": [
+        {
+            "groupID": "i1401",
+            "group": "iPhone 14 Pro",
+            "generations": 14,
+            "isNew": true,
+            "chip": {
+                "chipName": "A16 仿生晶片",
+                "chipDesc": "6 核心 CPU 配備 2 個效能核心與 4 個節能核心"
+            },
+            "product": [
+                {
+                    "productName": "iPhone 14 Pro",
+                    "dim": {
+                        "high": {
+                            "DimDetail": "147.5 公釐",
+                            "inches": "5.81 吋"
+                        },
+                        "weight": {
+                            "DimDetail": "71.5 公釐",
+                            "inches": "2.81 吋"
+                        },
+                        "thickness": {
+                            "DimDetail": "7.85 公釐",
+                            "inches": "0.31 吋"
+                        }
+                    },
+                    "weight": "206 公克 (7.27 盎司)",
+                    "monitor": {
+                        "InchesDesc": "6.1 吋 (對角線) 全螢幕 OLED 顯示器",
+                        "pixelresolution": "2556 x 1179 像素，460 ppi 解析度"
+                    },
+                    "details": [
+                        {
+                            "rom": "128GB",
+                            "oriprice": 34900
+                        },
+                        {
+                            "rom": "256GB",
+                            "oriprice": 38400
+                        },
+                        {
+                            "rom": "512GB",
+                            "oriprice": 45400
+                        },
+                        {
+                            "rom": "1TB",
+                            "oriprice": 52400
+                        }
+                    ],
+                    "colors": [
+                        {
+                            "colordesc": "太空黑色",
+                            "colorCSS": "#363636",
+                            "img": "url"
+                           
+                        },
+                        {
+                            "colordesc": "銀色",
+                            "colorCSS": "#CFCFCF",
+                            "img": "url"
+                          
+                        },
+                        {
+                            "colordesc": "金色",
+                            "colorCSS": "#CCCC00",
+                            "img": "url"
+                          
+                        },
+                        {
+                            "colordesc": "深紫色",
+                            "colorCSS": "#4A0080",
+                            "img": "url"
+                          
+                        }
+                    ]
+                },
+                {
+                    "productName": "iPhone 14 Pro Max",
+                    "dim": {
+                        "high": {
+                            "DimDetail": "160.7 公釐",
+                            "inches": "6.33 吋"
+                        },
+                        "weight": {
+                            "DimDetail": "77.6 公釐",
+                            "inches": "3.05 吋"
+                        },
+                        "thickness": {
+                            "DimDetail": "7.85 公釐",
+                            "inches": "0.31 吋"
+                        }
+                    },
+                    "weight": "240 公克 (8.47 盎司)",
+                    "monitor": {
+                        "InchesDesc": "6.7 吋 (對角線) 全螢幕 OLED 顯示器",
+                        "pixelresolution": "2796 x 1290 像素，460 ppi 解析度"
+                    },
+                    "details": [
+                        {
+                            "rom": "128GB",
+                            "oriprice": 38900
+                        },
+                        {
+                            "rom": "256GB",
+                            "oriprice": 42400
+                        },
+                        {
+                            "rom": "512GB",
+                            "oriprice": 49400
+                        },
+                        {
+                            "rom": "1TB",
+                            "oriprice": 56400
+                        }
+                    ],
+                    "colors": [
+                        {
+                            "colordesc": "太空黑色",
+                            "colorCSS": "#363636",
+                            "img": "url"
+                          
+                        },
+                        {
+                            "colordesc": "銀色",
+                            "colorCSS": "#CFCFCF",
+                            "img": "url"
+                           
+                        },
+                        {
+                            "colordesc": "金色",
+                            "colorCSS": "#CCCC00",
+                            "img": "url"
+                           
+                        },
+                        {
+                            "colordesc": "深紫色",
+                            "colorCSS": "#4A0080",
+                            "img": "url"
+                          
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "groupID": "i1402",
+            "group": "iPhone 14",
+            "generations": 14,
+            "isNew": true,
+            "chip": {
+                "chipName": "A15 仿生晶片",
+                "chipDesc": "6 核心 CPU 配備 2 個效能核心與 4 個節能核心"
+            },
+            "product": [
+                {
+                    "productName": "iPhone 14",
+                    "dim": {
+                        "high": {
+                            "DimDetail": "146.7 公釐",
+                            "inches": "5.78 吋"
+                        },
+                        "weight": {
+                            "DimDetail": "71.5 公釐",
+                            "inches": "32.82 吋"
+                        },
+                        "thickness": {
+                            "DimDetail": "7.80 公釐",
+                            "inches": "0.31 吋"
+                        }
+                    },
+                    "weight": "172 公克 (6.07 盎司)",
+                    "monitor": {
+                        "InchesDesc": "6.1 吋 (對角線) 全螢幕 OLED 顯示器",
+                        "pixelresolution": "2532 x 1170 像素，460 ppi 解析度"
+                    },
+                    "details": [
+                        {
+                            "rom": "128GB",
+                            "oriprice": 27900
+                        },
+                        {
+                            "rom": "256GB",
+                            "oriprice": 31400
+                        },
+                        {
+                            "rom": "512GB",
+                            "oriprice": 38400
+                        }
+                    ],
+                    "colors": [
+                        {
+                            "colordesc": "午夜色",
+                            "colorCSS": "#404040",
+                            "img": "url"
+                           
+                        },
+                        {
+                            "colordesc": "紫色",
+                            "colorCSS": "#8400E6",
+                            "img": "url"
+                           
+                        },
+                        {
+                            "colordesc": "星光色",
+                            "colorCSS": "#C9C9C9",
+                            "img": "url"
+                           
+                        },
+                        {
+                            "colordesc": "紅色",
+                            "colorCSS": "#FF3030",
+                            "img": "url"
+                           
+                        },
+                        {
+                            "colordesc": "藍色",
+                            "colorCSS": "#2626FF",
+                            "img": "url"
+                           
+                        }
+                    ]
+                },
+                {
+                    "productName": "iPhone 14 Plus",
+                    "dim": {
+                        "high": {
+                            "DimDetail": "160.8 公釐",
+                            "inches": "6.33 吋"
+                        },
+                        "weight": {
+                            "DimDetail": "78.1 公釐",
+                            "inches": "3.07 吋"
+                        },
+                        "thickness": {
+                            "DimDetail": "7.80 公釐",
+                            "inches": "0.31 吋"
+                        }
+                    },
+                    "weight": "203 公克 (7.16 盎司)",
+                    "monitor": {
+                        "InchesDesc": "6.7 吋 (對角線) 全螢幕 OLED 顯示器",
+                        "pixelresolution": "2778 x 1284 像素，458 ppi 解析度"
+                    },
+                    "details": [
+                        {
+                            "rom": "128GB",
+                            "oriprice": 31900
+                        },
+                        {
+                            "rom": "256GB",
+                            "oriprice": 35400
+                        },
+                        {
+                            "rom": "512GB",
+                            "oriprice": 42400
+                        }
+                    ],
+                    "colors": [
+                        {
+                            "colordesc": "午夜色",
+                            "colorCSS": "#404040",
+                            "img": "url"
+                            
+                        },
+                        {
+                            "colordesc": "紫色",
+                            "colorCSS": "#8400E6",
+                            "img": "url"
+                            
+                        },
+                        {
+                            "colordesc": "星光色",
+                            "colorCSS": "#C9C9C9",
+                            "img": "url"
+                           
+                        },
+                        {
+                            "colordesc": "紅色",
+                            "colorCSS": "#FF3030",
+                            "img": "url"
+                           
+                        },
+                        {
+                            "colordesc": "藍色",
+                            "colorCSS": "#2626FF",
+                            "img": "url"
+                           
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "iPad": [],
+    "Mac": []
+}
