@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -32,10 +31,14 @@
       background-color: unset;
     }
 
-    #productBtnGroup > button{
+    #productBtnGroup>button {
       margin-left: 10px;
       margin-right: 10px;
     }
+    button{
+      margin: 10px;
+    }
+
   </style>
 
 </head>
@@ -43,9 +46,12 @@
 <body>
   <div class="container">
     <div id="productBtnGroup" class="row mb-3 d-flex justify-content-center">
-      <button id="iphone" type="button" class="product-btn btn btn-dark" onclick="InitProduct(this.innerText)">IPhone</button>
-      <button id="ipad" type="button" class="product-btn btn btn-dark" onclick="InitProduct(this.innerText)">IPad</button>
-      <button id="iphone" type="button" class="product-btn btn btn-dark" onclick="InitProduct(this.innerText)">MacPro</button>
+      <button id="iphone" type="button" class="product-btn btn btn-dark"
+        onclick="InitProduct(this.innerText)">IPhone</button>
+      <button id="ipad" type="button" class="product-btn btn btn-dark"
+        onclick="InitProduct(this.innerText)">IPad</button>
+      <button id="iphone" type="button" class="product-btn btn btn-dark"
+        onclick="InitProduct(this.innerText)">MacPro</button>
     </div>
     <div class="row">
       <div class="col-12 col-md-6">
@@ -75,7 +81,256 @@
     </div>
   </div>
 
+  <main>
+    <div class="myButtonArea">
+
+
+      <!-- <button id="iphone14pro" class="product-btn btn btn-dark">iphone 14 pro</button> -->
+    </div>
+    <div class="myContainer">
+      <div class="col-12 col-md-6">
+        <div id="myTitle" class="row">
+        </div>
+        <div id="myDesc" class="row">
+        </div>
+     <div id="myType" class="row">
+
+         
+        </div>
+        <div id="myPrice" class="row">
+
+
+        </div>
+
+      </div>
+
+    
+
+  
+  </main>
+
+
+
   <script>
+
+    // DOM 變數
+    let buttonArea;
+    let myContainer;
+
+    // DOM 會新增節點區域
+    let myType;
+    let myPrice;
+    let myTitle;
+    let myDesc;
+
+
+    let nodelist = [];
+
+    // 外部json 相關變數
+    const url = "https://raw.githubusercontent.com/flyingtrista/FileStorage/main/apple_json";
+    let xhr = new XMLHttpRequest();
+    let appleData;
+    let appleKeys;  //apple 產品類型
+    let group       //apple 產品分群
+
+
+    window.onload = function () {
+
+
+      buttonArea = document.querySelector(".myButtonArea");
+      myContainer = document.querySelector("#myContainer");
+
+      myType = document.querySelector("#myType");
+      myPrice = document.querySelector("#myPrice");
+      myTitle = document.querySelector("#myTitle");
+      myDesc = document.querySelector("#myDesc");
+
+      // 設定清除節點的清單
+      nodelist.push(myType);
+      nodelist.push(myPrice);
+      nodelist.push(myTitle);
+      nodelist.push(myDesc);
+
+
+      // 取得 json 資料
+      getAppleAPI(url);
+
+
+
+
+
+
+
+
+    }
+
+    // 取得 github上的 json資料
+    function getAppleAPI(url) {
+
+      xhr.open("GET", url);
+      xhr.send();
+
+      xhr.onload = function () {
+
+        // api 回傳 後進行...
+
+        console.log("xhr.onload...")
+        if (xhr.status == 200) {
+
+          appleData = JSON.parse(xhr.responseText);
+
+
+
+          console.log("渲染按鈕");
+
+          appleKeys = Object.keys(appleData);
+          // 先把所有要顯示於畫面上的資料準備好
+
+          appleKeys.forEach(item => {
+
+            let appleItems = appleData[item];
+            appleItems.forEach((data, index) => {
+              let product_group = data.group;
+
+              // 將按鈕顯示在畫面上
+
+              let btn = document.createElement("button");
+              btn.setAttribute("id", product_group);
+              btn.setAttribute("class", "product-btn btn btn-dark");
+              btn.innerText = product_group;
+
+              btn.addEventListener("click", renderData.bind(null, item, index));
+              buttonArea.appendChild(btn);
+            });
+          });
+
+        } else {
+
+          document.writeln(xhr.status + "無法成功取得Json資料");
+        }
+
+      }
+
+    }
+
+
+    // 移除新增的節點內容
+    function removeRander() {
+      
+      nodelist.forEach(node => {
+        console.log("移除新增的節點內容...");
+        
+        while (node.firstChild) {
+          console.log(node.firstChild);
+          node.removeChild(node.firstChild);
+        }
+      });
+    }
+
+
+    // 移除按鈕監聽事件
+    function removeEventListener(domName, fnName) {
+      // domName.removeEventListener("click", fnName);
+    }
+
+
+    // 渲染資料
+    function renderData(item, index) {
+
+      // 清空資料
+      removeRander();
+
+
+
+
+      let headerData = document.createElement("header");
+      let productTitle = document.createElement("h2");
+
+
+
+      console.log("renderData...");
+
+      // 先把所有要顯示於畫面上的資料準備好
+
+      let data = appleData[item][index];
+
+
+      console.log(data);
+
+      let title = document.createElement("h2");
+
+
+      title.innerText = data.group;
+      title.innerText += data.isNew ? "新上市" : "";
+
+
+      myTitle.appendChild(title);
+
+      showProductName(item, index);
+
+      console.log("......");
+      let product_chip = data.chip;
+
+
+
+
+      let productData = data.product;
+      productData.forEach(item => {
+        console.log(item.Dim);
+        console.log(item.Info);
+        let colorsInfo = item.Info;
+
+
+
+
+
+
+
+      });
+
+
+
+
+    }
+
+    function showProductName(item, index) {
+
+      let data = appleData[item][index];
+      let productData = data.product;
+      productData.forEach(item => {
+        let titleBtn = document.createElement("button");
+        titleBtn.setAttribute("class", "p-4 d-flex flex-column justify-content-center align-items-center");
+        titleBtn.innerText = item.productName;
+        myType.appendChild(titleBtn);
+
+      });
+
+
+
+    }
+
+
+    function showColors() {
+
+      let titleBtn = document.createElement("button");
+      titleBtn.setAttribute("class", "p-4 d-flex flex-column justify-content-center align-items-center");
+      titleBtn.innerText = colors.colordesc;
+      myType.appendChild(titleBtn);
+
+    }
+
+
+
+  </script>
+
+
+
+  <script>
+
+
+
+
+
     var Product = {
       IPhone: {
         Detail: {
@@ -138,9 +393,9 @@
     var colorArea = document.getElementById('color');
     var typeArea = document.getElementById('type');
     var priceArea = document.getElementById('price');
-    
+
     //iphoneBtn.onclick = function () 
-    function InitProduct(product){
+    function InitProduct(product) {
       console.log(product);
       //初始化
       colorArea.innerHTML = '';
@@ -279,9 +534,8 @@
 
       priceArea.appendChild(priceTitle);
 
-      for(let item of typeBtns)
-      {
-        item.addEventListener('click', function(){
+      for (let item of typeBtns) {
+        item.addEventListener('click', function () {
           //初始化
           priceArea.innerHTML = '';
           let priceTitle = document.createElement('div');
