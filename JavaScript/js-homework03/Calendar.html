@@ -68,6 +68,10 @@
         let goYear;
         let goDayInMonth;
 
+        let showTask;
+        let myJson;
+        let str;
+        let showStr;
         // DOM
 
         let container;
@@ -75,7 +79,7 @@
 
         let countMonth = 0;
         let countYear = 0;
-
+        let myCalendarTable;
 
 
 
@@ -91,8 +95,12 @@
             currentMonth = new Date().getMonth();
             currentYear = new Date().getFullYear();
 
+
+
             createCalendar();
             dateInfo();
+
+
         }
 
         function createCalendar() {
@@ -127,7 +135,7 @@
         // 建立日曆表格
         function calendarTable() {
 
-            let myCalendarTable = document.createElement("table");
+            myCalendarTable = document.createElement("table");
 
             for (let i = 0; i < 5; i++) {
                 let row = document.createElement("tr");
@@ -135,6 +143,8 @@
                     let cell = document.createElement("td");
                     let cellText = document.createTextNode("");
                     cell.appendChild(cellText);
+                    cell.addEventListener("click", openCalendar.bind(null, i, j));
+
                     row.appendChild(cell);
 
                 }
@@ -149,21 +159,38 @@
             for (let i = 0; i < 5; i++) {
                 let row = myCalendarTable.rows[i];
                 for (let j = 0; j < 7; j++) {
+                    myJson = {
+                        "currentYear": currentYear,
+                        "currentMonth": currentMonth,
+                        "i": i,
+                        "j": j
 
-                    // 每個月的第1天是星期幾
-                    if (i === 0 && j < starDay) {
+                    }
+                    str = JSON.stringify(myJson);
+
+
+                    if (i === 0 && j < starDay) { // starDay:每個月的第1天是星期幾
                         // row.cells[j].innerHTML = "";
-                        row.cells[j].innerHTML = backDayInMonth - pDay;
+                        loadCalendar();
+                        // row.cells[j].innerHTML = (backDayInMonth - pDay);
+                        row.cells[j].innerHTML = (backDayInMonth - pDay)+showTask;
+
                         pDay--;
-                        //如果天數大於當月份的天數 
-                    } else if (day > daysInMonth) {
+
+                    } else if (day > daysInMonth) { //daysInMonth:當月份的天數
                         // row.cells[j].innerHTML = "";
-                        row.cells[j].innerHTML = nDay;
+                        loadCalendar();
+                        // row.cells[j].innerHTML = nDay;
+                        row.cells[j].innerHTML = nDay+showTask;
+
                         nDay++;
 
 
                     } else {
-                        row.cells[j].innerHTML = day;
+                        loadCalendar();
+                        // row.cells[j].innerHTML = day;
+                        row.cells[j].innerHTML = day+showTask;
+
                         day++;
                     }
                 }
@@ -174,28 +201,18 @@
 
         }
 
+        // 開新視窗
+        function openCalendar(i, j) {
+            console.log(myCalendarTable.rows[i].cells[j].innerHTML);
 
-        // 儲存行事曆資訊
-        function saveCalendar() {
-            localStorage.setItem("calendar", JSON.stringify(calendarTable));
+            getStr(i, j);
+
+            let date = myCalendarTable.rows[i].cells[j].innerHTML;
+            window.open(`addEvent.html?date= ${date}&year=${currentYear}&month=${currentMonth}&i=${i}&j=${j}&str=${str}`, "Add Event", "width=600,height=400");
+            // window.open(`addEvent.html?date= ${date}&str=${str}`, "Add Event", "width=600,height=400");
+
+
         }
-
-        // 讀取行事曆資訊
-        function loadCalendar() {
-            var calendar = localStorage.getItem("calendar");
-            if (calendar) {
-                calendarTable = JSON.parse(calendar);
-            } else {
-                createCalendar();
-            }
-        }
-
-        // 修改行事曆中的日期：
-        /*
-        可以使用 calendarTable.rows[i].cells[j].innerHTML 來修改行事曆中單元格中的日期。
-        例如，要將行事曆中第二行第三個單元格的日期修改為 5，
-        你可以使用 calendarTable.rows[1].cells[2].innerHTML = 5。
-        */
 
 
         // 切換至上一個月
@@ -259,6 +276,40 @@
             }
 
             backDayInMonth = getDaysInMonth(backMonth, backYear);
+
+
+        }
+
+
+        // 讀取行事曆資訊
+        function loadCalendar() {
+            console.log("loadCalendar");
+
+            console.log(str);
+            myValue = localStorage.getItem(str);
+            console.log(myValue);
+
+            if (myValue) {
+                showTask = JSON.parse(myValue);
+                
+                showTask = `(${showTask})`;
+                // alert(showTask);
+            } else {
+                showTask = "";
+            }
+
+
+        }
+
+        function getStr(i, j) {
+            myJson = {
+                "currentYear": currentYear,
+                "currentMonth": currentMonth,
+                "i": i,
+                "j": j
+
+            }
+            str = JSON.stringify(myJson);
 
 
         }

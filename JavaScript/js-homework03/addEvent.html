@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行事曆內容</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="div">
+            <h2>內容頁</h2>
+        </div>
+        <div class="container">
+
+            <input type="text" id="text">
+            <button>儲存</button>
+        </div>
+    </div>
+
+    <script>
+        let btn;
+        let text;
+        let searchParams;
+        let currentYear;
+        let currentMonth;
+        let i;
+        let j;
+        let myJson;
+        let str;
+        let myValue;
+        window.onload = function () {
+
+            btn = document.querySelector('button');
+            text = document.querySelector('input');
+
+            searchParams = new URLSearchParams(window.location.search);
+
+            str = searchParams.get("str");
+
+            // ---------------------------------------
+            // 以下程式會在json的value多雙引號 待確認why?
+            // ---------------------------------------
+
+            // currentYear = searchParams.get("year");
+            // currentMonth = searchParams.get("month");
+            // i = searchParams.get("i");
+            // j = searchParams.get("j");
+
+            // myJson = {
+            //     "currentYear": currentYear,
+            //     "currentMonth": currentMonth,
+            //     "i":i,
+            //     "j":j
+
+            // }
+            // str = JSON.stringify(myJson);
+            loadCalendar();
+            btn.addEventListener('click', saveCalendar);
+
+            window.addEventListener('unload', function () {
+                window.opener.location.reload();
+            });
+
+        };
+
+        // 儲存行事曆資訊
+        function saveCalendar() {
+
+            // Value必須要轉型stringify才可以寫入
+            localStorage.setItem(str, JSON.stringify(text.value));
+            alert("儲存成功");
+            window.close();
+        }
+
+        // 讀取行事曆資訊
+        function loadCalendar() {
+
+            myValue = localStorage.getItem(str);
+
+            // alert(JSON.parse(myValue));
+            if (myValue) {
+
+                text.value = JSON.parse(myValue);
+            } else {
+                text.value = "";
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
