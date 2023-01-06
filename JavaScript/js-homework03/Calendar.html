@@ -225,7 +225,9 @@
 
             removeRander(container);
             currentMonth--;
-            if (currentMonth < 1) {
+            // 月份 0 ~ 11 月
+            // 小於0表示去年最後一個月
+            if (currentMonth < 0) {
                 currentMonth = 11;
                 currentYear--;
             }
@@ -238,6 +240,8 @@
         function nextMonth() {
             removeRander(container);
             currentMonth++;
+            // 月份 0 ~ 11 月
+            // 大於11表示明年第一個月
             if (currentMonth > 11) {
                 currentMonth = 0;
                 currentYear++;
