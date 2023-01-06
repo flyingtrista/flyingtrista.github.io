@@ -80,7 +80,7 @@
         let countMonth = 0;
         let countYear = 0;
         let myCalendarTable;
-
+        let rowsInMonth;
 
 
         window.onload = function () {
@@ -109,7 +109,8 @@
             // 定義變數
             daysInMonth = getDaysInMonth(currentMonth, currentYear);
             starDay = getStartDay(currentMonth, currentYear);
-
+            // 每個月有幾個禮拜(要加上當月是從禮拜幾開始的天數)
+            let rowsInMonth = Math.ceil((daysInMonth+starDay)/7);
 
             console.log(daysInMonth);
             console.log(starDay);
@@ -136,8 +137,8 @@
         function calendarTable() {
 
             myCalendarTable = document.createElement("table");
-
-            for (let i = 0; i < 5; i++) {
+            
+            for (let i = 0; i < rowsInMonth; i++) {
                 let row = document.createElement("tr");
                 for (let j = 0; j < 7; j++) {
                     let cell = document.createElement("td");
@@ -160,7 +161,7 @@
             // 更新backDayInMonth : 上個月的最後幾天
             dateInfo();
 
-            for (let i = 0; i < 5; i++) {
+            for (let i = 0; i < rowsInMonth; i++) {
                 let row = myCalendarTable.rows[i];
                 for (let j = 0; j < 7; j++) {
                     myJson = {
