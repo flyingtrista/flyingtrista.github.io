@@ -110,7 +110,7 @@
             daysInMonth = getDaysInMonth(currentMonth, currentYear);
             starDay = getStartDay(currentMonth, currentYear);
             // 每個月有幾個禮拜(要加上當月是從禮拜幾開始的天數)
-            let rowsInMonth = Math.ceil((daysInMonth+starDay)/7);
+            rowsInMonth = Math.ceil((daysInMonth+starDay)/7);
 
             console.log(daysInMonth);
             console.log(starDay);
