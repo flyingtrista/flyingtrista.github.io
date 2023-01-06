@@ -98,7 +98,7 @@
 
 
             createCalendar();
-            dateInfo();
+           
 
 
         }
@@ -156,6 +156,10 @@
             let day = 1;
             let pDay = starDay;
             let nDay = 1;
+
+            // 更新backDayInMonth : 上個月的最後幾天
+            dateInfo();
+
             for (let i = 0; i < 5; i++) {
                 let row = myCalendarTable.rows[i];
                 for (let j = 0; j < 7; j++) {
@@ -173,7 +177,7 @@
                         // row.cells[j].innerHTML = "";
                         loadCalendar();
                         // row.cells[j].innerHTML = (backDayInMonth - pDay);
-                        row.cells[j].innerHTML = (backDayInMonth - pDay)+showTask;
+                        row.cells[j].innerHTML = (backDayInMonth - pDay+1)+showTask;
 
                         pDay--;
 
@@ -225,7 +229,7 @@
                 currentYear--;
             }
             createCalendar();
-            dateInfo();
+            
         }
 
 
@@ -239,7 +243,7 @@
             }
 
             createCalendar();
-            dateInfo();
+            
         }
 
         // 切換至當月
@@ -249,7 +253,7 @@
             currentYear = new Date().getFullYear();
 
             createCalendar();
-            dateInfo();
+           
         }
 
 
