@@ -14,104 +14,146 @@
 
     <!-- CSS撰寫區 -->
     <style>
+        body {
+            display: flex;
+            justify-content: center;
+            max-width: 1400px;
+            margin: auto;
+        }
 
+        header {
+            padding: 20px;
+            text-align: center;
+            max-width: 1400px;
+            height: 150px;
+            margin: auto;
+            background: pink;
+            opacity: 0.8;
+
+        }
+
+        main {
+            text-align: center;
+            width: 1000px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+
+
+
+        }
     </style>
 </head>
 
 <body>
-    <h1 class="year-month"></h1>
-    <button type="button" class="btn btn-primary" onclick="previewMonth()">preview month</button>
-    <button type="button" class="btn btn-primary" onclick="nowMonth()">now</button>
-    <button type="button" class="btn btn-primary" onclick="nextMonth()">next month</button>
+    <div class="my-calender">
+        <header>
+            MY Schedule
+            <h1 class="year-month"></h1>
+            <div class="menu">
 
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>日</th>
-                <th>一</th>
-                <th>二</th>
-                <th>三</th>
-                <th>四</th>
-                <th>五</th>
-                <th>六</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- 動態渲染日期 -->
-
-        </tbody>
-    </table>
-
-    <!-- 新增行程 Modal -->
-    <!-- 
-        1. 複製Modal
-        2. class多加上fade
-        3. modal-title 改掉
-        4. modal-body 加上輸入框
-        5. modal-footer  調整成一個 新增按鈕
-        
-        測試: 
-        bootstrap.Modal.getOrCreateInstance(document.querySelector("#add-modal")).show()
-        
-        js 設定出現: show()
-        js 設定隱藏: hide()
-    -->
-    <div class="modal fade" tabindex="-1" id="add-modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <!-- 修改title -->
-                    <h5 class="modal-title">新增行程</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- 新增兩個輸入框 -->
-                    <input type="text" id="add-date">
-                    <input type="text" id="add-value">
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" onclick="addTodoItem()">新增</button>
-                </div>
+                <button type="button" class="btn btn-primary" onclick="previewMonth()">preview </button>
+                <button type="button" class="btn btn-primary" onclick="nowMonth()">now</button>
+                <button type="button" class="btn btn-primary" onclick="nextMonth()">next </button>
             </div>
-        </div>
-    </div>
+        </header>
 
+        <div class="wrap">
 
-    <!-- 編輯行程 Modal -->
-    <!-- 
-        1. 複製Modal
-        2. class多加上fade
-        3. modal-title 改掉
-        4. modal-body 加上輸入框
-        5. modal-footer  調整成 修改按鈕 & 刪除按鈕
+            <main>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>日</th>
+                            <th>一</th>
+                            <th>二</th>
+                            <th>三</th>
+                            <th>四</th>
+                            <th>五</th>
+                            <th>六</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 動態渲染日期 -->
 
-        測試: 
-        bootstrap.Modal.getOrCreateInstance(document.querySelector("#edit-modal")).show()
+                    </tbody>
+                </table>
 
-        js 設定出現: show()
-        js 設定隱藏: hide()
-    -->
-    <div class="modal fade" tabindex="-1" id="edit-modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <!-- 修改title -->
-                    <h5 class="modal-title">編輯行程</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <!-- 新增行程 Modal -->
+                <!-- 
+                    1. 複製Modal
+                    2. class多加上fade
+                    3. modal-title 改掉
+                    4. modal-body 加上輸入框
+                    5. modal-footer  調整成一個 新增按鈕
+                    
+                    測試: 
+                    bootstrap.Modal.getOrCreateInstance(document.querySelector("#add-modal")).show()
+                    
+                    js 設定出現: show()
+                    js 設定隱藏: hide()
+                -->
+                <div class="modal fade" tabindex="-1" id="add-modal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <!-- 修改title -->
+                                <h5 class="modal-title">新增行程</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- 新增兩個輸入框 -->
+                                <input type="text" id="add-date" readonly>
+                                <input type="text" id="add-value">
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" onclick="addTodoItem()">新增</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <!-- 新增兩個輸入框 -->
-                    <input type="text" id="edit-date">
-                    <input type="text" id="edit-value">
 
+
+                <!-- 編輯行程 Modal -->
+                <!-- 
+                    1. 複製Modal
+                    2. class多加上fade
+                    3. modal-title 改掉
+                    4. modal-body 加上輸入框
+                    5. modal-footer  調整成 修改按鈕 & 刪除按鈕
+            
+                    測試: 
+                    bootstrap.Modal.getOrCreateInstance(document.querySelector("#edit-modal")).show()
+            
+                    js 設定出現: show()
+                    js 設定隱藏: hide()
+                -->
+                <div class="modal fade" tabindex="-1" id="edit-modal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <!-- 修改title -->
+                                <h5 class="modal-title">編輯行程</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- 新增兩個輸入框 -->
+                                <input type="text" id="edit-date" readonly>
+                                <input type="text" id="edit-value">
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" onclick="editTodoItem()">修改</button>
+                                <button type="button" class="btn btn-danger" onclick="delTodoItem()">刪除</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" onclick="editTodoItem()">修改</button>
-                    <button type="button" class="btn btn-danger" onclick="delTodoItem()">刪除</button>
-                </div>
-            </div>
+            </main>
+
         </div>
     </div>
 
@@ -127,6 +169,8 @@
         let lastDay;
         let weekly;
 
+
+
         // new Date 取得的 month 是由 0 開始
         queryfirstDay(year, month);
         querylastDay(year, month);
@@ -141,7 +185,7 @@
         // 下個月的日期
         let nextD;
         // 行事曆另外存的日期
-        let day ;
+        let day;
 
         // DOM===================
         const title = document.querySelector(".year-month");
@@ -152,12 +196,20 @@
         const editModal = document.querySelector("#edit-modal");
 
         // 新增視窗modal
-        const addDateInput = document.querySelector("#add-date")
-        const addValueInput = document.querySelector("#add-value")
+        const addDateInput = document.querySelector("#add-date");
+        const addValueInput = document.querySelector("#add-value");
 
         // 編輯視窗modal
-        const editDateInput = document.querySelector("#edit-date")
-        const editValueInput = document.querySelector("#edit-value")
+        const editDateInput = document.querySelector("#edit-date");
+        const editValueInput = document.querySelector("#edit-value");
+
+
+        // 新增待辦事項
+        const addTaskModal = document.querySelector("#addTaskMain-modal");
+
+        // 新增待辦視窗modal
+        const addTaskDateInput = document.querySelector("#addTaskMain-date");
+        const addTaskValueInput = document.querySelector("#addTaskValue-title");
 
 
 
@@ -311,7 +363,7 @@
 
                     } else {
                         if (showDate <= lastDay) {
-                            
+
                             // 本月份日期
                             const td = document.createElement("td");
                             td.innerText = showDate;
@@ -320,14 +372,14 @@
                             // 渲染 localstorage 資料
                             // step1. 查看今天是否有行程
                             if (localStorage.getItem(`${year}-${(month + 1)}-${day}`) != null) {
-                                
+
                                 // 今天有行程
                                 let ul = document.createElement("ul");
-                              
+
                                 let todoList = JSON.parse(localStorage.getItem(`${year}-${(month + 1)}-${day}`));
 
 
-                                todoList.forEach((item,index) => {
+                                todoList.forEach((item, index) => {
                                     let li = document.createElement("li");
                                     li.innerText = item.title;
 
@@ -335,7 +387,7 @@
                                         // 去localstorage抓當天的資料
                                         editDateInput.value = `${year}-${(month + 1)}-${day}`;
                                         editValueInput.value = e.target.innerText;
-                                        editValueInput.setAttribute("data-num",index);
+                                        editValueInput.setAttribute("data-num", index);
 
                                         bootstrap.Modal.getOrCreateInstance(editModal).show();
                                         e.stopPropagation();
@@ -443,7 +495,7 @@
             let editIndex = editValueInput.getAttribute("data-num");
             todoList[editIndex] = todoObj;
             console.log(todoList);
-            localStorage.setItem(dateOfKey,JSON.stringify(todoList));
+            localStorage.setItem(dateOfKey, JSON.stringify(todoList));
             bootstrap.Modal.getOrCreateInstance(editModal).hide();
 
             addDateInput.value = "";
@@ -460,10 +512,10 @@
             // 取得 localstorage 的 陣列資料
             todoList = JSON.parse(localStorage.getItem(dateOfKey));
             let delIndex = editValueInput.getAttribute("data-num");
-            todoList.splice(delIndex,1);
-          
+            todoList.splice(delIndex, 1);
+
             console.log(todoList);
-            localStorage.setItem(dateOfKey,JSON.stringify(todoList));
+            localStorage.setItem(dateOfKey, JSON.stringify(todoList));
             bootstrap.Modal.getOrCreateInstance(editModal).hide();
 
             addDateInput.value = "";
@@ -474,14 +526,19 @@
 
 
 
+
+
+
+
+
+
+
     </script>
     <!-- 載入Bootstrap 5.0 Bundle-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
-    <!-- 載入Font Awesome :Dora的帳號-->
-    <script src="https://kit.fontawesome.com/0015b7851a.js" crossorigin="anonymous"></script>
 
 
 

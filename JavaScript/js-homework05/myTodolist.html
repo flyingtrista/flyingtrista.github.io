@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,38 +19,6 @@
 
 <body>
 
-    <!-- 新增待辦事項Modal -->
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#staticBackdrop">
-        add
-    </button>
-
-    <!-- Modal -->
-    <div class="modal fade " id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <input id="add-date" type="text">
-                    <input id="add-value" type="text">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Understood</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
 
 
     <!-- 載入Bootstrap 5.0 Bundle-->
@@ -61,19 +28,15 @@
 
     <!-- 載入Font Awesome :Dora的帳號-->
     <script src="https://kit.fontawesome.com/0015b7851a.js" crossorigin="anonymous"></script>
-
+    
     <!-- script 撰寫區 -->
     <script>
         // 變數
 
         // DOM
-        const addModal = document.querySelector('.new-modal')
 
         // function
-        td.onclick = function () {
-            addDateInput.value = `${year}-${month + 1}-${d}`
-            bootstrap.Modal.getOrCreateInstance(addModal).show()
-        }
+
         // window onload
         window.onload = function () {
 
