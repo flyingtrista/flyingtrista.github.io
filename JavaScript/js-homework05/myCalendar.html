@@ -65,7 +65,7 @@
         // 當月的日期
         let showDate;
         // 上個月的日期
-        let d;
+        let dayofpremonth;
         let preD;
         // 下個月的日期
         let nextD;
@@ -84,14 +84,12 @@
         // 月份第一天是星期幾
         function queryfirstDay(y, m) {
             firstDay = new Date(y, m, 1).getDay();
-            console.log(firstDay);
 
         }
 
         // 月份最後一天是星期幾
         function querylastDay(y, m) {
             lastDay = new Date(y, m + 1, 0).getDay();
-            console.log(lastDay);
 
         }
         // 月份最後一天是幾號
@@ -144,14 +142,11 @@
         // 下個月
 
         function nextMonth() {
-            console.log(year, month);
             month++;
-            console.log(year, month);
             if (month > 11) {
                 year++;
                 month = 0;
             }
-            console.log(year, month);
 
             queryfirstDay(year, month);
             querylastDate(year, month);
@@ -171,7 +166,6 @@
 
             // 渲染標題
             title.innerText = `${year}年${month + 1}月`;
-            console.log(year, month);
             // 渲染日期
             renderCalendar();
 
@@ -191,8 +185,17 @@
             // 清除日曆節點
             removeRander(tbody);
             // 日期變數初始化
-            d = fillPrevievDate();
-            preD = (d - firstDay) + 1;
+            dayofpremonth = fillPrevievDate();
+            console.log("dayofpremonth:"+dayofpremonth);
+            console.log("firstDay:"+firstDay);
+            preD=dayofpremonth;
+            console.log("preD:"+preD);
+
+            if(firstDay!= 0){
+                preD = (dayofpremonth - firstDay) + 1;
+            }
+            
+            console.log("preD_start"+preD);
             showDate = 1;
             nextD = 1;
         }
@@ -207,13 +210,13 @@
             weekly = Math.ceil((lastDay + firstDay) / 7);
             console.log("lastDay:" + lastDay);
 
-            for (let i = 0; i < weekly; i++) {
+            for (let row = 0; row < weekly; row++) {
 
                 const tr = document.createElement("tr");
-                for (let j = 1; j <= 7; j++) {
+                for (let col = 0; col < 7; col++) {
 
                     // 如果是第一週且 上個月的日期 在 上個月最後一天內
-                    if (i == 0 && preD <= d) {
+                    if (row == 0 && col < firstDay) {
 
 
                         // 要印上個月的日期
