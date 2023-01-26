@@ -57,17 +57,18 @@
         let weekly;
 
         // new Date 取得的 month 是由 0 開始
-        queryfirstDay(year, month + 1);
-        querylastDay(year, month + 1);
-        querylastDate(year, month + 1);
+        queryfirstDay(year, month);
+        querylastDay(year, month);
+        querylastDate(year, month);
 
 
         // 當月的日期
-        let showDate = 0;
+        let showDate;
         // 上個月的日期
         let d;
+        let preD;
         // 下個月的日期
-        let nextD = 1;
+        let nextD;
 
         // DOM===================
         const title = document.querySelector(".year-month");
@@ -82,20 +83,20 @@
 
         // 月份第一天是星期幾
         function queryfirstDay(y, m) {
-            firstDay = new Date(y, m - 1, 1).getDay();
+            firstDay = new Date(y, m, 1).getDay();
             console.log(firstDay);
 
         }
 
         // 月份最後一天是星期幾
         function querylastDay(y, m) {
-            lastDay = new Date(y, m, 0).getDay();
+            lastDay = new Date(y, m + 1, 0).getDay();
             console.log(lastDay);
 
         }
         // 月份最後一天是幾號
         function querylastDate(y, m) {
-            lastDay = new Date(y, m, 0).getDate();
+            lastDay = new Date(y, m + 1, 0).getDate();
             console.log(lastDay);
 
         }
@@ -104,15 +105,15 @@
 
         // 取得當月的前一個月最後一天日期
         function fillPrevievDate() {
-            
-            let preMonth = month + 1;
+
+            let preMonth = month - 1;
             let preYear = year;
-            preMonth--;
+
             if (preMonth < 0) {
                 preYear--;
                 preMonth = 11;
             }
-            let preLastDate = new Date(preYear, preMonth, 0).getDate();;
+            let preLastDate = new Date(preYear, preMonth + 1, 0).getDate();;
             return preLastDate;
 
 
@@ -125,8 +126,8 @@
                 year--;
                 month = 11;
             }
-            queryfirstDay(year, month + 1);
-            querylastDate(year, month + 1);
+            queryfirstDay(year, month);
+            querylastDate(year, month);
 
             randerData();
         }
@@ -135,22 +136,25 @@
         function nowMonth() {
             year = today.getFullYear();
             month = today.getMonth();
-            queryfirstDay(year, month + 1);
-            querylastDate(year, month + 1);
+            queryfirstDay(year, month);
+            querylastDate(year, month);
 
             randerData();
         }
         // 下個月
 
         function nextMonth() {
+            console.log(year, month);
             month++;
+            console.log(year, month);
             if (month > 11) {
                 year++;
                 month = 0;
             }
-            queryfirstDay(year, month + 1);
-            querylastDate(year, month + 1);
+            console.log(year, month);
 
+            queryfirstDay(year, month);
+            querylastDate(year, month);
             randerData();
 
         }
@@ -167,9 +171,9 @@
 
             // 渲染標題
             title.innerText = `${year}年${month + 1}月`;
-
+            console.log(year, month);
             // 渲染日期
-            renderMonth();
+            renderCalendar();
 
         }
 
@@ -181,45 +185,48 @@
             }
 
         }
-        
+
         // 初始化 tbody
         function initTbody() {
+            // 清除日曆節點
             removeRander(tbody);
+            // 日期變數初始化
+            d = fillPrevievDate();
+            preD = (d - firstDay) + 1;
+            showDate = 1;
+            nextD = 1;
         }
 
 
-        // 渲染日期
-        function renderMonth() {
+        // 渲染行事曆日期
+        function renderCalendar() {
+
             initTbody();
-
-            // 日期變數初始化
-            showDate = 0;
-            nextD = 1;
-            d = fillPrevievDate();
-            d = (d - firstDay) + 1;
-
 
             // 當月有幾週?
             weekly = Math.ceil((lastDay + firstDay) / 7);
-            console.log("當月有幾週:" + weekly);
+            console.log("lastDay:" + lastDay);
 
             for (let i = 0; i < weekly; i++) {
-                console.log("for");
+
                 const tr = document.createElement("tr");
                 for (let j = 1; j <= 7; j++) {
-                    if (i == 0 && showDate < firstDay) {
 
-                        // 要加上上個月的日期
+                    // 如果是第一週且 上個月的日期 在 上個月最後一天內
+                    if (i == 0 && preD <= d) {
+
+
+                        // 要印上個月的日期
 
                         const td = document.createElement("td");
-                        td.innerText = d;
-                        console.log(td);
+                        td.innerText = preD;
+
                         tr.appendChild(td);
-                        d++;
+                        preD++;
 
 
-                    } else if (showDate >= lastDay) {
-                        // 要加上新月份
+                    } else if (showDate > lastDay) {
+                        // 印下個月的日期
                         const td = document.createElement("td");
                         td.innerText = nextD;
                         tr.appendChild(td);
@@ -228,8 +235,8 @@
 
                         // 本月份日期
                         const td = document.createElement("td");
-                        td.innerText = showDate + 1;
-                        console.log(td);
+                        td.innerText = showDate;
+
                         tr.appendChild(td);
                         showDate++;
                     }
