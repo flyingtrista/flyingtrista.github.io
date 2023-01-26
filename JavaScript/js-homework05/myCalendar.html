@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <!-- 載入reset CSS -->
+    <link rel="stylesheet" href="/utility-css/reset.css">
+    <!-- 載入Bootstrap 5.0 CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- CSS撰寫區 -->
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1 class="year-month"></h1>
+    <button type="button" class="btn btn-primary" onclick="previewMonth()">preview month</button>
+    <button type="button" class="btn btn-primary" onclick="nowMonth()">now</button>
+    <button type="button" class="btn btn-primary" onclick="nextMonth()">next month</button>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>日</th>
+                <th>一</th>
+                <th>二</th>
+                <th>三</th>
+                <th>四</th>
+                <th>五</th>
+                <th>六</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 動態渲染日期 -->
+
+        </tbody>
+    </table>
+
+
+
+    <!-- script 撰寫區 -->
+    <script>
+        // 宣告===================
+        // step1. 先取得系統年月及第一天為星期幾
+        const today = new Date();
+        let year = today.getFullYear();
+        let month = today.getMonth();
+        let firstDay;
+        let lastDay;
+        let weekly;
+
+        // new Date 取得的 month 是由 0 開始
+        queryfirstDay(year, month + 1);
+        querylastDay(year, month + 1);
+        querylastDate(year, month + 1);
+
+
+        // 當月的日期
+        let showDate = 0;
+        // 上個月的日期
+        let d;
+        // 下個月的日期
+        let nextD = 1;
+
+        // DOM===================
+        const title = document.querySelector(".year-month");
+
+        const tbody = document.querySelector("tbody");
+
+
+
+
+
+        // function===================
+
+        // 月份第一天是星期幾
+        function queryfirstDay(y, m) {
+            firstDay = new Date(y, m - 1, 1).getDay();
+            console.log(firstDay);
+
+        }
+
+        // 月份最後一天是星期幾
+        function querylastDay(y, m) {
+            lastDay = new Date(y, m, 0).getDay();
+            console.log(lastDay);
+
+        }
+        // 月份最後一天是幾號
+        function querylastDate(y, m) {
+            lastDay = new Date(y, m, 0).getDate();
+            console.log(lastDay);
+
+        }
+
+
+
+        // 取得當月的前一個月最後一天日期
+        function fillPrevievDate() {
+            
+            let preMonth = month + 1;
+            let preYear = year;
+            preMonth--;
+            if (preMonth < 0) {
+                preYear--;
+                preMonth = 11;
+            }
+            let preLastDate = new Date(preYear, preMonth, 0).getDate();;
+            return preLastDate;
+
+
+        }
+
+        // 上個月
+        function previewMonth() {
+            month--;
+            if (month < 0) {
+                year--;
+                month = 11;
+            }
+            queryfirstDay(year, month + 1);
+            querylastDate(year, month + 1);
+
+            randerData();
+        }
+
+        // 當月
+        function nowMonth() {
+            year = today.getFullYear();
+            month = today.getMonth();
+            queryfirstDay(year, month + 1);
+            querylastDate(year, month + 1);
+
+            randerData();
+        }
+        // 下個月
+
+        function nextMonth() {
+            month++;
+            if (month > 11) {
+                year++;
+                month = 0;
+            }
+            queryfirstDay(year, month + 1);
+            querylastDate(year, month + 1);
+
+            randerData();
+
+        }
+        // window onload===================
+        window.onload = function () {
+            // 取得年月資料
+
+            randerData();
+
+        }
+
+        // 渲染資料
+        function randerData() {
+
+            // 渲染標題
+            title.innerText = `${year}年${month + 1}月`;
+
+            // 渲染日期
+            renderMonth();
+
+        }
+
+        // 移除新增的節點內容
+        function removeRander(node) {
+
+            while (node.firstChild) {
+                node.removeChild(node.firstChild);
+            }
+
+        }
+        
+        // 初始化 tbody
+        function initTbody() {
+            removeRander(tbody);
+        }
+
+
+        // 渲染日期
+        function renderMonth() {
+            initTbody();
+
+            // 日期變數初始化
+            showDate = 0;
+            nextD = 1;
+            d = fillPrevievDate();
+            d = (d - firstDay) + 1;
+
+
+            // 當月有幾週?
+            weekly = Math.ceil((lastDay + firstDay) / 7);
+            console.log("當月有幾週:" + weekly);
+
+            for (let i = 0; i < weekly; i++) {
+                console.log("for");
+                const tr = document.createElement("tr");
+                for (let j = 1; j <= 7; j++) {
+                    if (i == 0 && showDate < firstDay) {
+
+                        // 要加上上個月的日期
+
+                        const td = document.createElement("td");
+                        td.innerText = d;
+                        console.log(td);
+                        tr.appendChild(td);
+                        d++;
+
+
+                    } else if (showDate >= lastDay) {
+                        // 要加上新月份
+                        const td = document.createElement("td");
+                        td.innerText = nextD;
+                        tr.appendChild(td);
+                        nextD++;
+                    } else {
+
+                        // 本月份日期
+                        const td = document.createElement("td");
+                        td.innerText = showDate + 1;
+                        console.log(td);
+                        tr.appendChild(td);
+                        showDate++;
+                    }
+
+
+                }
+                tbody.append(tr);
+            }
+
+
+        }
+
+
+    </script>
+    <!-- 載入Bootstrap 5.0 Bundle-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- 載入Font Awesome :Dora的帳號-->
+    <script src="https://kit.fontawesome.com/0015b7851a.js" crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>
