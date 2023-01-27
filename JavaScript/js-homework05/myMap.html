@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <!-- 載入reset CSS -->
+    <link rel="stylesheet" href="/utility-css/reset.css">
+    <!-- 載入Bootstrap 5.0 CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <!-- CSS撰寫區 -->
+    <style>
+        #map {
+            height: 100%;
+        }
+
+        .container>.row {
+            height: 100vh;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- py-5 : padding y軸:5px-->
+        <div class="row py-5">
+            <div class="col-6">
+                <!-- 地圖要根據不同的圖資蓋在畫面上 -->
+                <!-- 圖資來源要找公開免費版本 -->
+                <div id="map"></div>
+
+            </div>
+            <div class="col-6"></div>
+        </div>
+    </div>
+
+
+    <!-- 載入Bootstrap 5.0 Bundle-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- 載入Font Awesome :Dora的帳號-->
+    <script src="https://kit.fontawesome.com/0015b7851a.js" crossorigin="anonymous"></script>
+
+    <!-- script 撰寫區 -->
+    <script>
+        // 變數
+        let map;
+        const areaDataUrl = 'https://raw.githubusercontent.com/ChouJustice/ChouJustice.github.io/main/Map/%E5%8F%B0%E7%81%A3%E8%A1%8C%E6%94%BF%E5%9C%B0%E5%8D%80.json';
+        const waterDataUrl = 'https://raw.githubusercontent.com/ChouJustice/ChouJustice.github.io/main/Map/%E5%8F%B0%E7%81%A3%E8%87%AA%E4%BE%86%E6%B0%B4%E7%94%A8%E9%87%8F.json';
+        const toiletDataUrl = 'https://raw.githubusercontent.com/flyingtrista/FileStorage/main/Map/%E5%85%A8%E5%9C%8B%E5%85%AC%E5%BB%81.json';
+
+        const areaDataRequest = fetch(areaDataUrl);
+        const waterDataRequest = fetch(waterDataUrl);
+        const toiletDataRequest = fetch(toiletDataUrl);
+
+        let markers = L.markerClusterGroup()  //marker叢集
+
+        // 行政區資料
+        let areaData;
+        // 全國廁所資料
+        let toiletData;
+        // 全國廁所資料 加 行政區經緯度資料
+        let toiletAreaData;
+
+        // DOM
+
+        // function
+
+        // step1. 初始化地圖
+        function initMap() {
+            map = L.map('map', {
+                center: [25.03369, 121.564128],
+
+                zoom: 9
+            });
+            // step2. 設定圖層 openstreetmap =>公開讓大家維護的免費圖層
+            let osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+            // L. 是 leafLet 提供的方法
+            let osm = new L.TileLayer(osmUrl, { minZoom: 8, maxZoom: 19 });
+            map.addLayer(osm);
+
+        }
+        // 將廁所及行政區資料都抓回來
+        function setMapItem() {
+
+            // 巢狀寫法 => NG
+            // Promise.all([areaDataRequest, toiletDataRequest])
+            //     .then(res => {
+            //         Promise.all(([areaRes, toiletRes] = res).map(x => x.json()))
+            //             .then(jsonData => {
+            //                 console.log(jsonData);
+            //             })
+            //     })
+
+            Promise.all([areaDataRequest, toiletDataRequest])
+                .then(res => Promise.all(res.map(x => x.json())))
+                .then(jsonData => {
+                    // console.log(jsonData);
+                    [areaData, toiletData] = jsonData;
+
+                    // 廁所資料處理
+                    toiletData = toiletData.records;
+
+
+
+
+                    // 廁所資料合併行政區資料
+                    toiletAreaData = toiletData.map(x => {
+                        let area = areaData.find(y => y.City == x.country && y.District == x.city)
+
+                        return {
+                            // ...是將原來x所有欄位取出
+                            ...x,
+                            countyTown: `${x.country}${x.city}`,
+                            lat: area != undefined ? area.Lat : undefined,
+                            lng: area != undefined ? area.Lng : undefined
+
+                        }
+
+                    }).filter(x => x.lng != undefined).groupBy('countyTown')
+
+
+                    // 抓完並整理資料完成後開始渲染地圖
+                    renderMarker();
+
+                })
+        }
+
+        // 引用 markercluster 叢集
+        function renderMarker() {
+            // 要看 LeafLet 技術文件
+            if (markers) markers.clearLayers()
+
+            Object.keys(toiletAreaData).forEach(key => {
+                let data = toiletAreaData[key];
+                // 圖釘物件
+                let marker = L.marker([data[0].lat, data[0].lng]);
+                console.log(data);
+
+
+                marker.bindPopup(
+                    `<h4>${data[0].country}${data[0].city} ~綠色公廁~ </h4>
+                    <h5>${data[0].grade}  ${data[0].type2}</h5>
+                    <p> ${data[0].type} ${data[0].name}</p>
+                    <h6> ${data[0].address}</h6>
+                `)
+
+                // 叢集去點上每一個marker
+                markers.addLayer(marker);
+            });
+
+            // 把地圖疊上markers叢集
+            map.addLayer(markers);
+
+        }
+
+
+        // window onload
+        window.onload = function () {
+            initMap();
+            setMapItem();
+        }
+
+        Array.prototype.groupBy = function (prop) {
+            return this.reduce(function (groups, item) {
+                const val = item[prop]
+                groups[val] = groups[val] || []
+                groups[val].push(item)
+                return groups
+            }, {})
+        }
+    </script>
+
+
+
+</body>
+
+</html>

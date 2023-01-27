@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>網路請求方式</title>
+</head>
+<body>
+    <script>
+        console.log(this);
+        // XHR
+
+                // step1. 先宣告 XMLHttpRequest 物件
+                // step2. 使用 xhr.open(method,url) 設定存取資料方式
+                //                          method : 表示 HTTP 动词方法，比如GET、POST、PUT、DELETE、HEAD等。
+                // step3. 使用 xhr.onload = function() {
+                //                          ...
+                //                          };         
+                //                                      方法設定 非同步資料回傳後要做的事
+                // step4. 使用 xhr.send() 送出同步與非同步請求
+
+        const url = "https://raw.githubusercontent.com/flyingtrista/FileStorage/main/Map/%E5%85%A8%E5%9C%8B%E5%85%AC%E5%BB%81.json";
+        
+        // 設定 XHR 的 Request
+        let xhr = new XMLHttpRequest()
+        xhr.open('GET',url);
+        xhr.onload = function(){
+            // console.log(this.responseText);
+            // this 表示 離自己最近的物件
+            console.log(JSON.parse((this.responseText)));
+            console.table(JSON.parse((this.responseText)));
+
+        }            
+        xhr.send();
+
+
+        // Fetch  : then語法 => 基於 Promis =>保證這是一個完整的請求
+        // request 及 response 都包含
+        //          head : 放 metadata (基本資訊)
+        //          body : 
+        fetch(url)
+            .then(Response=>{
+                console.log(Response);
+                // response 提供了四種格式: json,text,blob,formData
+                console.log(Response.json());
+                // Prototype 擴充方法
+                // response 回傳 Promise => 物件 (保證 Response 回傳的東西可以變成JSON)
+            })
+
+        // Ajax
+
+        // Axios  : then語法 => 基於 Promis
+
+ 
+    </script>
+</body>
+</html>
