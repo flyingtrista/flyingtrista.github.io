@@ -43,7 +43,39 @@
                 <div id="map"></div>
 
             </div>
-            <div class="col-6"></div>
+            <div class="col-6">
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="county">縣市</label>
+                        <select name="" id="county" class="form-control">
+                            <!---option-->
+
+
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <h2 class="w-100 text-center">
+                        <strong></strong>
+                        綠色公廁數量
+                    </h2>
+                    <div class="col-12">
+                        <table class="table table-bordered table-striped text-center">
+                            <thead>
+                                <tr>
+                                    <th>縣市</th>
+                                    <th>數量</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 
@@ -60,6 +92,7 @@
     <script>
         // 變數
         let map;
+        let option;
         const areaDataUrl = 'https://raw.githubusercontent.com/ChouJustice/ChouJustice.github.io/main/Map/%E5%8F%B0%E7%81%A3%E8%A1%8C%E6%94%BF%E5%9C%B0%E5%8D%80.json';
         const waterDataUrl = 'https://raw.githubusercontent.com/ChouJustice/ChouJustice.github.io/main/Map/%E5%8F%B0%E7%81%A3%E8%87%AA%E4%BE%86%E6%B0%B4%E7%94%A8%E9%87%8F.json';
         const toiletDataUrl = 'https://raw.githubusercontent.com/flyingtrista/FileStorage/main/Map/%E5%85%A8%E5%9C%8B%E5%85%AC%E5%BB%81.json';
@@ -78,6 +111,10 @@
         let toiletAreaData;
 
         // DOM
+        const countySelect = document.querySelector('#county');
+        const countyText = document.querySelector('strong');
+        const tbody = document.querySelector('tbody');
+
 
         // function
 
@@ -137,6 +174,7 @@
 
                     // 抓完並整理資料完成後開始渲染地圖
                     renderMarker();
+                    initCountySelect();
 
                 })
         }
@@ -150,15 +188,34 @@
                 let data = toiletAreaData[key];
                 // 圖釘物件
                 let marker = L.marker([data[0].lat, data[0].lng]);
-                console.log(data);
+                // console.log(data);
 
 
                 marker.bindPopup(
-                    `<h4>${data[0].country}${data[0].city} ~綠色公廁~ </h4>
-                    <h5>${data[0].grade}  ${data[0].type2}</h5>
-                    <p> ${data[0].type} ${data[0].name}</p>
-                    <h6> ${data[0].address}</h6>
+                    `<h4> ${data[0].country}${data[0].city}  ~綠色公廁~ </h4>
+                    <H6> ${data[0].type} - ${data[0].grade}  ${data[0].type2}</h6>
+                    <h6>  ${data[0].name}</h6>
+                    <p> 地址 : ${data[0].address}<p>
                 `)
+
+                marker.addEventListener("click", function () {
+
+                    countyText.innerText = data[0].country;
+                    tbody.innerHTML = '';
+
+
+                    let tolietTr = document.createElement('tr');
+                    let td1 = document.createElement('td');
+                    let td2 = document.createElement('td');
+                    td1.innerText = data[0].country;
+                    td2.innerText = 10;
+                    tolietTr.appendChild(td1);
+                    tolietTr.appendChild(td2);
+                    tbody.append(tolietTr);
+
+
+
+                })
 
                 // 叢集去點上每一個marker
                 markers.addLayer(marker);
@@ -169,6 +226,57 @@
 
         }
 
+        function initCountySelect() {
+
+            ['請選擇', ...new Set(areaData.map(x => x.City))].forEach(city => {
+                option = document.createElement('option');
+                option.innerText = city;
+                option.value = city == '請選擇' ? '' : city;
+
+                countySelect.append(option);
+
+
+
+                let tolietTr = document.createElement('tr');
+                let td1 = document.createElement('td');
+                let td2 = document.createElement('td');
+                td1.innerText = city;
+                td2.innerText = 10;
+                tolietTr.appendChild(td1);
+                tolietTr.appendChild(td2);
+                tbody.append(tolietTr);
+
+
+
+            })
+            countySelect.onchange = function () {
+                if (this.value != '') {
+
+                    // 要確該縣市經緯度
+                    let county = areaData.find(x => x.City == this.value);
+                    // 改變地圖的焦點
+                    map.setView([county.Lat, county.Lng], 12);
+                    countyText.innerText = county.City;
+
+                    tbody.innerHTML = '';
+
+                    let tolietTr = document.createElement('tr');
+                    let td1 = document.createElement('td');
+                    let td2 = document.createElement('td');
+                    td1.innerText = county.City;
+                    td2.innerText = 10;
+                    tolietTr.appendChild(td1);
+                    tolietTr.appendChild(td2);
+                    tbody.append(tolietTr);
+                } else {
+                    tbody.innerHTML = '';
+                    initCountySelect();
+                   
+                   
+
+                }
+            }
+        }
 
         // window onload
         window.onload = function () {
