@@ -38,12 +38,6 @@
         <!-- py-5 : padding y軸:5px-->
         <div class="row py-5">
             <div class="col-6">
-                <!-- 地圖要根據不同的圖資蓋在畫面上 -->
-                <!-- 圖資來源要找公開免費版本 -->
-                <div id="map"></div>
-
-            </div>
-            <div class="col-6">
                 <div class="row">
                     <div class="form-group col-6">
                         <label for="county">縣市</label>
@@ -57,16 +51,12 @@
                 <div class="row">
                     <h2 class="w-100 text-center">
                         <strong></strong>
-                        綠色公廁數量
+                        綠色公廁
                     </h2>
                     <div class="col-12">
                         <table class="table table-bordered table-striped text-center">
                             <thead>
-                                <tr>
-                                    <th>縣市</th>
-                                    <th>數量</th>
 
-                                </tr>
                             </thead>
                             <tbody>
 
@@ -76,6 +66,13 @@
                 </div>
 
             </div>
+            <div class="col-6">
+                <!-- 地圖要根據不同的圖資蓋在畫面上 -->
+                <!-- 圖資來源要找公開免費版本 -->
+                <div id="map"></div>
+
+            </div>
+
         </div>
     </div>
 
@@ -113,6 +110,8 @@
         // DOM
         const countySelect = document.querySelector('#county');
         const countyText = document.querySelector('strong');
+        const thead = document.querySelector('thead');
+
         const tbody = document.querySelector('tbody');
 
 
@@ -203,15 +202,8 @@
                     countyText.innerText = data[0].country;
                     tbody.innerHTML = '';
 
+                    createTRTD(data[0])
 
-                    let tolietTr = document.createElement('tr');
-                    let td1 = document.createElement('td');
-                    let td2 = document.createElement('td');
-                    td1.innerText = data[0].country;
-                    td2.innerText = 10;
-                    tolietTr.appendChild(td1);
-                    tolietTr.appendChild(td2);
-                    tbody.append(tolietTr);
 
 
 
@@ -233,18 +225,13 @@
                 option.innerText = city;
                 option.value = city == '請選擇' ? '' : city;
 
+
                 countySelect.append(option);
 
 
 
-                let tolietTr = document.createElement('tr');
-                let td1 = document.createElement('td');
-                let td2 = document.createElement('td');
-                td1.innerText = city;
-                td2.innerText = 10;
-                tolietTr.appendChild(td1);
-                tolietTr.appendChild(td2);
-                tbody.append(tolietTr);
+
+
 
 
 
@@ -258,24 +245,52 @@
                     map.setView([county.Lat, county.Lng], 12);
                     countyText.innerText = county.City;
 
+
                     tbody.innerHTML = '';
 
-                    let tolietTr = document.createElement('tr');
-                    let td1 = document.createElement('td');
-                    let td2 = document.createElement('td');
-                    td1.innerText = county.City;
-                    td2.innerText = 10;
-                    tolietTr.appendChild(td1);
-                    tolietTr.appendChild(td2);
-                    tbody.append(tolietTr);
+
+
+
+
+
+
                 } else {
                     tbody.innerHTML = '';
                     initCountySelect();
-                   
-                   
+
+
 
                 }
             }
+        }
+
+        function createTRTD(county) {
+           
+
+
+            let tolietTr1 = document.createElement('tr');
+            let th1 = document.createElement('td');
+            let th2 = document.createElement('td');
+            let th3 = document.createElement('td');
+            let tolietTr2 = document.createElement('tr');
+            let td1 = document.createElement('td');
+            let td2 = document.createElement('td');
+            let td3 = document.createElement('td');
+            th1.innerText = "類型";
+            th2.innerText = "名稱";
+            th3.innerText = "地址";
+            td1.innerText = county.type;
+            td2.innerText = county.grade + county.type2 + "---" + county.name;
+            td3.innerText = county.address;
+            tolietTr1.appendChild(th1);
+            tolietTr1.appendChild(th2);
+            tolietTr1.appendChild(th3);
+            tolietTr2.appendChild(td1);
+            tolietTr2.appendChild(td2);
+            tolietTr2.appendChild(td3);
+            tbody.append(tolietTr1);
+            tbody.append(tolietTr2);
+
         }
 
         // window onload
