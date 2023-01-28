@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <!-- 載入reset CSS -->
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/flyingtrista/snippet/main/CSS/reset.css">
+    <!-- 載入Bootstrap 5.0 CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <!-- CSS撰寫區 -->
+    <style>
+        i {
+            font-size: 48px;
+
+
+        }
+
+        [box-id] {
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            transition: 0.3s;
+        }
+
+        [box-id].active {
+            border: solid 5px red;
+            box-shadow: 0 0 20px red;
+            transition: 0s;
+
+        }
+
+        #msg {
+            font-size: 36px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+
+        <div class="row">
+            <div class="col-1" box-id="1"></div>
+            <div class="col-1" box-id="2"></div>
+            <div class="col-1" box-id="3"></div>
+            <div class="col-1" box-id="4"></div>
+            <div class="col-1" box-id="5"></div>
+            <div class="col-1" box-id="6"></div>
+            <div class="col-1" box-id="7"></div>
+            <div class="col-1" box-id="8"></div>
+            <div class="col-1" box-id="9"></div>
+            <div class="col-1" box-id="10"></div>
+            <div class="col-1" box-id="11"></div>
+            <div class="col-1" box-id="12"></div>
+
+        </div>
+        <div class="row">
+            <div class="col-1" box-id="32"></div>
+            <div class="col-10"></div>
+            <div class="col-1" box-id="13"></div>
+
+
+        </div>
+        <div class="row">
+            <div class="col-1" box-id="31"></div>
+            <div class="col-10"></div>
+            <div class="col-1" box-id="14"></div>
+        </div>
+        <div class="row">
+            <div class="col-1" box-id="30"></div>
+            <div class="col-10"></div>
+            <div class="col-1" box-id="15"></div>
+        </div>
+        <div class="row">
+            <div class="col-1" box-id="29"></div>
+            <div class="col-10"></div>
+            <div class="col-1" box-id="16"></div>
+        </div>
+        <div class="row">
+            <div class="col-1" box-id="28"></div>
+            <div class="col-1" box-id="27"></div>
+            <div class="col-1" box-id="26"></div>
+            <div class="col-1" box-id="25"></div>
+            <div class="col-1" box-id="24"></div>
+            <div class="col-1" box-id="23"></div>
+            <div class="col-1" box-id="22"></div>
+            <div class="col-1" box-id="21"></div>
+            <div class="col-1" box-id="20"></div>
+            <div class="col-1" box-id="19"></div>
+            <div class="col-1" box-id="18"></div>
+            <div class="col-1" box-id="17"></div>
+        </div>
+        <!-- btuuon -->
+        <div class="row">
+            <div class="col-12">
+                <button class="btn btn-primary w-100">start</button>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- fontawesome js -->
+    <script src="https://kit.fontawesome.com/0015b7851a.js" crossorigin="anonymous"></script>
+
+    <!-- 載入Bootstrap 5.0 Bundle-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+    <!-- script 撰寫區 -->
+    <script>
+        // 宣告
+
+        // step1. 切版資料準備
+        let brickData = [
+            {
+                id: '1',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return 'IG'
+                }
+            }, {
+                id: '2',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return 'FB'
+                }
+            },
+            {
+                id: '3',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return 'LINE'
+                }
+            },
+            {
+                id: '4',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return 'IG'
+                }
+            }, {
+                id: '5',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return 'FB'
+                }
+            },
+            {
+                id: '6',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return 'LINE'
+                }
+            },
+            {
+                id: '7',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return 'IG'
+                }
+            }, {
+                id: '8',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return 'FB'
+                }
+            },
+            {
+                id: '9',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return 'LINE'
+                }
+            },
+            {
+                id: '10',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return 'IG'
+                }
+            }, {
+                id: '11',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return 'FB'
+                }
+            },
+            {
+                id: '12',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return 'LINE'
+                }
+            },
+            {
+                id: '13',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return 'IG'
+                }
+            }, {
+                id: '14',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return 'FB'
+                }
+            },
+            {
+                id: '15',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return 'LINE'
+                }
+            },
+            {
+                id: '16',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return 'IG'
+                }
+            }, {
+                id: '17',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return 'FB'
+                }
+            },
+            {
+                id: '18',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return 'LINE'
+                }
+            }, {
+                id: '19',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return 'IG'
+                }
+            }, {
+                id: '20',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return 'FB'
+                }
+            },
+            {
+                id: '21',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return 'LINE'
+                }
+            },
+            {
+                id: '22',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return 'IG'
+                }
+            }, {
+                id: '23',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return 'FB'
+                }
+            },
+            {
+                id: '24',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return 'LINE'
+                }
+            },
+            {
+                id: '25',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return 'IG'
+                }
+            }, {
+                id: '26',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return 'FB'
+                }
+            },
+            {
+                id: '27',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return 'LINE'
+                }
+            },
+            {
+                id: '28',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return 'IG'
+                }
+            }, {
+                id: '29',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return 'FB'
+                }
+            },
+            {
+                id: '30',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return 'LINE'
+                }
+            },
+            {
+                id: '31',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return 'IG'
+                }
+            }, {
+                id: '32',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return 'FB'
+                }
+            }
+        ]
+
+        let steps = 0;
+        let allsteps = 0;
+        let current = 0;
+        let speed;
+        let bricks
+
+        // DOM
+
+        const startBtn = document.querySelector('button');
+        const msgBox = document.querySelector('#msg');
+        // function
+        function renderBrick() {
+            // 方塊的dom元素
+            bricks = document.querySelectorAll('[box-id]');
+            bricks = Array.from(bricks).sort((a, b) => {
+                return a.getAttributeNode('box-id').value - b.getAttributeNode('box-id').value
+            })
+
+
+
+
+            bricks.forEach(x => {
+                let id = x.getAttributeNode('box-id').value;
+                let data = brickData.find(x => x.id == id);
+                let icon = document.createElement('i');
+                icon.setAttribute('class', data.icon);
+                icon.style.color = data.color;
+                x.appendChild(icon);
+
+
+
+            })
+
+
+        }
+
+        function go() {
+            console.log(" go()");
+            speed = 50;
+            let random = Math.floor(Math.random() * brickData.length) + 1
+            //steps = random; v1
+            console.log(random);
+            console.log(bricks);
+            steps = random + (3 * bricks.length) // v2 多跑幾圈
+            allSteps = steps;
+            turnAround();
+
+        }
+
+        function turnAround() {
+
+            bricks[current].classList.remove('active');
+            current++;
+
+            if (current >= bricks.length) current = 0
+
+            bricks[current].classList.add('active');
+            steps--;
+
+            if (steps > 0) {
+
+                setTimeout(turnAround, speed);
+
+
+                if (steps < Math.floor((allSteps / 3))) {
+                    speed += 7;
+
+                }
+            } else {
+
+                //走完了
+                msgBox.innerText = brickData[current].target();
+
+            }
+
+
+        }
+
+        // window onload
+        window.onload = function () {
+
+            renderBrick();
+            console.log("renderBrick()");
+            startBtn.onclick = function () {
+                console.log("startBtn()");
+                go();
+
+            }
+
+        }
+    </script>
+</body>
+
+</html>
