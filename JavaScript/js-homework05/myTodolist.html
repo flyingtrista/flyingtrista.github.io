@@ -220,14 +220,14 @@
 
             // 新增資料
             let inputTask = myInputData.value;
-            let taskList = getLocolhost();
+            let taskList = getLocalStorage();
             let taskObj =
             {
                 status: 0,
                 item: inputTask
             }
             taskList.push(taskObj);
-            setLocolStorage(taskList)
+            setLocalStorage(taskList)
             // localStorage.setItem(key, JSON.stringify(taskList));
             renderData();
             myInputData.value = "";
@@ -237,13 +237,13 @@
 
 
             let num = e.target.getAttribute("data-num");
-            let taskList = getLocolhost();
+            let taskList = getLocalStorage();
 
             console.log(taskList[num].status == 0);
             if (taskList[num].status == 0) {
                 taskList[num].status = 1;
 
-                setLocolStorage(taskList);
+                setLocalStorage(taskList);
                 // localStorage.setItem(key, JSON.stringify(taskList));
                 renderData();
                 console.log(taskList[num].status == 0);
@@ -251,7 +251,7 @@
 
             } else {
                 taskList[num].status = 0;
-                setLocolStorage(taskList);
+                setLocalStorage(taskList);
                 // localStorage.setItem(key, JSON.stringify(taskList));
                 renderData();
                 console.log(taskList[num].status == 0);
@@ -295,10 +295,10 @@
             const edit_editbtn = document.querySelector(`#edit${num}`);
             const edit_savebtn = document.querySelector(`#save${num}`);
             let inputData = edit_Text.value;
-            let taskList = getLocolhost();
+            let taskList = getLocalStorage();
             taskList[num].item = inputData;
 
-            setLocolStorage(taskList);
+            setLocalStorage(taskList);taskList
             // localStorage.setItem(key, JSON.stringify(taskList));
 
             renderData();
@@ -310,23 +310,23 @@
             let num = e.target.getAttribute("data-num");
             console.log("num:" + num);
             // 刪除資料
-            let taskList = getLocolhost();
+            let taskList = getLocalStorage();
             taskList.splice(num, 1);
 
-            setLocolStorage(taskList);
+            setLocalStorage(taskList);
             // localStorage.setItem(key, JSON.stringify(taskList));
             renderData();
 
         }
 
         // 讀取localstorage
-        function getLocolhost() {
+        function getLocalStorage() {
             return  JSON.parse(localStorage.getItem(key));
 
         }
 
         // 寫localStorage
-        function setLocolStorage(taskList) {
+        function setLocalStorage(taskList) {
             localStorage.setItem(key, JSON.stringify(taskList));
 
         }
@@ -367,7 +367,7 @@
             }
 
             console.log(taskList);
-            setLocolStorage(taskList);
+            setLocalStorage(taskList);
             // localStorage.setItem(key, JSON.stringify(taskList));
 
             renderData();
