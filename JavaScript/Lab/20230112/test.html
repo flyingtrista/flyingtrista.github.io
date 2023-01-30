@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        let arrayList = [1, 2, 333, 44, 55666, 7];
+
+        // map()方法: 是對每一個陣列元素作運算，並將回傳結果傳至新陣列
+        let arrayList_1 = arrayList.map(p => p * 2);
+        console.log(arrayList);
+        console.log(arrayList_1);
+
+        // reduce()方法: 累加器
+
+        let arrayList_2 = arrayList.reduce((total, current) => {
+            // total 初始值是 0 , 要設在reduce的 第 2 個參數
+            // 規則設定在return: 初始值 加上 迭代的值 再指派給 total
+            console.log(`${total} + ${current} * 1.05 = ${total + current * 1.05}`);
+           
+            return total + current * 1.05;
+            
+        },0);
+        console.log(arrayList_2);
+
+
+    </script>
+</body>
+
+</html>

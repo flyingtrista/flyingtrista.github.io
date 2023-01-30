@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function A(result){
+            return new Promise(function(resolve,reject){
+                console.log("開始");
+
+                let isDone = result;
+
+                if(isDone){
+                    return resolve('A成功');
+                }else{
+                    return reject('A 失敗');
+                }
+            })
+        }
+
+ 
+
+        function B(result){
+            return new Promise(function(resolve,reject){
+                console.log("Start....");
+                let isDone = result;
+
+                if(isDone){
+                    return resolve("AAA 成功");
+                }else{
+                    return reject("BBB 失敗");
+                }
+            })
+        }
+            
+        A(false)
+            .then(res=>{
+                console.log(res);
+
+            })
+            .catch(ex=>{
+                console.warn(ex);
+            })
+        B(true)
+            .then(res=>{
+                console.log(res);
+
+            })
+            .catch(ex=>{
+                console.warn(ex);
+            })
+    </script>
+</body>
+</html>

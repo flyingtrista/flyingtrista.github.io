@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <H1> fetch GET</H1>
+    <div id="msg"></div>
+
+    <script>
+
+        //變數區
+
+        let url = "https://localhost:5001/api/Json";
+        let msg = "";
+        //DOM
+
+        //function
+        function fetchRequestGet() {
+            const request = new Request(url);
+            fetch(request)
+                .then(response => response.text())
+                .then(text => {
+                    console.log(msg)
+                    msg.innerText = text;
+                })
+                .catch(ex => {
+                    msg.innerText = ex;
+                });
+        }
+
+        //window onload
+        window.onload = function () {
+            msg = document.getElementById("msg");
+
+            fetchRequestGet();
+        }
+
+    </script>
+</body>
+
+</html>

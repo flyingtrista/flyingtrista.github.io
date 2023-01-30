@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h1>Fetch API</h1>
+    <h2>以fetch抓取JSON資料, 並示範帶url參數與不帶參數兩種</h2>
+    <input type="text" id="urlIpad" size="120">
+    <button id="btn1">fetch</button>
+    <button id="btn2">fetch with url parameter</button>
+    <div id="msg"></div>
+</head>
+
+<body>
+
+
+    <script>
+
+        // 變數區
+
+        let urlIpad = "https://raw.githubusercontent.com/apprunner/FileStorage/master/iPad_DataFixed.json";
+
+
+        // DOM
+    </script>
+
+    <script type="module">
+        import { $g } from "/JavaScript/Lab/utility/helpers.js";
+        // window onload
+        window.onload = function () {
+
+            $g("input").value = urlIpad;
+            $g("#btn1").addEventListener("click", fetchResource);
+
+            $g("#btn2").addEventListener("click", fetchJson.bind(event, $g("input").value));
+        }
+
+        function fetchResource() {
+
+            // 從全域變數
+            urlIpad = $g('input').value;
+
+            console.log(urlIpad);
+            fetch(urliPad)
+                .then(response.text())
+                .then(result => {
+                    $g("#msg").innerHTML = result;
+                })
+                .catch(ex => {
+
+                })
+                .finally(() => {
+
+                })
+        }
+
+
+        function fetchJson(uri) {
+           
+
+            fetch(uri)
+                .then(response => response.text())
+                .then(result => {
+                    $g("#msg").innerHTML = result;
+                })
+                .catch(ex => {
+
+                })
+                .finally(() => {
+
+                });
+
+
+        }
+
+
+    </script>
+    <script src="></script>
+</body>
+
+</html>
