@@ -47,7 +47,7 @@
                     onclick="addTask()">新增</button>
             </div>
         </div>
-        <div class="render"></div>
+        
         <div class="wrap">
             <!-- <div class="input-group mb-3" id="my-taskList">
 
@@ -89,7 +89,7 @@
     <!-- script 撰寫區 -->
     <script>
         // 變數
-
+        const key = "todoList";
         // DOM
         const myWrap = document.querySelector(".wrap");
         const myTaskList = document.querySelector("#my-taskList");
@@ -110,7 +110,8 @@
 
         function renderData() {
             removeRander(myWrap);
-            let data = JSON.parse(localStorage.getItem("todoList"));
+            
+            let data = JSON.parse(localStorage.getItem(key));
             console.log(data);
 
             data.forEach((taskName, index) => {
@@ -219,14 +220,15 @@
 
             // 新增資料
             let inputTask = myInputData.value;
-            let taskList = JSON.parse(localStorage.getItem("todoList"));
+            let taskList = getLocolhost();
             let taskObj =
             {
                 status: 0,
                 item: inputTask
             }
             taskList.push(taskObj);
-            localStorage.setItem("todoList", JSON.stringify(taskList));
+            setLocolStorage(taskList)
+            // localStorage.setItem(key, JSON.stringify(taskList));
             renderData();
             myInputData.value = "";
 
@@ -235,19 +237,22 @@
 
 
             let num = e.target.getAttribute("data-num");
-            let taskList = JSON.parse(localStorage.getItem("todoList"));
+            let taskList = getLocolhost();
 
             console.log(taskList[num].status == 0);
             if (taskList[num].status == 0) {
                 taskList[num].status = 1;
-                localStorage.setItem("todoList", JSON.stringify(taskList));
+
+                setLocolStorage(taskList);
+                // localStorage.setItem(key, JSON.stringify(taskList));
                 renderData();
                 console.log(taskList[num].status == 0);
                 myCheckbox.setAttribute("checked", "true");
 
             } else {
                 taskList[num].status = 0;
-                localStorage.setItem("todoList", JSON.stringify(taskList));
+                setLocolStorage(taskList);
+                // localStorage.setItem(key, JSON.stringify(taskList));
                 renderData();
                 console.log(taskList[num].status == 0);
                 myCheckbox.setAttribute("checked", "false");
@@ -290,9 +295,11 @@
             const edit_editbtn = document.querySelector(`#edit${num}`);
             const edit_savebtn = document.querySelector(`#save${num}`);
             let inputData = edit_Text.value;
-            let taskList = JSON.parse(localStorage.getItem("todoList"));
+            let taskList = getLocolhost();
             taskList[num].item = inputData;
-            localStorage.setItem("todoList", JSON.stringify(taskList));
+
+            setLocolStorage(taskList);
+            // localStorage.setItem(key, JSON.stringify(taskList));
 
             renderData();
 
@@ -303,24 +310,37 @@
             let num = e.target.getAttribute("data-num");
             console.log("num:" + num);
             // 刪除資料
-            let taskList = JSON.parse(localStorage.getItem("todoList"));
+            let taskList = getLocolhost();
             taskList.splice(num, 1);
-            localStorage.setItem("todoList", JSON.stringify(taskList));
+
+            setLocolStorage(taskList);
+            // localStorage.setItem(key, JSON.stringify(taskList));
             renderData();
 
         }
-        function gotoDel() {
+
+        // 讀取localstorage
+        function getLocolhost() {
+            return  JSON.parse(localStorage.getItem(key));
 
         }
+
+        // 寫localStorage
+        function setLocolStorage(taskList) {
+            localStorage.setItem(key, JSON.stringify(taskList));
+
+        }
+
+
+
 
         // window onload
         window.onload = function () {
             // 先撈出localstorage的資料,渲染到頁面上
-           
-            let taskList =[];
-            
-            if (localStorage.getItem("todoList") == null) 
-            {
+
+            let taskList = [];
+
+            if (localStorage.getItem(key) == null) {
                 let taskObj1 =
                 {
                     status: 1,
@@ -340,29 +360,17 @@
                 taskList.push(taskObj2);
                 taskList.push(taskObj3);
 
-            
-                
-            }else{
-                taskList= JSON.parse(localStorage.getItem("todoList"));
+
+
+            } else {
+                taskList = JSON.parse(localStorage.getItem(key));
             }
 
             console.log(taskList);
-            localStorage.setItem("todoList", JSON.stringify(taskList));
+            setLocolStorage(taskList);
+            // localStorage.setItem(key, JSON.stringify(taskList));
 
             renderData();
-
-
-            // <div class="input-group mb-3" id="my-taskList">
-            // <div class="input-group-text">
-            //         <input class="form-check-input mt-0" type="checkbox" value=""
-            //             aria-label="Checkbox for following text input">
-            //     </div>
-            //     <input type="text" class="form-control" aria-label="Text input with checkbox">
-            //     <button class="btn btn-outline-secondary" type="button" onclick="editTask()">編輯</button>
-            //     <button class="btn btn-outline-secondary" type="button" onclick="saveTask()">保存</button>
-            //     <button class="btn btn-outline-secondary" type="button" onclick="delTask()">刪除</button>
-
-
 
 
         }
