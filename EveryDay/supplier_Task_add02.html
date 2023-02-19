@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>新增行程</title>
+    <title>行程列表</title>
 
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
@@ -23,6 +23,14 @@
     <!-- owl 幻燈片 -->
     <link rel="stylesheet" href="owl-carousel/owl.carousel.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="/EveryDay/ckeditor_4.20.2_full/ckeditor/ckeditor.js"></script>
+    <script>
+        function processData() {
+            // getting data
+            var data = CKEDITOR.instances.content.getData()
+            alert(data);
+        }
+    </script>
 </head>
 
 
@@ -30,47 +38,43 @@
 
 
     <section class="section-bg">
-        <div class="container">
-            <div class="row">
+        <div>
+            <div class="container">
+                <div class="container mb-5">
+                    <h2>行程說明</h2>
+                    <h3>行程簡述</h3>
+                    <p>建議輸入300~500字以內</p>
+                    <div class="row">
+                        <form name='form' action='#' method='post'>
+                            <textarea name="content" id="content" rows="10" cols="80"></textarea>
+                            <script>
+                                CKEDITOR.replace('content', {});
+                            </script>
+                            <input type='button' value='送出' onclick='processData()'>
+                        </form>
 
-                <h1>行程列表</h1>
-                <div>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-default">行程</span>
-                        <input type="text" class="form-control" aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-default">
                     </div>
-                </div>
-                <div>
-                    <table class="table table-striped">
-                        <tr>
-                            <th>圖片</th>
-                            <th>行程名稱</th>
-                            <th>套餐選項</th>
-                            <th>行程代碼</th>
-                            <th>類別</th>
-                            <th>行程狀態</th>
-                            <th>通路</th>
-                        </tr>
-                        <tr>
-                            <td><img src="" alt=""></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-
-                    </table>
+                    <hr>
+                    <h2>使用對象</h2>
+                    <div class="row mb-3">
+                        <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">客製化使用對象說明</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="exampleFormControlInput1" value="">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">新增</button>
                 </div>
 
-
+                <div class="container mb-5 justify-content-center" >
+                    <button type="submit" class="btn btn-primary">儲存</button>
+                </div>
             </div>
-
+           
+            
         </div>
-
-
+        <div>
+            
+        </div>
     </section>
 
 
