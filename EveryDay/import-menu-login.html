@@ -1,0 +1,180 @@
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    hamburger.addEventListener('click', function () {
+        hamburger.classList.toggle('active');
+    });
+</script>
+<input type="checkbox" id="menu-checkbox">
+<input type="checkbox" id="search-checkbox">
+
+<header class="navbar navbar-expand-lg navbar-light fixed-top py-0">
+    <div class="container-md">
+        <a class="logo" href="/">
+            <h1>kkday</h1>
+        </a>
+
+        <div class="input-group">
+            <input type="text" class="form-control kk-form-control" placeholder="輸入目的地、景點、體驗行程或活動名稱..."
+                aria-label="輸入目的地、景點、體驗行程或活動名稱..." aria-describedby="search">
+            <button class="btn btn-search" type="button" id="search"><i
+                    class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="icon-item">
+            <label class="icon-search" for="search-checkbox">
+                <span><i class="fa-solid fa-magnifying-glass"></i></span>
+            </label>
+            <label class="hamburger" for="menu-checkbox">
+                <span><i class="fa-solid fa-bars"></i></span>
+            </label>
+        </div>
+
+        <nav class="collapse navbar-collapse justify-content-end  align-items-center" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item kk-dropdown">
+                    <a class="nav-link" href="">
+                        <img class="icon-shop" src="img/shop.png" alt="">
+                    </a>
+                    <div class="kk-dropdown-menu border-0 shadow">
+                        <div class="h-item container">
+                            <div class="row">
+                                <div class="col-12 cart-item">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <img class="w-100" src="img/demo1.png" alt="">
+                                        </div>
+                                        <div class="col-7">
+                                            <div class="item">
+                                                <a href="">
+                                                    【日本旅遊】星優惠北海道5日|破冰船.阿寒湖雪體驗.層雲峽冰爆祭.三溫泉|中華航空・星宇航空
+                                                </a>
+                                                <span class="introduce">
+                                                    兩人一室
+                                                </span>
+                                                <span class="time">2023-03-19</span>
+                                                <span class="remark">成人 x 2, 兒童 x 1, 嬰兒 x 1</span>
+                                                <span class="money">TWD 500</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <i class="fa-regular fa-trash-can"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 cart-item">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <img class="w-100" src="img/demo1.png" alt="">
+                                        </div>
+                                        <div class="col-7">
+                                            <div class="item">
+                                                <a href="">
+                                                    【日本旅遊】星優惠北海道5日|破冰船.阿寒湖雪體驗.層雲峽冰爆祭.三溫泉|中華航空・星宇航空
+                                                </a>
+                                                <span class="introduce">
+                                                    兩人一室
+                                                </span>
+                                                <span class="time">2023-03-19</span>
+                                                <span class="remark">成人 x 2, 兒童 x 1, 嬰兒 x 1</span>
+                                                <span class="money">TWD 500</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <i class="fa-regular fa-trash-can"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="b-item">
+                            <span>共 0 件商品</span>
+                            <a href="" class="btn kk-btn">查看購物車</a>
+
+                        </div>
+
+                    </div>
+                </li>
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link user-img-link" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <img class="user-img" src="img/car.png" alt="">
+                    </a>
+                    <ul class="dropdown-menu border-0 shadow dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">
+                                <div class="d-flex justify-content-between align-items-center text-secondary">
+                                    <span class="me-3"><img class="user-img " src="img/car.png" alt=""> Test</span> <i
+                                        class="fa-solid fa-gear"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-regular fa-gem"></i> 我的會籍禮遇</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-ticket"></i> KKday 折扣劵</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-regular fa-rectangle-list"></i> 訂單管理</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-regular fa-message"></i> 訊息管理</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-regular fa-heart"></i> 我的收藏</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item text-center" href="#">登出</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<div class="side-menu">
+    <div class="search-item">
+        <h3>搜尋</h3>
+        <label for="search-checkbox"><i class="fa-solid fa-angle-left"></i> </label>
+        <div class="input-group">
+            <input type="text" class="form-control kk-form-control" placeholder="輸入目的地、景點、體驗行程或活動名稱..."
+                aria-label="輸入目的地、景點、體驗行程或活動名稱..." aria-describedby="search">
+            <button class="btn btn-search" type="button" id="search"><i
+                    class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+    </div>
+</div>
+<label for="menu-checkbox" class="side-menu">
+    <ul class="menu-item">
+        <li><a href="">登入/註冊</a></li>
+        <li class="nav-item dropdown">
+            <a class="nav-link user-img-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <img class="user-img" src="img/car.png" alt="">
+            </a>
+            <ul class="dropdown-menu border-0 shadow dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">
+                        <div class="d-flex justify-content-between align-items-center text-secondary">
+                            <span class="me-3"><img class="user-img " src="img/car.png" alt=""> Test</span> <i
+                                class="fa-solid fa-gear"></i>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-gem"></i> 我的會籍禮遇</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-ticket"></i> KKday 折扣劵</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-rectangle-list"></i> 訂單管理</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-message"></i> 訊息管理</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-heart"></i> 我的收藏</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item text-center" href="#">登出</a></li>
+            </ul>
+        </li>
+    </ul>
+</label>

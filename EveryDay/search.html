@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KKday - 當地旅遊,在地旅行,旅遊體驗 - KKday</title>
+
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="訂完機票和飯店，當地旅遊體驗就交給KKday。自己的行程自己排 - 海外潛水、戶外攀岩、料理課程、私房景點、 一日遊、票券、包車旅遊、機場接駁，各式世界當地旅遊行程任您挑選">
+
+    <meta property="og:title" content="KKday - 當地旅遊,在地旅行,旅遊體驗 - KKday">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url"
+        content="訂完機票和飯店，當地旅遊體驗就交給KKday。自己的行程自己排 - 海外潛水、戶外攀岩、料理課程、私房景點、 一日遊、票券、包車旅遊、機場接駁，各式世界當地旅遊行程任您挑選">
+    <meta property="og:image" content="image/og-img.png">
+
+    <!-- font-awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- bootstrap 5.1.3 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- owl 幻燈片 -->
+    <link rel="stylesheet" href="owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+    <!-- 選單 -->
+    <div id="import-menu"></div>
+
+    <section class="section-bg">
+        <div class="container">
+            <div class="container mb-5">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="accordion" id="accordionPanelsStayOpenExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseOne">
+                                        景點門票
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                                    aria-labelledby="panelsStayOpen-headingOne">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                全部
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseTwo">
+                                        活動 & 展覽
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="panelsStayOpen-headingTwo">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                全部
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseThree">
+                                        戶外活動
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="panelsStayOpen-headingThree">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                全部
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <div class="kk-card style-5 mb-3">
+                            <a href="">
+                                <div class="h-card">
+                                    <img src="img/demo2.png" alt="">
+                                </div>
+                                <div class="b-card">
+                                    <span class="icon-heart"><i class="fa-regular fa-heart"></i></span>
+                                    <p class="title">
+                                        【日本旅遊】星優惠北海道5日|破冰船.阿寒湖雪體驗.層雲峽冰爆祭.三溫泉|中華航空・星宇航空
+                                    </p>
+                                    <p class="content">
+                                        立即在KKday訂購濟州機加酒自由行五天四夜,搭乘德威航空前往韓國感受韓流魅力!自選市區飯店輕鬆暢遊濟州,說走就走就是這麼簡單!
+                                    </p>
+                                    <div class="ex-item">
+                                        <span><i class="fa-solid fa-location-dot"></i> 韓國 濟州島</span>
+                                        <span><i class="fa-regular fa-calendar"></i> 最早可預訂日 ： 2023-02-21</span>
+                                    </div>
+                                    <span class="icon-money">TWD 500</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="kk-card style-5 mb-3">
+                            <a href="">
+                                <div class="h-card">
+                                    <img src="img/demo2.png" alt="">
+                                </div>
+                                <div class="b-card">
+                                    <span class="icon-heart"><i class="fa-regular fa-heart"></i></span>
+                                    <p class="title">
+                                        【日本旅遊】星優惠北海道5日|破冰船.阿寒湖雪體驗.層雲峽冰爆祭.三溫泉|中華航空・星宇航空
+                                    </p>
+                                    <p class="content">
+                                        立即在KKday訂購濟州機加酒自由行五天四夜,搭乘德威航空前往韓國感受韓流魅力!自選市區飯店輕鬆暢遊濟州,說走就走就是這麼簡單!
+                                    </p>
+                                    <div class="ex-item">
+                                        <span><i class="fa-solid fa-location-dot"></i> 韓國 濟州島</span>
+                                        <span><i class="fa-regular fa-calendar"></i> 最早可預訂日 ： 2023-02-21</span>
+                                    </div>
+                                    <span class="icon-money">TWD 500</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- footer -->
+    <div id="import-footer"></div>
+
+    <div class="go-top" onclick="scrollToTop();">
+        <span><i class="fa-solid fa-chevron-up"></i></span>
+    </div>
+
+    <!-- bootstrap 5.1.3 -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+    <!-- import載入 -->
+    <script src="js/jquery-3.5.0.js"></script>
+    <script src="owl-carousel/owl.carousel.min.js"></script>
+    <script>
+        $(function () {
+            $("#import-menu").load("import-menu.html");
+            $("#import-footer").load("import-footer.html");
+        });
+    </script>
+
+
+    <script>
+        window.addEventListener('scroll', function () {
+            let scroll = document.querySelector('.go-top');
+            scroll.classList.toggle("active", window.scrollY > 100)
+
+
+        })
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+        }
+    </script>
+
+    <script>
+        $('.question h3').hover(function (e) {
+
+            //讓點及到的 h3 亮起來 其他h3移除active樣式
+            $(this).toggleClass('active');
+
+            //讓點擊到的 h3找到父元素.question 再找到裡面的 p判斷收合
+            $(this).parent().find('p').slideToggle();
+
+            //自己以外的p隱藏起來
+            $(this).parent().siblings().find('p').slideUp();
+
+            //自己以外的h3 移除active
+            $(this).parent().siblings().find('h3').removeClass('active');
+        });
+    </script>
+
+    <!-- <script>
+        const bug = document.querySelector('.bug')
+        bug.style.width = "33.33333%"
+        const col5 = docunt.querySelectorAll('.col-5')
+        col5.forEach(x => {
+            x.addEventListener("mouseover", function () {
+                bug.style.width = "16.666666%"
+                x.classList.toggle('active')
+
+            })
+            x.addEventListener('mouseout', function () {
+                x.classList.toggle('active')
+                bug.style.width = "16.666666%"
+                // x.style.width = "33.333333%"
+
+            })
+
+        })
+        // col5.mousemove = function () {
+        // }
+    </script> -->
+
+</body>
+
+</html>

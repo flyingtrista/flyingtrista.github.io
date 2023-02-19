@@ -1,0 +1,108 @@
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    hamburger.addEventListener('click', function () {
+        hamburger.classList.toggle('active');
+    });
+</script>
+<input type="checkbox" id="menu-checkbox">
+<input type="checkbox" id="search-checkbox">
+
+<header class="navbar navbar-expand-lg navbar-light fixed-top py-0">
+    <div class="container-md">
+        <a class="logo" href="/">
+            <h1>kkday</h1>
+        </a>
+
+        <div class="input-group">
+            <input type="text" class="form-control kk-form-control" placeholder="輸入目的地、景點、體驗行程或活動名稱..."
+                aria-label="輸入目的地、景點、體驗行程或活動名稱..." aria-describedby="search">
+            <button class="btn btn-search" type="button" id="search"><i
+                    class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="icon-item">
+            <label class="icon-search" for="search-checkbox">
+                <span><i class="fa-solid fa-magnifying-glass"></i></span>
+            </label>
+            <label class="hamburger" for="menu-checkbox">
+                <span><i class="fa-solid fa-bars"></i></span>
+            </label>
+        </div>
+
+        <nav class="collapse navbar-collapse justify-content-end  align-items-center" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link tel" href="search.html"><i class="fa-solid fa-mobile-screen-button pe-1"></i>下載
+                        App 享優惠</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        繁體中文 <span><i class="fa-solid fa-angle-down"></i></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        TWD <span><i class="fa-solid fa-angle-down"></i></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <img class="icon-shop" src="img/shop.png" alt="">
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="nav-item">
+                    <a href="" class="nav-link">登入/註冊</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<div class="side-menu">
+    <div class="search-item">
+        <h3>搜尋</h3>
+        <label for="search-checkbox"><i class="fa-solid fa-angle-left"></i> </label>
+        <div class="input-group">
+            <input type="text" class="form-control kk-form-control" placeholder="輸入目的地、景點、體驗行程或活動名稱..."
+                aria-label="輸入目的地、景點、體驗行程或活動名稱..." aria-describedby="search">
+            <button class="btn btn-search" type="button" id="search"><i
+                    class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+    </div>
+</div>
+<label for="menu-checkbox" class="side-menu">
+    <ul class="menu-item">
+        <li><a href="">登入/註冊</a></li>
+        <li><a class="tel" href="#"><i class="fa-solid fa-mobile-screen-button pe-1"></i>下載 App 享優惠</a></li>
+    </ul>
+</label>
