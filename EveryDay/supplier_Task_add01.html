@@ -46,38 +46,65 @@
             <div class="row">
 
                 <h1>行程說明</h1>
+                <hr>
+                <div>
+                    <div class="input-group mb-3">
+                        <h2>行程簡述</h2>
+                            <hr>
+                            <p>建議輸入300~500字以內</p>
+                            <textarea id="summernote1"></textarea>
+                    </div>
+                </div>
 
                 <div>
                     <div class="input-group mb-3">
-                        <h2>行程簡述</h3>
-                            <p>建議輸入300~500字以內</p>
+                        <h2>行程特色</h2>
+                            <hr>
+                            <p>建議輸入500字以內</p>
+                            <textarea id="summernote2"></textarea>
                     </div>
                 </div>
                 <div>
-                    <textarea id="summernote" ></textarea>
-                    <button id="edit" class="btn btn-primary" onclick="edit()" type="button">Edit</button>
-                    <button id="save" class="btn btn-primary" onclick="save()" type="button">Save</button>
-                  
-                    <script>
-                     
-                        function save(){
-                              // getting data
-                            
-                            
-                        }
+                    <div class="input-group mb-3">
+                        <h2>行程描述</h2>
+                            <hr>
+                            <p>建議輸入500字以內</p>
+                            <textarea id="summernote3"></textarea>
+                    </div>
+                </div>
 
-                        $('#summernote').summernote({
-                            placeholder: 'Hello Bootstrap 4',
-                            tabsize: 2,
-                            height: 100
-                        });
-
-                        
-                    </script>
-
+                <div>
+                    <div class="input-group mb-3">
+                        <h2>購買須知摘要</h2>
+                            <hr>
+                            <p>建議輸入500字以內</p>
+                            <textarea id="summernote4"></textarea>
+                    </div>
+                </div>
+                <div>
+                    <div class="input-group mb-3">
+                        <h2>注意事項</h2>
+                            <hr>
+                            <p>建議輸入500字以內</p>
+                            <textarea id="summernote5"></textarea>
+                    </div>
+                </div>
+                <div>
+                    
                 </div>
 
 
+            </div>
+            <div class="row mb-3">
+                <div class="col-sm-5"></div>
+                <div class="col-sm-1">
+                    <button id="edit" class="btn btn-primary" onclick="edit()" type="button">Edit</button>
+                </div>
+                
+                <div class="col-sm-1">
+                    <button id="save" class="btn btn-primary" onclick="save()" type="button">Save</button>
+                </div>
+                <div class="col-sm-5"></div>
             </div>
 
         </div>
@@ -88,128 +115,6 @@
 
 
 
-    <!-- 選單 -->
-    <!-- <div id="import-menu"></div>
-
-    <section class="section-bg">
-        <div class="container">
-            <div class="container mb-5">
-                <div class="row">
-                    <div class="col-3">
-                        <div class="accordion" id="accordionPanelsStayOpenExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                                        aria-controls="panelsStayOpen-collapseOne">
-                                        景點門票
-                                    </button>
-                                </h2>
-                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
-                                    aria-labelledby="panelsStayOpen-headingOne">
-                                    <div class="accordion-body">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                                全部
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
-                                        aria-controls="panelsStayOpen-collapseTwo">
-                                        活動 & 展覽
-                                    </button>
-                                </h2>
-                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
-                                    aria-labelledby="panelsStayOpen-headingTwo">
-                                    <div class="accordion-body">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                                全部
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
-                                        aria-controls="panelsStayOpen-collapseThree">
-                                        戶外活動
-                                    </button>
-                                </h2>
-                                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="panelsStayOpen-headingThree">
-                                    <div class="accordion-body">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                                全部
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-9">
-                        <div class="kk-card style-5 mb-3">
-                            <a href="">
-                                <div class="h-card">
-                                    <img src="img/demo2.png" alt="">
-                                </div>
-                                <div class="b-card">
-                                    <span class="icon-heart"><i class="fa-regular fa-heart"></i></span>
-                                    <p class="title">
-                                        【日本旅遊】星優惠北海道5日|破冰船.阿寒湖雪體驗.層雲峽冰爆祭.三溫泉|中華航空・星宇航空
-                                    </p>
-                                    <p class="content">
-                                        立即在KKday訂購濟州機加酒自由行五天四夜,搭乘德威航空前往韓國感受韓流魅力!自選市區飯店輕鬆暢遊濟州,說走就走就是這麼簡單!
-                                    </p>
-                                    <div class="ex-item">
-                                        <span><i class="fa-solid fa-location-dot"></i> 韓國 濟州島</span>
-                                        <span><i class="fa-regular fa-calendar"></i> 最早可預訂日 ： 2023-02-21</span>
-                                    </div>
-                                    <span class="icon-money">TWD 500</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="kk-card style-5 mb-3">
-                            <a href="">
-                                <div class="h-card">
-                                    <img src="img/demo2.png" alt="">
-                                </div>
-                                <div class="b-card">
-                                    <span class="icon-heart"><i class="fa-regular fa-heart"></i></span>
-                                    <p class="title">
-                                        【日本旅遊】星優惠北海道5日|破冰船.阿寒湖雪體驗.層雲峽冰爆祭.三溫泉|中華航空・星宇航空
-                                    </p>
-                                    <p class="content">
-                                        立即在KKday訂購濟州機加酒自由行五天四夜,搭乘德威航空前往韓國感受韓流魅力!自選市區飯店輕鬆暢遊濟州,說走就走就是這麼簡單!
-                                    </p>
-                                    <div class="ex-item">
-                                        <span><i class="fa-solid fa-location-dot"></i> 韓國 濟州島</span>
-                                        <span><i class="fa-regular fa-calendar"></i> 最早可預訂日 ： 2023-02-21</span>
-                                    </div>
-                                    <span class="icon-money">TWD 500</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
 
     <!-- footer -->
@@ -218,6 +123,44 @@
     <div class="go-top" onclick="scrollToTop();">
         <span><i class="fa-solid fa-chevron-up"></i></span>
     </div>
+
+    <script>
+
+        function save() {
+            // getting data
+
+
+        }
+
+        $('#summernote1').summernote({
+            placeholder: 'Hello Bootstrap 4',
+            tabsize: 2,
+            height: 100
+        });
+        $('#summernote2').summernote({
+            placeholder: 'Hello Bootstrap 4',
+            tabsize: 2,
+            height: 100
+        });
+        $('#summernote3').summernote({
+            placeholder: 'Hello Bootstrap 4',
+            tabsize: 2,
+            height: 100
+        });
+        $('#summernote4').summernote({
+            placeholder: 'Hello Bootstrap 4',
+            tabsize: 2,
+            height: 100
+        });
+        $('#summernote5').summernote({
+            placeholder: 'Hello Bootstrap 4',
+            tabsize: 2,
+            height: 100
+        });
+
+
+    </script>
+
 
     <!-- bootstrap 5.1.3 -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
@@ -239,36 +182,11 @@
 
 
     <script>
-        window.addEventListener('scroll', function () {
-            let scroll = document.querySelector('.go-top');
-            scroll.classList.toggle("active", window.scrollY > 100)
 
-
-        })
-
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            })
-        }
     </script>
 
     <script>
-        $('.question h3').hover(function (e) {
 
-            //讓點及到的 h3 亮起來 其他h3移除active樣式
-            $(this).toggleClass('active');
-
-            //讓點擊到的 h3找到父元素.question 再找到裡面的 p判斷收合
-            $(this).parent().find('p').slideToggle();
-
-            //自己以外的p隱藏起來
-            $(this).parent().siblings().find('p').slideUp();
-
-            //自己以外的h3 移除active
-            $(this).parent().siblings().find('h3').removeClass('active');
-        });
     </script>
 
 
