@@ -42,73 +42,169 @@
 
 
     <section class="section-bg">
-        <div class="container">
-            <div class="row">
 
-                <h1>行程說明</h1>
+        <div class="container">
+            <H1>行程說明</H1>
+            <hr>
+
+            <div class="row mb-3">
+                <H2>新增行程</H2>
                 <hr>
+                <label for="exampleFormControlInput1" class="col-sm-2 col-form-label  mb-3">類別</label>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="category" id="mytype" checked>
+                        <label class="form-check-label" for="mytype"> 一日遊</label>
+                    </div>
+
+                </div>
+                <H2>基本資料</H2>
+                <hr>
+                <label for="exampleFormControlInput1" class="col-sm-2 col-form-label  mb-3">行程代碼</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" value="">
+                </div>
+                <label for="exampleFormControlInput1" class="col-sm-2 col-form-label  mb-3">行程別名</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" value="">
+                </div>
+                <label for="exampleFormControlInput1" class="col-sm-2 col-form-label  mb-3">行程名稱</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" value="">
+                </div>
+
+                <H2>地點</H2>
+                <hr>
+                <label for="exampleFormControlInput1" class="col-sm-2 col-form-label  mb-3">主要地點/地標</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" value=""><button
+                        class="btn btn-primary" type="button">更多</button>
+                </div>
+                <label for="exampleFormControlInput1" class="col-sm-2 col-form-label  mb-3">更多地點/地標</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" value=""><button
+                        class="btn btn-primary" type="button">更多</button>
+                </div>
+            </div>
+
+
+
+            <div class="row mb-3">
                 <div>
                     <div class="input-group mb-3">
                         <h2>行程簡述</h2>
-                            <hr>
-                            <p>建議輸入300~500字以內</p>
-                            <textarea id="summernote1"></textarea>
+                        <hr>
+                        <p>建議輸入300~500字以內</p>
+                        <textarea id="summernote1"></textarea>
                     </div>
                 </div>
 
                 <div>
                     <div class="input-group mb-3">
                         <h2>行程特色</h2>
-                            <hr>
-                            <p>建議輸入500字以內</p>
-                            <textarea id="summernote2"></textarea>
+                        <hr>
+                        <p>建議輸入500字以內</p>
+                        <textarea id="summernote2"></textarea>
                     </div>
                 </div>
                 <div>
                     <div class="input-group mb-3">
                         <h2>行程描述</h2>
-                            <hr>
-                            <p>建議輸入500字以內</p>
-                            <textarea id="summernote3"></textarea>
+                        <hr>
+                        <p>建議輸入500字以內</p>
+                        <textarea id="summernote3"></textarea>
                     </div>
                 </div>
 
                 <div>
                     <div class="input-group mb-3">
                         <h2>購買須知摘要</h2>
-                            <hr>
-                            <p>建議輸入500字以內</p>
-                            <textarea id="summernote4"></textarea>
+                        <hr>
+                        <p>建議輸入500字以內</p>
+                        <textarea id="summernote4"></textarea>
                     </div>
                 </div>
                 <div>
                     <div class="input-group mb-3">
                         <h2>注意事項</h2>
-                            <hr>
-                            <p>建議輸入500字以內</p>
-                            <textarea id="summernote5"></textarea>
+                        <hr>
+                        <p>建議輸入500字以內</p>
+                        <textarea id="summernote5"></textarea>
                     </div>
                 </div>
                 <div>
-                    
+
                 </div>
 
 
             </div>
+
+
+        </div>
+        <div class="container">
             <div class="row mb-3">
-                <div class="col-sm-5"></div>
-                <div class="col-sm-1">
-                    <button id="edit" class="btn btn-primary" onclick="edit()" type="button">Edit</button>
+                <H2>套餐選項</H2>
+                <hr>
+                <label for="exampleFormControlInput1" class="col-sm-2 col-form-label  mb-3">銷售開關</label>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="open" id="type1" checked>
+                        <label class="form-check-label" for="mytype">
+                            啟用
+                        </label>
+                    </div>
+                    <div class="form-check"></div>
+                    <input class="form-check-input" type="radio" name="open" id="type2">
+                    <label class="form-check-label" for="mytype">
+                        停用
+                    </label>
                 </div>
-                
-                <div class="col-sm-1">
-                    <button id="save" class="btn btn-primary" onclick="save()" type="button">Save</button>
+                <label for="exampleFormControlInput1" class="col-sm-2 col-form-label  mb-3">套餐名稱</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" value="">
                 </div>
-                <div class="col-sm-5"></div>
+                <label for="exampleFormControlInput1" class="col-sm-2 col-form-label  mb-3">選項說明</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" value="">
+                </div>
+                <label for="exampleFormControlInput1" class="col-sm-2 col-form-label  mb-3">庫存類型</label>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="type" id="my1" checked>
+                        <label class="form-check-label" for="mytype">
+                            無限量
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="type" id="my2">
+                        <label class="form-check-label" for="mytype">
+                            依場次設定可售量
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="type" id="my3">
+                        <label class="form-check-label" for="mytype">
+                            依套餐設定總可售量
+                        </label>
+                    </div>
+                </div>
+
             </div>
 
         </div>
+        <div class="container">
+            <div class="row mb-3">
+                <div class="col-sm-5"></div>
+                <div class="col-sm-1">
+                    <button id="edit" class="btn btn-primary" onclick="back()" type="button">取消</button>
+                </div>
 
+                <div class="col-sm-1">
+                    <button id="save" class="btn btn-primary" onclick="back()" type="button">新增</button>
+                </div>
+                <div class="col-sm-5"></div>
+            </div>
+        </div>
 
     </section>
 
@@ -182,7 +278,9 @@
 
 
     <script>
-
+        function back() {
+            window.location.replace("http://127.0.0.1:5500/EveryDay/supplier_Task_index.html");
+        }
     </script>
 
     <script>
