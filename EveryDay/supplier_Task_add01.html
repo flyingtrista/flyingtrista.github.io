@@ -44,7 +44,7 @@
     <section class="section-bg">
 
         <div class="container">
-           
+
 
             <div class="row mb-3">
                 <H1>行程說明</H1>
@@ -86,6 +86,14 @@
                     <input type="text" class="form-control" id="exampleFormControlInput1" value=""><button
                         class="btn btn-primary" type="button">更多</button>
                 </div>
+                <label for="exampleFormControlInput1" class="col-sm-2 col-form-label  mb-3">座標</label>
+                <div class="col-sm-1">集合地點經度:</div>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" value="">
+                </div>
+                <div class="col-sm-1">集合地點緯度:</div>
+                <div class="col-sm-4">
+                <input type="text" class="form-control" id="exampleFormControlInput1" value=""></div>
             </div>
 
 
@@ -93,7 +101,7 @@
             <div class="row mb-3">
                 <div>
                     <div class="input-group mb-3">
-                        <h2>行程簡述</h2>
+                        <h2>行程特色</h2>
                         <hr>
                         <p>建議輸入300~500字以內</p>
                         <textarea id="summernote1"></textarea>
@@ -102,30 +110,32 @@
 
                 <div>
                     <div class="input-group mb-3">
-                        <h2>行程特色</h2>
+                        <h2>商品說明</h2>
                         <hr>
                         <p>建議輸入500字以內</p>
                         <textarea id="summernote2"></textarea>
                     </div>
                 </div>
+
+
                 <div>
+                    <div class="input-group mb-3">
+                        <h2>購買須知</h2>
+                        <hr>
+                        <p>建議輸入500字以內</p>
+                        <textarea id="summernote4"></textarea>
+                    </div>
+                </div>
+                <!-- <div>
                     <div class="input-group mb-3">
                         <h2>行程描述</h2>
                         <hr>
                         <p>建議輸入500字以內</p>
                         <textarea id="summernote3"></textarea>
                     </div>
-                </div>
+                </div>-->
+                <div> 
 
-                <div>
-                    <div class="input-group mb-3">
-                        <h2>購買須知摘要</h2>
-                        <hr>
-                        <p>建議輸入500字以內</p>
-                        <textarea id="summernote4"></textarea>
-                    </div>
-                </div>
-                <div>
                     <div class="input-group mb-3">
                         <h2>注意事項</h2>
                         <hr>
@@ -166,7 +176,13 @@
                 </div>
                 <label for="exampleFormControlInput1" class="col-sm-2 col-form-label  mb-3">選項說明</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="exampleFormControlInput1" value="">
+                    <div>
+                        <div class="input-group mb-3">
+                            
+                            
+                            <textarea id="summernote3"></textarea>
+                        </div>
+                    </div>
                 </div>
                 <label for="exampleFormControlInput1" class="col-sm-2 col-form-label  mb-3">庫存類型</label>
                 <div class="col-sm-10">
@@ -176,12 +192,7 @@
                             無限量
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="type" id="my2">
-                        <label class="form-check-label" for="mytype">
-                            依場次設定可售量
-                        </label>
-                    </div>
+                 
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="type" id="my3">
                         <label class="form-check-label" for="mytype">
@@ -193,7 +204,7 @@
                 <hr>
 
             </div>
-            
+
 
         </div>
         <div class="container">
@@ -218,11 +229,11 @@
 
 
     <!-- footer -->
-    <div id="import-footer"></div>
+    <!-- <div id="import-footer"></div>
 
     <div class="go-top" onclick="scrollToTop();">
         <span><i class="fa-solid fa-chevron-up"></i></span>
-    </div>
+    </div> -->
 
     <script>
 
