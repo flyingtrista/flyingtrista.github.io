@@ -51,6 +51,7 @@
                 <hr>
                 <H2>新增行程</H2>
                 <hr>
+
                 <label for="exampleFormControlInput1" class="col-sm-2 col-form-label  mb-3">類別</label>
                 <div class="col-sm-10">
                     <div class="form-check">
@@ -78,13 +79,13 @@
                 <hr>
                 <label for="exampleFormControlInput1" class="col-sm-2 col-form-label  mb-3">主要地點/地標</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="exampleFormControlInput1" value=""><button
-                        class="btn btn-primary" type="button">更多</button>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" value="">
+                    <!-- <button class="btn btn-primary" type="button">更多</button> -->
                 </div>
                 <label for="exampleFormControlInput1" class="col-sm-2 col-form-label  mb-3">更多地點/地標</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="exampleFormControlInput1" value=""><button
-                        class="btn btn-primary" type="button">更多</button>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" value="">
+                    <!-- <button class="btn btn-primary" type="button">更多</button> -->
                 </div>
                 <label for="exampleFormControlInput1" class="col-sm-2 col-form-label  mb-3">座標</label>
                 <div class="col-sm-1">集合地點經度:</div>
@@ -93,7 +94,8 @@
                 </div>
                 <div class="col-sm-1">集合地點緯度:</div>
                 <div class="col-sm-4">
-                <input type="text" class="form-control" id="exampleFormControlInput1" value=""></div>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" value="">
+                </div>
             </div>
 
 
@@ -134,7 +136,7 @@
                         <textarea id="summernote3"></textarea>
                     </div>
                 </div>-->
-                <div> 
+                <div>
 
                     <div class="input-group mb-3">
                         <h2>注意事項</h2>
@@ -178,29 +180,32 @@
                 <div class="col-sm-10">
                     <div>
                         <div class="input-group mb-3">
-                            
-                            
+
+
                             <textarea id="summernote3"></textarea>
                         </div>
                     </div>
                 </div>
                 <label for="exampleFormControlInput1" class="col-sm-2 col-form-label  mb-3">庫存類型</label>
-                <div class="col-sm-10">
+                <div class="col-sm-3">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="type" id="my1" checked>
                         <label class="form-check-label" for="mytype">
                             無限量
                         </label>
                     </div>
-                 
-                    <div class="form-check">
+
+                    <div class="form-check ">
                         <input class="form-check-input" type="radio" name="type" id="my3">
-                        <label class="form-check-label" for="mytype">
-                            依套餐設定總可售量
+                        <label class="form-check-label" for="mytype">依套餐設定總可售量
                         </label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" value="">
+
+
                     </div>
+
                 </div>
-                <button id="save" class="btn btn-primary" onclick="back()" type="button">新增</button>
+                <!-- <button id="save" class="btn btn-primary" onclick="back()" type="button">新增</button> -->
                 <hr>
 
             </div>
@@ -244,27 +249,27 @@
         }
 
         $('#summernote1').summernote({
-            placeholder: 'Hello Bootstrap 4',
+            placeholder: 'Hello ',
             tabsize: 2,
             height: 100
         });
         $('#summernote2').summernote({
-            placeholder: 'Hello Bootstrap 4',
+            placeholder: 'Hello ',
             tabsize: 2,
             height: 100
         });
         $('#summernote3').summernote({
-            placeholder: 'Hello Bootstrap 4',
+            placeholder: 'Hello ',
             tabsize: 2,
             height: 100
         });
         $('#summernote4').summernote({
-            placeholder: 'Hello Bootstrap 4',
+            placeholder: 'Hello ',
             tabsize: 2,
             height: 100
         });
         $('#summernote5').summernote({
-            placeholder: 'Hello Bootstrap 4',
+            placeholder: 'Hello ',
             tabsize: 2,
             height: 100
         });

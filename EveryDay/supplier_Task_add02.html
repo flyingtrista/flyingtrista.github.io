@@ -132,22 +132,7 @@
         }
     </script>
 
-    <script>
-        $('.question h3').hover(function (e) {
 
-            //讓點及到的 h3 亮起來 其他h3移除active樣式
-            $(this).toggleClass('active');
-
-            //讓點擊到的 h3找到父元素.question 再找到裡面的 p判斷收合
-            $(this).parent().find('p').slideToggle();
-
-            //自己以外的p隱藏起來
-            $(this).parent().siblings().find('p').slideUp();
-
-            //自己以外的h3 移除active
-            $(this).parent().siblings().find('h3').removeClass('active');
-        });
-    </script>
 
 
 
