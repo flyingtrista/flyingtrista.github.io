@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app1">
+
+        <h1>{{title}}</h1>
+        <input type="text" v-model="title">
+
+        <hr/>
+
+        <select name="" id="" v-model="selected">
+            <option value="1">A</option>
+            <option value="2">B</option>
+            <option value="3">C</option>
+        </select>
+        <hr/>
+        <label for="">同意</label>
+        <input type="checkbox" v-model="isCheck">
+
+    </div>
+
+
+    <script>
+       const app2 = new Vue({
+        el:'#app1',
+        data:{
+            title:'BuildSchool',
+            selected :'2',
+            isCheck:false
+        }
+       })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app1">
+
+    <h1>{{title}}</h1>
+    <h1>{{price|currency}}</h1>
+
+    </div>
+
+
+    <script>
+        const app1 = new Vue({
+            el:'#app1',
+            data:{
+                title:'123',
+                price:123451111
+            },
+            filters:{
+                currency(val){
+                    return `NT ${val.toLocaleString('en-us')}`
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>
