@@ -1,0 +1,111 @@
+:root {
+    --kk-primary: #22a7aa;
+        --kk-primary-hover: #197f81;
+        --kk-text-color: #666;
+        --kk-title-color: #333;
+        --kk-price-color: #212121;
+        --kk-acount-bg-color: #F5F5F5;
+        --kk-title-size: 22px;
+        --kk-text-size: 14px;
+}
+*{
+    list-style: none;
+}
+.account-main{
+    background: var(--kk-acount-bg-color);
+}
+.account-info{
+    border-radius: 10px;
+}
+.upload-head-shot{
+    width: 100px;
+    position: relative;
+}
+.upload-head-shot img{
+    vertical-align: middle;
+    border-radius: 50%;
+}
+.upload-head-shot .fa-camera{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.certified-group{
+    border-top: 1px solid #ccc;
+}
+.certified .certified-pic{
+    width: 40px;
+}
+.certified .certified-pic img{
+    vertical-align: middle;
+    width: 50%;
+}
+.certified .certified-text{
+    flex: 1 1 auto;
+}
+.certified i{
+    color: var(--kk-primary);
+}
+.account-function-list{
+    border-radius: 10px;
+}
+.account-function-list,.account-info,.account-details{
+    background: #fff;
+}
+.account-function-list .list-item .list-item-title{
+    flex:1 0 auto;
+}
+.account-function-list .list-item a{
+    text-decoration: none;
+    color: var(--kk-text-color);
+}
+.account-function-list .list-item a:hover{
+    background-color: #ccc;
+}
+.account-function-list .list-item a:focus {
+    border-left: 6px solid var(--kk-primary);
+    color: var(--kk-primary);
+}
+#account-coupons .coupon-quantity{
+    color: #fa0;
+    font-weight: 700;
+}
+.icon-box{
+    width: 1.5rem;
+}
+
+.account-details{
+    border-radius: 10px;
+}
+.details-title span{
+    font-weight: 700;
+}
+.details-content{
+    border-top: 1px solid #ccc;
+}
+
+.filter .filter-link{
+    text-decoration: none;
+    color: var(--kk-text-color);
+
+}
+
+.filter .filter-link:focus{
+    border-bottom: 4px solid var(--kk-primary);
+}
+
+.form-control:focus,.form-select:focus{
+    border-color:var(--kk-primary);
+    box-shadow:none;
+}
+.save,.save-link{
+    width: fit-content;
+    text-decoration: none;
+    color: #fff;
+    background-color: var(--kk-primary);
+    border: none;
+    border-radius: 5px;
+}
+.save .save-link:hover{
+    background-color: var(--kk-primary-hover);
+}

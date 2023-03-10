@@ -1,0 +1,180 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>account</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="/EveryDay/css/account.css">
+    </head>
+    <body>
+        <section class="account-main p-5">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-12 col-xl-3">
+                        <aside class="account-function">
+                            <div class="account-info p-3 mt-5 text-center">
+                                <div class="mb-3">
+                                    <div class="head-shot">
+                                        <div class="upload-head-shot m-auto">
+                                            <img src="https://picsum.photos/id/142/100/100">
+                                            <i class="fa fa-camera"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="member-full-name">
+                                    <p>公司名稱</p>
+                                </div>
+                                <div class="membership text-grey">
+                                    <p>OOOOOO</p>
+                                </div>
+                                <div class="certified-group">
+                                    <div class="certified d-flex align-items-center">
+                                        <div class="certified-pic">
+                                            <img src="images/facebook.svg" alt="">
+                                        </div>
+                                        <div class="certified-text p-2 text-start">
+                                            <span>Facebook</span>
+                                        </div>
+                                    </div>
+                                    <div class="certified d-flex align-items-center">
+                                        <div class="certified-pic">
+                                            <img src="images/google.svg" alt="">
+                                        </div>
+                                        <div class="certified-text p-2 text-start">
+                                            <span>Google</span>
+                                        </div>
+                                        <i class="fa-solid fa-circle-check"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="account-function-list ps-0 mt-5">
+                                <li class="list-item">
+                                    <a id="account-settings" class="d-flex align-items-center p-3" href="#" >
+                                        <span class="icon-box"><i class="fa-solid fa-gear"></i></span>
+                                        <span class="list-item-title ps-3">帳號設定</span>
+                                    </a>
+                                </li>
+                                <!-- <li class="list-item">
+                                    <a id="account-class" class="d-flex align-items-center p-3" href="account-membership.html">
+                                        <span class="icon-box"><i class="fa-solid fa-gem"></i></span>
+                                        <span class="list-item-title ps-3">我的會籍禮遇</span>
+                                    </a>
+                                </li> -->
+                                <!-- <li class="list-item">
+                                    <a id="account-coupons" class="d-flex align-items-center p-3" href="coupons.html">
+                                        <span class="icon-box"><i class="fa-solid fa-ticket"></i></span>
+                                        <span class="list-item-title ps-3">KKday 折扣券</span>
+                                        <span class="coupon-quantity">20</span>
+                                    </a>
+                                </li> -->
+                                <li class="list-item">
+                                    <a id="account-orders-management" class="d-flex align-items-center p-3" href="#">
+                                        <span class="icon-box"><i class="fa-solid fa-file"></i></span>
+                                        <span class="list-item-title ps-3">訂單管理</span>
+                                    </a>
+                                </li>
+                                <li class="list-item">
+                                    <a id="account-messages-management" class="d-flex align-items-center p-3" href="#">
+                                        <span class="icon-box"><i class="fa-solid fa-envelope"></i></span>
+                                        <span class="list-item-title ps-3">行程管理</span>
+                                    </a>
+                                </li>
+                                <!-- <li class="list-item">
+                                    <a id="account-collections" class="d-flex align-items-center p-3" href="#">
+                                        <span class="icon-box"><i class="fa-solid fa-gift"></i></span>
+                                        <span class="list-item-title ps-3">我的收藏</span>
+                                    </a>
+                                </li> -->
+                            </ul>
+                        </aside>
+                    </div>
+                    <div class="col-12 col-xl-9">
+                        <div class="account-details">
+                            <div class="details-title pt-3 mt-5">
+                                <span class="fs-3 ps-3">帳號設定</span>
+                                <ul class="filter d-flex mt-5">
+                                    <li>
+                                        <a class="filter-link pb-3 me-3" href="#">基本資料</a>
+                                    </li>
+                                    <li>
+                                        <a class="filter-link pb-3 me-3" href="#">常用旅客</a>
+                                    </li>
+                                    <li>
+                                        <a class="filter-link pb-3 me-3" href="#">帳號安全</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="details-content p-4">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label for="">名</label>
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" placeholder="名" aria-label="Username" aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <label for="">姓</label>
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" placeholder="姓" aria-label="Username" aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <label for="">性別</label>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>請選擇</option>
+                                            <option value="1">不便透漏</option>
+                                            <option value="2">男</option>
+                                            <option value="3">女</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label for="">出生日期</label>
+                                        <div class="input-group mb-3">
+                                            <input type="date" class="form-control" placeholder="姓" aria-label="Username" aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <label for="">國家/地區</label>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>請選擇</option>
+                                            <option value="1">臺灣</option>
+                                            <option value="2">日本</option>
+                                            <option value="3">韓國</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label for="">電話號碼</label>
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" placeholder="電話號碼" aria-label="Username" aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="col-8">
+                                        <label for="">聯絡 E-mail*</label>
+                                        <div class="input-group mb-3">
+                                            <input type="email" class="form-control" placeholder="聯絡 E-mail*" aria-label="Username" aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="save ms-auto">
+                                    <a class="save-link px-3 py-2" href="#">儲存</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/592d58a0fb.js" crossorigin="anonymous"></script>
+        <script>
+            
+        </script>
+    </body>
+</html>

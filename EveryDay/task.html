@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>account</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/EveryDay/css/account.css">
+    <!-- include libraries(jQuery, bootstrap) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+
+</head>
+
+<body>
+    <section class="account-main p-5">
+        <div class="container mt-5">
+            <div class="row">
+                
+                <div class="col-12 col-xl-3">
+                    <aside class="account-function">
+                        <div class="account-info p-3 mt-5 text-center">
+                            <div class="mb-3">
+                                <div class="head-shot">
+                                    <div class="upload-head-shot m-auto">
+                                        <img src="https://picsum.photos/id/142/100/100">
+                                        <i class="fa fa-camera"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="member-full-name">
+                                <p>公司名稱</p>
+                            </div>
+                            <div class="membership text-grey">
+                                <p>OOOOOO</p>
+                            </div>
+                            <div class="certified-group">
+                                <div class="certified d-flex align-items-center">
+                                    <div class="certified-pic">
+                                        <img src="images/facebook.svg" alt="">
+                                    </div>
+                                    <div class="certified-text p-2 text-start">
+                                        <span>Facebook</span>
+                                    </div>
+                                </div>
+                                <div class="certified d-flex align-items-center">
+                                    <div class="certified-pic">
+                                        <img src="images/google.svg" alt="">
+                                    </div>
+                                    <div class="certified-text p-2 text-start">
+                                        <span>Google</span>
+                                    </div>
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="account-function-list ps-0 mt-5">
+                            <li class="list-item">
+                                <a id="account-settings" class="d-flex align-items-center p-3" href="#">
+                                    <span class="icon-box"><i class="fa-solid fa-gear"></i></span>
+                                    <span class="list-item-title ps-3">帳號設定</span>
+                                </a>
+                            </li>
+                           
+                            <li class="list-item">
+                                <a id="account-orders-management" class="d-flex align-items-center p-3" href="#">
+                                    <span class="icon-box"><i class="fa-solid fa-file"></i></span>
+                                    <span class="list-item-title ps-3">訂單管理</span>
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a id="account-messages-management" class="d-flex align-items-center p-3" href="#">
+                                    <span class="icon-box"><i class="fa-solid fa-envelope"></i></span>
+                                    <span class="list-item-title ps-3">行程管理</span>
+                                </a>
+                            </li>
+                       
+                        </ul>
+                    </aside>
+                </div>
+
+
+
+
+                <div class="col-12 col-xl-9">
+                    <div class="account-details">
+                        <div class="details-title pt-3 mt-5">
+                            <span class="fs-3 ps-3">行程設定</span>
+                           
+                        </div>
+                        <div class="details-content p-4">
+                            <div class="row">
+
+                                <div class="col-4">
+                                    <label for="">行程名稱</label>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="行程名稱" aria-label="Username"
+                                            aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <label for="">是否可取消</label>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>請選擇</option>
+                                        <option value="1">可取消</option>
+                                        <option value="2">不可取消</option>
+                                    </select>
+                                </div>
+                                <div class="col-4">
+                                    <label for="">是否可退款</label>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>請選擇</option>
+                                        <option value="1">全額退</option>
+                                        <option value="2">全額不退</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="details-content p-4">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="">行程縣市</label>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>請選擇</option>
+                                        <option value="1">臺灣</option>
+                                        <option value="2">日本</option>
+                                        <option value="3">韓國</option>
+                                    </select>
+                                </div>
+                                <div class="col-4">
+                                    <label for="">行程地區</label>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>請選擇</option>
+                                        <option value="1">臺灣</option>
+                                        <option value="2">日本</option>
+                                        <option value="3">韓國</option>
+                                    </select>
+                                </div>
+                                <div class="col-2">
+                                    <label for="">行程經度</label>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="行程經度" aria-label="Username"
+                                            aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <label for="">行程緯度</label>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="行程緯度" aria-label="Username"
+                                            aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="details-title pt-3 mt-2">
+                            <span class="fs-3 ps-3">行程特色</span>
+
+                        </div>
+                
+
+                        <div class="details-content p-4">
+                            <div class="row">
+
+                                <div class="col-12">
+                                    <label for="">建議輸入300~500字以內</label>
+                                    <textarea id="summernote1"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="details-title pt-3 mt-2">
+                            <span class="fs-3 ps-3">行程說明</span>
+
+                        </div>
+                        <div class="details-content p-4">
+                            <div class="row">
+
+                                <div class="col-12">
+                                    <label for="">建議輸入300~500字以內</label>
+                                    <textarea id="summernote2"></textarea>
+                                </div>
+
+                               
+                            </div>
+                        </div>
+
+                        <div class="details-title pt-3 mt-2">
+                            <span class="fs-3 ps-3">行程購買須知</span>
+
+                        </div>
+                        <div class="details-content p-4">
+                            <div class="row">
+
+                                <div class="col-12">
+                                    <label for="">建議輸入300~500字以內</label>
+                                    <textarea id="summernote3"></textarea>
+                                </div>
+
+                              
+                            </div>
+                        </div>
+
+                        <div class="details-title pt-3 mt-2">
+                            <span class="fs-3 ps-3">行程注意事項</span>
+
+                        </div>
+                        <div class="details-content p-4">
+                            <div class="row">
+
+                                <div class="col-12">
+                                    <label for="">建議輸入300~500字以內</label>
+                                    <textarea id="summernote4"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/592d58a0fb.js" crossorigin="anonymous"></script>
+    <script>
+        $('#summernote1').summernote({
+            placeholder: 'Hello ',
+            tabsize: 2,
+            height: 100
+        });
+        $('#summernote2').summernote({
+            placeholder: 'Hello ',
+            tabsize: 2,
+            height: 100
+        });
+        $('#summernote3').summernote({
+            placeholder: 'Hello ',
+            tabsize: 2,
+            height: 100
+        });
+        $('#summernote4').summernote({
+            placeholder: 'Hello ',
+            tabsize: 2,
+            height: 100
+        });
+    </script>
+</body>
+
+</html>
